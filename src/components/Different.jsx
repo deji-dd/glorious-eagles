@@ -1,0 +1,96 @@
+import blue_circle from "../assets/blue_circle.svg";
+import orange_circle from "../assets/orange_circle.svg";
+
+export default function Different() {
+  const circle_div = {
+    width: "15rem",
+    height: "15rem",
+    flexShrink: "0",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#FFF",
+    textAlign: "center",
+    fontSize: "1.875rem",
+    lineHeight: "2.5rem",
+    letterSpacing: "-0.00938rem",
+    padding: "5rem 1.1rem",
+  };
+  const blue = { ...circle_div, background: `url(${blue_circle})` };
+  const orange = { ...circle_div, background: `url(${orange_circle})` };
+  return (
+    <div
+      style={{
+        width: "90rem",
+        display: "flex",
+        padding: "2.875rem 6.4375rem 3.5rem 6.4375rem",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "4.5625rem",
+        background: "#F6F5FF",
+        marginTop: "3.55rem",
+      }}
+    >
+      <h1
+        style={{
+          lineHeight: "5.21875rem",
+          letterSpacing: "-0.01875rem",
+          width: "77.125rem",
+          textAlign: "center",
+        }}
+      >
+        A different approach to Applied Behaviour Analysis Therapy
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "3.75rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "12.5rem",
+          }}
+        ></div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "12.5rem",
+          }}
+        >
+          <div style={blue}>
+            <p>Innovative Techniques</p>
+          </div>
+          <div style={orange}>
+            <p>Evidence Based</p>
+          </div>
+          <div style={blue}>
+            <p>Compassionate Professionals</p>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "12.5rem",
+          }}
+        >
+          <div style={orange}>
+            <p>Inclusion and Diversity</p>
+          </div>
+          <div style={blue}>
+            <p>Client Centered</p>
+          </div>
+          <div style={orange}>
+            <p>Collaborative Care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
