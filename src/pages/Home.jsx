@@ -16,7 +16,13 @@ export default function Home() {
       <Offer />
       <Work />
       <Testimonials />
-      <Transform />
+      <Transform
+        title={"Work with Us to Transform Lives Through ABA Excellence"}
+        desc={
+          "“Lobortis leo pretium facilisis amet nisl at nec. Scelerisque risus tortor donec ipsum consequat semper consequat adipiscing ultrices Scelerisque risus tortor donec ipsum consequat semper consequatScelerisque risus tortor donec ipsum consequat semper consequat.”"
+        }
+        btn={"Apply to work with us"}
+      />
       <Footer />
     </div>
   );

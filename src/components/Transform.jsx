@@ -1,6 +1,6 @@
 import BG from "../assets/transform-bg.svg";
 
-export default function Transform() {
+export default function Transform(props) {
   return (
     <div
       style={{
@@ -46,7 +46,7 @@ export default function Transform() {
                 textAlign: "center",
               }}
             >
-              Work with Us to Transform Lives Through ABA Excellence
+              {props.title}
             </h1>
             <p
               style={{
@@ -57,11 +57,7 @@ export default function Transform() {
                 width: "60.8125rem",
               }}
             >
-              “Lobortis leo pretium facilisis amet nisl at nec. Scelerisque
-              risus tortor donec ipsum consequat semper consequat adipiscing
-              ultrices Scelerisque risus tortor donec ipsum consequat semper
-              consequatScelerisque risus tortor donec ipsum consequat semper
-              consequat.”
+              {props.desc}
             </p>
           </div>
           <button
@@ -71,7 +67,7 @@ export default function Transform() {
             }}
             className={"button-p"}
           >
-            Apply to work with us
+            {props.btn}
           </button>
         </div>
       </div>

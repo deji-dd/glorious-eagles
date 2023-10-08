@@ -5,7 +5,6 @@ import { useLocation } from "preact-iso/router";
 export default function Header() {
   const location = useLocation();
   const path = location.path;
-  console.log(path);
   const link_style = {
     color: "var(--Text-Color, #151411)",
     fontFamily: "Hanken Grotesk",
