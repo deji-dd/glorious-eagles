@@ -46,7 +46,7 @@ export default function Transform(props) {
                 textAlign: "center",
               }}
             >
-              {props.title}
+              Work with Us to Transform Lives Through ABA Excellence
             </h1>
             <p
               style={{
@@ -57,7 +57,12 @@ export default function Transform(props) {
                 width: "60.8125rem",
               }}
             >
-              {props.desc}
+              Join our team and become a part of something extraordinary. We are
+              passionate about making a positive impact on the lives of
+              individuals and families through Applied Behavior Analysis (ABA)
+              therapy. If you're dedicated, compassionate, and eager to
+              contribute your expertise to our mission, we invite you to explore
+              the rewarding career opportunities we offer.
             </p>
           </div>
           <button
@@ -67,7 +72,7 @@ export default function Transform(props) {
             }}
             className={"button-p"}
           >
-            {props.btn}
+            Apply to work with us
           </button>
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function Services() {
   return (
     <div>
       <ServicesOffer
-        help={() => {
+        scroll={() => {
           ref.current?.scrollIntoView({ behavior: "smooth" });
         }}
       />
@@ -74,7 +74,6 @@ export default function Services() {
         }
         btn={"Contact Us"}
       />
-      <Footer />
     </div>
   );
 }

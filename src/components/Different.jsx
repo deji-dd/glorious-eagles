@@ -21,74 +21,51 @@ export default function Different() {
   return (
     <div
       style={{
-        width: "90rem",
         display: "flex",
-        padding: "2.875rem 6.4375rem 3.5rem 6.4375rem",
         flexDirection: "column",
-        alignItems: "center",
-        gap: "4.5625rem",
-        background: "#F6F5FF",
-        marginTop: "3.55rem",
+        alignItems: "flex-start",
+        gap: "3.75rem",
       }}
     >
-      <h1
-        style={{
-          lineHeight: "5.21875rem",
-          letterSpacing: "-0.01875rem",
-          width: "77.125rem",
-          textAlign: "center",
-        }}
-      >
-        A different approach to Applied Behaviour Analysis Therapy
-      </h1>
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
           alignItems: "flex-start",
-          gap: "3.75rem",
+          gap: "12.5rem",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "12.5rem",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "12.5rem",
-          }}
-        ></div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "12.5rem",
-          }}
-        >
-          <div style={blue}>
-            <p>Innovative Techniques</p>
-          </div>
-          <div style={orange}>
-            <p>Evidence Based</p>
-          </div>
-          <div style={blue}>
-            <p>Compassionate Professionals</p>
-          </div>
+        <div style={blue}>
+          <p>Innovative Techniques</p>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "12.5rem",
-          }}
-        >
-          <div style={orange}>
-            <p>Inclusion and Diversity</p>
-          </div>
-          <div style={blue}>
-            <p>Client Centered</p>
-          </div>
-          <div style={orange}>
-            <p>Collaborative Care</p>
-          </div>
+        <div style={orange}>
+          <p>Evidence Based</p>
+        </div>
+        <div style={blue}>
+          <p>Compassionate Professionals</p>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "12.5rem",
+        }}
+      >
+        <div style={orange}>
+          <p>Inclusion and Diversity</p>
+        </div>
+        <div style={blue}>
+          <p>Client Centered</p>
+        </div>
+        <div style={orange}>
+          <p>Collaborative Care</p>
         </div>
       </div>
     </div>

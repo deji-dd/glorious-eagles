@@ -86,7 +86,12 @@ export default function Header() {
             >
               Services
             </a>
-            <a style={link_style}>About Us</a>
+            <a
+              href={"/about-us"}
+              style={path == "/about-us" ? link_active : link_style}
+            >
+              About Us
+            </a>
             <a style={link_style}>How we work</a>
             <a style={link_style}>Resources</a>
           </div>
