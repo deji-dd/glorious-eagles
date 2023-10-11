@@ -92,10 +92,17 @@ export default function Header() {
             >
               About Us
             </a>
-            <a style={link_style}>How we work</a>
-            <a style={link_style}>Resources</a>
+            <a
+              href={"/how-we-work"}
+              style={path == "/how-we-work" ? link_active : link_style}
+            >
+              How we work
+            </a>
+            {/* <a style={link_style}>Resources</a> */}
           </div>
-          <button className={"button-p"}>Contact us</button>
+          <a href={"/contact-us"}>
+            <button className={"button-p"}>Contact us</button>
+          </a>
         </div>
       </div>
     </div>

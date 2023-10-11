@@ -48,7 +48,7 @@ export default function Work() {
       <img src={WorkImg} />
       <div style={{ display: "flex", flexDirection: "column", gap: "3.63rem" }}>
         <h2>How We Work- 4 easy steps</h2>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", position: "relative" }}>
           <hr
             style={{
               width: "0.4375rem",
@@ -57,16 +57,15 @@ export default function Work() {
               opacity: "0.1",
               background:
                 "linear-gradient(295deg, #4563FF 9.05%, #4388DD 79.28%)",
-              position: "relative",
+              position: "absolute",
               margin: "0",
-              left: "19.4rem",
+              left: "18.9375rem",
             }}
           />
           <div
             style={{
               display: "inline-flex",
               flexDirection: "column",
-
               position: "relative",
             }}
           >

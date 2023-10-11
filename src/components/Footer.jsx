@@ -76,8 +76,10 @@ export default function Footer() {
             <a href={"/about-us"} style={link_style}>
               About Us
             </a>
-            <a style={link_style}>How we work</a>
-            <a style={link_style}>Resources</a>
+            <a href={"/how-we-work"} style={link_style}>
+              How we work
+            </a>
+            {/* <a style={link_style}>Resources</a> */}
           </div>
         </div>
         <hr
@@ -95,12 +97,14 @@ export default function Footer() {
             gap: "15.3125rem",
           }}
         >
-          <button
-            className={"button-p"}
-            style={{ background: "rgba(224, 211, 250, 0.50)", color: "#FFF" }}
-          >
-            Contact Us
-          </button>
+          <a href={"/contact-us"}>
+            <button
+              className={"button-p"}
+              style={{ background: "rgba(224, 211, 250, 0.50)", color: "#FFF" }}
+            >
+              Contact Us
+            </button>
+          </a>
           <div
             style={{
               display: "flex",

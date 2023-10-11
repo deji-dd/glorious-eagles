@@ -8,6 +8,8 @@ import "./style.css";
 import Services from "./pages/Services.jsx";
 import About from "./pages/About.jsx";
 import Footer from "./components/Footer.jsx";
+import How from "./pages/How.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 
 export function App() {
   return (
@@ -18,6 +20,8 @@ export function App() {
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
           <Route path="/about-us" component={About} />
+          <Route path="/how-we-work" component={How} />
+          <Route path="/contact-us" component={ContactUs} />
           <Route default component={NotFound} />
         </Router>
       </main>
