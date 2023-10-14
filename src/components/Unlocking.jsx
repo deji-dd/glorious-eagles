@@ -17,7 +17,7 @@ export default function Unlocking() {
     <div
       style={{
         width: "90rem",
-        height: "64rem",
+        height: "68.376875rem",
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
@@ -25,6 +25,7 @@ export default function Unlocking() {
         gap: "3.56rem",
         background: `url(${BG}) 8rem 8rem no-repeat`,
         paddingTop: "8.19rem",
+        backgroundColor: "#E5E2FD",
       }}
     >
       <div
@@ -45,9 +46,16 @@ export default function Unlocking() {
         >
           Unlocking Potential, One Step at a Time: Your Partner in ABA Therapy"
         </h1>
-        <p style={{ color: "#4D4D4D", fontSize: "1.5rem", lineHeight: "2rem" }}>
-          Quam vel aliquam sit vulputate. Faucibus nec gravida ipsum pulvinar
-          vel.
+        <p
+          style={{
+            color: "#4D4D4D",
+            fontSize: "1.5rem",
+            lineHeight: "2rem",
+            width: "66.5rem",
+          }}
+        >
+          Discover personalized care that empowers you or your loved one. Let's
+          make a brighter tomorrow a reality for you and your family
         </p>
         <div
           style={{

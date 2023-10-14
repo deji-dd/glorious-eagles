@@ -1,4 +1,5 @@
 import NameIcon from "../assets/name-icon.svg";
+import MessageIcon from "../assets/message-icon.svg";
 
 export default function ContactForm() {
   const label_style = {
@@ -75,11 +76,12 @@ export default function ContactForm() {
           justifyContent: "center",
           gap: "6.25rem",
           width: "79.0625rem",
-          height: "66.5rem",
+          height: "72rem",
           borderRadius: "2.125rem",
           border: "1px solid var(--neutral-300, #EFF0F6)",
           background: "#F1EBFE",
           flexDirection: "column",
+          padding: "0 3.19rem",
         }}
       >
         <div
@@ -109,6 +111,9 @@ export default function ContactForm() {
           </p>
         </div>
         <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -150,7 +155,7 @@ export default function ContactForm() {
             >
               <label style={label_style}>Email</label>
               <div style={div_style}>
-                <img src={NameIcon} />
+                <img src={MessageIcon} />
                 <input
                   style={input_style}
                   type={"email"}
@@ -182,6 +187,13 @@ export default function ContactForm() {
               placeholder={"Lorem Ipsum"}
             />
           </div>
+          <button
+            style={{ width: "33.5rem", alignSelf: "center" }}
+            className={"button-p"}
+            type={"submit"}
+          >
+            Sumbit
+          </button>
         </form>
       </div>
     </div>

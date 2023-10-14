@@ -10,12 +10,14 @@ import About from "./pages/About.jsx";
 import Footer from "./components/Footer.jsx";
 import How from "./pages/How.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
+import Socials from "./components/Socials.jsx";
 
 export function App() {
   return (
     <LocationProvider>
+      <Socials />
       <Header />
-      <main>
+      <main style={{ paddingTop: "5.3125rem" }}>
         <Router>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />

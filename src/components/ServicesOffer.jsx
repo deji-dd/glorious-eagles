@@ -140,7 +140,7 @@ export default function ServicesOffer(props) {
               cursor: "pointer",
             }}
             src={Arrow}
-            onClick={props.help}
+            onClick={props.scroll}
           />
         </div>
       </div>
