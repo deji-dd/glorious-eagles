@@ -41,10 +41,10 @@ export default function Experts(props) {
               lineHeight: "2.5rem",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur ipiscing elit. Cursus
-            imperdiet sed id elementum. Quam vel aliquam sit vulputate. Faucibus
-            nec gravida ipsum pulvinar vel non.Faucibus nec gravida ipsum
-            pulvinar vel.
+            Our commitment to excellence, innovation, and client-centered care
+            sets us apart. With a team of dedicated professionals and a passion
+            for transformative solutions, we stand ready to exceed your
+            expectations. Discover the exceptional difference that sets us apart
           </p>
         </div>
         <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>

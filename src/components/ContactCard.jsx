@@ -1,3 +1,5 @@
+import Gif from "../assets/contact.gif";
+
 export default function ContactCard() {
   return (
     <div
@@ -61,6 +63,7 @@ export default function ContactCard() {
             Contact Us
           </button>
         </div>
+        <img style={{ width: "18.91138rem" }} src={Gif} />
       </div>
     </div>
   );

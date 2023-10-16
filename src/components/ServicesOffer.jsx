@@ -75,10 +75,10 @@ export default function ServicesOffer(props) {
                 lineHeight: "2.5rem",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
-              imperdiet sed id elementum. Quam vel aliquam sit vulputate.
-              Faucibus nec gravida ipsum pulvinar vel non.Faucibus nec gravida
-              ipsum pulvinar vel non.
+              Our comprehensive range of services is designed to meet the unique
+              needs of each individual we serve. We collaborate closely with
+              families, employing evidence-based practices to unlock potential
+              and transform lives.
             </p>
           </div>
           <div

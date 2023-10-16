@@ -40,7 +40,7 @@ export default function ServicesPurple(props) {
           </p>
         </div>
         <button style={{ width: "16.75rem" }} className={"button-p"}>
-          Contact us
+          Learn more
         </button>
       </div>
       <img src={props.img} />

@@ -40,7 +40,7 @@ export default function ServicesWhite(props) {
           </p>
         </div>
         <button style={{ width: "16.75rem" }} className={"button-p"}>
-          Contact us
+          Learn more
         </button>
       </div>
     </div>

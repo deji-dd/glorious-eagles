@@ -74,9 +74,8 @@ export default function ContactForm() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: "6.25rem",
           width: "79.0625rem",
-          height: "72rem",
+          height: "61.5625rem",
           borderRadius: "2.125rem",
           border: "1px solid var(--neutral-300, #EFF0F6)",
           background: "#F1EBFE",
@@ -84,32 +83,6 @@ export default function ContactForm() {
           padding: "0 3.19rem",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.88025rem",
-            alignItems: "flex-start",
-          }}
-        >
-          <h2
-            style={{
-              fontFeatureSettings: "'clig' off, 'liga' off",
-              lineHeight: "4.07825rem",
-            }}
-          >
-            Contact details
-          </h2>
-          <p
-            style={{
-              fontFeatureSettings: "'clig' off, 'liga' off",
-              lineHeight: "2.5rem",
-              fontSize: "1.5rem",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisc.
-          </p>
-        </div>
         <form
           onSubmit={(e) => {
             e.preventDefault();

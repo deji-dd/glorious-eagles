@@ -1,4 +1,4 @@
-import Img from "../assets/job-img.svg";
+import Img from "../assets/career.gif";
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import PositionIcon from "../assets/position-icon.svg";
@@ -48,14 +48,14 @@ export default function Job() {
           width: "85.3125rem",
           justifyContent: "center",
           alignItems: "center",
-          height: "113.875rem",
+          height: "105rem",
           borderRadius: "3rem",
           background: "var(--Primary-colour, #180344)",
           flexDirection: "column",
           gap: "2.25rem",
         }}
       >
-        <img src={Img} />
+        <img style={{ width: "25rem" }} src={Img} />
         <div
           style={{
             display: "flex",
@@ -174,6 +174,8 @@ export default function Job() {
                 background: "#E1D5FD",
                 color: "var(--Primary-colour, #180344)",
                 padding: "2.75rem 5rem",
+                width: "28.1rem",
+                alignSelf: "center",
               }}
             >
               Apply to work with us
