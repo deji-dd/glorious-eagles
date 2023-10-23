@@ -79,7 +79,9 @@ export default function Footer() {
             <a href={"/how-we-work"} style={link_style}>
               How we work
             </a>
-            {/* <a style={link_style}>Resources</a> */}
+            <a href={"/career"} style={link_style}>
+              Career
+            </a>
           </div>
         </div>
         <hr
@@ -114,7 +116,7 @@ export default function Footer() {
             }}
           >
             <p style={link_style}>president@gloriouseagles.com</p>
-            <p style={link_style}>+1 470-3360-611</p>
+            <p style={link_style}>+1 612-4566-090</p>
             <div
               style={{
                 display: "flex",
@@ -123,10 +125,12 @@ export default function Footer() {
                 gap: "1.8125rem",
               }}
             >
-              <a>
+              <a
+                href={"https://web.facebook.com/profile.php?id=61552151991164"}
+              >
                 <img src={Facebook} />
               </a>
-              <a>
+              <a href={"https://www.instagram.com/gloriouseaglesus"}>
                 <img src={Instagram} />
               </a>
               <a>

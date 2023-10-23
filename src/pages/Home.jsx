@@ -5,7 +5,7 @@ import Unlocking from "../components/Unlocking";
 import Work from "../components/Work";
 import ContactCard from "../components/ContactCard";
 import ContactForm from "../components/ContactForm";
-import Job from "../components/Job";
+import Transform from "../components/Transform";
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
       <Work />
       <ContactForm />
       <ContactCard />
-      <Job />
+      <Transform />
     </div>
   );
 }

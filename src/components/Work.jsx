@@ -1,6 +1,7 @@
 import BG from "../assets/elipses.svg";
 import WorkImg from "../assets/work-img.svg";
 import Line from "../assets/work-line.svg";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 export default function Work() {
   const h3_style = {
@@ -69,18 +70,28 @@ export default function Work() {
               position: "relative",
             }}
           >
-            <div style={{ ...div_style, marginBottom: "10.6rem" }}>
-              <h3 style={h3_style}>01</h3>
-              <h5 style={h5_style}>
-                Initial consultation and assessment process
-              </h5>
-              <img src={Line} style={img_style} />
-            </div>
-            <div style={div_style}>
-              <h3 style={h3_style}>03</h3>
-              <h5 style={h5_style}>Ongoing progress monitoring</h5>
-              <img src={Line} style={img_style} />
-            </div>
+            <AnimationOnScroll
+              animateIn="animate__fadeInLeft"
+              animateOut="animate__fadeOutLeft"
+            >
+              <div style={{ ...div_style, marginBottom: "10.6rem" }}>
+                <h3 style={h3_style}>01</h3>
+                <h5 style={h5_style}>
+                  Initial consultation and assessment process
+                </h5>
+                <img src={Line} style={img_style} />
+              </div>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animateIn="animate__fadeInLeft"
+              animateOut="animate__fadeOutLeft"
+            >
+              <div style={div_style}>
+                <h3 style={h3_style}>03</h3>
+                <h5 style={h5_style}>Ongoing progress monitoring</h5>
+                <img src={Line} style={img_style} />
+              </div>
+            </AnimationOnScroll>
             <button
               style={{ width: "16.75rem", position: "relative", top: "7.5rem" }}
               class={"button-p"}
@@ -98,16 +109,26 @@ export default function Work() {
               left: "-1.9375rem",
             }}
           >
-            <div style={div_right}>
-              <h3 style={h3_style}>02</h3>
-              <h5 style={h5_right}>Individualized treatment plans</h5>
-              <img src={Line} style={img_right} />
-            </div>
-            <div style={div_right}>
-              <h3 style={h3_style}>04</h3>
-              <h5 style={h5_right}>Family involvement and training</h5>
-              <img src={Line} style={img_right} />
-            </div>
+            <AnimationOnScroll
+              animateIn="animate__fadeInRight"
+              animateOut="animate__fadeOutRight"
+            >
+              <div style={div_right}>
+                <h3 style={h3_style}>02</h3>
+                <h5 style={h5_right}>Individualized treatment plans</h5>
+                <img src={Line} style={img_right} />
+              </div>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animateIn="animate__fadeInRight"
+              animateOut="animate__fadeOutRight"
+            >
+              <div style={div_right}>
+                <h3 style={h3_style}>04</h3>
+                <h5 style={h5_right}>Family involvement and training</h5>
+                <img src={Line} style={img_right} />
+              </div>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>

@@ -1,7 +1,11 @@
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
+import { useState } from "preact/hooks";
 
 export default function ContactForm() {
+  let [formStyleOne, setFormOneStyle] = useState(false);
+  let [formStyleTwo, setFormTwoStyle] = useState(false);
+
   const label_style = {
     color: "var(--neutral-800, #170F49)",
     fontFeatureSettings: "'clig' off, 'liga' off",
@@ -14,7 +18,7 @@ export default function ContactForm() {
     width: "33.8125rem",
     height: "7.6875rem",
     borderRadius: "5.36rem",
-    border: "4px solid #DCCDFC",
+    border: "1.864px solid #E6DCFC",
     background: "var(--neutral-100, #FFF)",
     display: "flex",
     alignItems: "center",
@@ -30,6 +34,10 @@ export default function ContactForm() {
     lineHeight: "2.33044rem",
     fontWeight: "400",
     border: "none",
+  };
+  const div_active = {
+    ...div_style,
+    border: "4px solid #DCCDFC",
   };
   return (
     <div
@@ -109,12 +117,18 @@ export default function ContactForm() {
               }}
             >
               <label style={label_style}>Name</label>
-              <div style={div_style}>
+              <div style={formStyleOne ? div_active : div_style}>
                 <img src={NameIcon} />
                 <input
                   style={input_style}
                   type={"text"}
                   placeholder={"Lorem Ipsum"}
+                  onfocusin={() => {
+                    setFormOneStyle(true);
+                  }}
+                  onfocusout={() => {
+                    setFormOneStyle(false);
+                  }}
                 />
               </div>
             </div>
@@ -127,12 +141,18 @@ export default function ContactForm() {
               }}
             >
               <label style={label_style}>Email</label>
-              <div style={div_style}>
+              <div style={formStyleTwo ? div_active : div_style}>
                 <img src={MessageIcon} />
                 <input
                   style={input_style}
                   type={"email"}
                   placeholder={"Lorem Ipsum"}
+                  onfocusin={() => {
+                    setFormTwoStyle(true);
+                  }}
+                  onfocusout={() => {
+                    setFormTwoStyle(false);
+                  }}
                 />
               </div>
             </div>

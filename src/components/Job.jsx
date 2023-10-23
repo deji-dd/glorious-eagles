@@ -1,9 +1,65 @@
 import Img from "../assets/career.gif";
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
-import PositionIcon from "../assets/position-icon.svg";
+import UploadIcon from "../assets/upload-icon.svg";
+import { useRef, useState } from "preact/hooks";
 
 export default function Job() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [name, setName] = useState("Upload");
+
+  const FileUploader = ({ handleFile }) => {
+    const hiddenFileInput = useRef(null);
+
+    const handleClick = (e) => {
+      hiddenFileInput.current.click();
+    };
+
+    const handleChange = (e) => {
+      const fileUploaded = e.target.files[0];
+      // handleFile(fileUploaded);
+      if (fileUploaded.size > 1024) {
+      } else {
+        setName(fileUploaded.name);
+      }
+    };
+
+    return (
+      <>
+        <button
+          style={{
+            ...div_style,
+            display: "flex",
+            gap: "1.5rem",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "1.864px solid #E6DCFC",
+          }}
+          onClick={handleClick}
+        >
+          <img src={UploadIcon} />
+          <p
+            style={{
+              fontFamily: "DM Sans",
+              color: "var(--Text, #4D4D4D)",
+              fontSize: "1.875rem",
+              lineHeight: "2.33044rem",
+              fontWeight: "400",
+            }}
+          >
+            {name}
+          </p>
+        </button>
+        <input
+          type="file"
+          style={{ display: "none" }}
+          ref={hiddenFileInput}
+          onChange={handleChange}
+        />
+      </>
+    );
+  };
+
   const label_style = {
     color: "#FFF",
     fontFeatureSettings: "'clig' off, 'liga' off",
@@ -48,14 +104,14 @@ export default function Job() {
           width: "85.3125rem",
           justifyContent: "center",
           alignItems: "center",
-          height: "105rem",
+          height: "114.4375rem",
           borderRadius: "3rem",
           background: "var(--Primary-colour, #180344)",
           flexDirection: "column",
           gap: "2.25rem",
         }}
       >
-        <img style={{ width: "25rem" }} src={Img} />
+        <img style={{ height: "14.375rem" }} src={Img} />
         <div
           style={{
             display: "flex",
@@ -157,15 +213,18 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label style={label_style}>Position</label>
-              <div style={div_style}>
-                <img src={PositionIcon} />
-                <input
-                  style={input_style}
-                  type={"text"}
-                  placeholder={"Lorem Ipsum"}
-                />
-              </div>
+              <label style={label_style}>Upload cover letter</label>
+              <FileUploader />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                gap: "1.25rem",
+                flexDirection: "column",
+              }}
+            >
+              <label style={label_style}>Upload resume</label>
+              <FileUploader />
             </div>
             <button
               className={"button-p"}
@@ -178,7 +237,7 @@ export default function Job() {
                 alignSelf: "center",
               }}
             >
-              Apply to work with us
+              Apply
             </button>
           </form>
         </div>

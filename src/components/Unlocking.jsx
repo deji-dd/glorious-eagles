@@ -71,15 +71,15 @@ export default function Unlocking() {
       <div style={div}>
         <div style={div_col}>
           <div style={div}>
-            <img src={img1} />
-            <img src={img2} />
+            <img className={"img-hover-zoom--slowmo"} src={img1} />
+            <img className={"img-hover-zoom--slowmo"} src={img2} />
           </div>
-          <img src={img3} />
+          <img className={"img-hover-zoom--slowmo-5"} src={img3} />
         </div>
-        <img src={img4} />
+        <img className={"img-hover-zoom--slowmo-25"} src={img4} />
         <div style={div_col}>
-          <img src={img5} />
-          <img src={img6} />
+          <img className={"img-hover-zoom--slowmo-75"} src={img5} />
+          <img className={"img-hover-zoom--slowmo-75"} src={img6} />
         </div>
       </div>
     </div>

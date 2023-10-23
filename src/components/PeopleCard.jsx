@@ -27,66 +27,22 @@ export default function PeopleCard(props) {
         flexDirection: "column",
         border: "1px solid #E7DDFD",
         position: "relative",
+        background: "var(--White, #FFF)",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "6.19rem",
       }}
     >
       <img src={props.img} />
-      <div
+      <p
         style={{
-          background: "var(--White, #FFF)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "0.48875rem",
-          height: "6.9375rem",
+          color: "var(--Primary-colour, #180344)",
+          fontSize: "1.11713rem",
+          lineHeight: "150.6%",
         }}
       >
-        <p
-          style={{
-            color: "var(--Text, #4D4D4D)",
-            fontSize: "1.67569rem",
-            lineHeight: "123.6%",
-          }}
-        >
-          {props.name}
-        </p>
-        <p
-          style={{
-            color: "var(--Primary-colour, #180344)",
-            fontSize: "1.11713rem",
-            lineHeight: "150.6%",
-          }}
-        >
-          {props.title}
-        </p>
-      </div>
-      {props.social ?? (
-        <div
-          style={{
-            width: "2.79288rem",
-            height: "12.21881rem",
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.35rem",
-            position: "absolute",
-            right: "0",
-            top: "2rem",
-          }}
-        >
-          <a style={icon_style}>
-            <img src={Facebook} />
-          </a>
-          <a style={icon_white}>
-            <img src={Instagram} />
-          </a>
-          <a style={icon_white}>
-            <img src={Twitter} />
-          </a>
-          <a style={icon_white}>
-            <img src={Linkedin} />
-          </a>
-        </div>
-      )}
+        {props.title}
+      </p>
     </div>
   );
 }

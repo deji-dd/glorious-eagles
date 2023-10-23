@@ -52,16 +52,18 @@ export default function ContactCard() {
               reach out.
             </p>
           </div>
-          <button
-            className={"button-p"}
-            style={{
-              background: "#FFF",
-              color: "var(--Primary-colour, #180344)",
-              width: "17.32rem",
-            }}
-          >
-            Contact Us
-          </button>
+          <a href={"/contact-us"}>
+            <button
+              className={"button-p"}
+              style={{
+                background: "#FFF",
+                color: "var(--Primary-colour, #180344)",
+                width: "17.32rem",
+              }}
+            >
+              Contact Us
+            </button>
+          </a>
         </div>
         <img style={{ width: "18.91138rem" }} src={Gif} />
       </div>

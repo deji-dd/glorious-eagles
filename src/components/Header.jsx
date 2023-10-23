@@ -98,7 +98,12 @@ export default function Header() {
             >
               How we work
             </a>
-            {/* <a style={link_style}>Resources</a> */}
+            <a
+              href={"/career"}
+              style={path == "/career" ? link_active : link_style}
+            >
+              Career
+            </a>
           </div>
           <a href={"/contact-us"}>
             <button className={"button-p"}>Contact us</button>

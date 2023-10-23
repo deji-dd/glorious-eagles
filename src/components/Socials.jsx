@@ -51,8 +51,12 @@ export default function Socials() {
           gap: "1.78569rem",
         }}
       >
-        <img src={Facebook} />
-        <img src={Instagram} />
+        <a href={"https://web.facebook.com/profile.php?id=61552151991164"}>
+          <img src={Facebook} />
+        </a>
+        <a href={"https://www.instagram.com/gloriouseaglesus"}>
+          <img src={Instagram} />
+        </a>
         <img src={Twitter} />
       </div>
     </div>

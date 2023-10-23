@@ -41,13 +41,13 @@ export default function Different() {
           gap: "12.5rem",
         }}
       >
-        <div style={blue}>
+        <div className={"circle-expand"} style={blue}>
           <p>Innovative Techniques</p>
         </div>
-        <div style={orange}>
+        <div className={"circle-expand"} style={orange}>
           <p>Evidence Based</p>
         </div>
-        <div style={blue}>
+        <div className={"circle-expand"} style={blue}>
           <p>Compassionate Professionals</p>
         </div>
       </div>
@@ -58,13 +58,13 @@ export default function Different() {
           gap: "12.5rem",
         }}
       >
-        <div style={orange}>
+        <div className={"circle-expand"} style={orange}>
           <p>Inclusion and Diversity</p>
         </div>
-        <div style={blue}>
+        <div className={"circle-expand"} style={blue}>
           <p>Client Centered</p>
         </div>
-        <div style={orange}>
+        <div className={"circle-expand"} style={orange}>
           <p>Collaborative Care</p>
         </div>
       </div>

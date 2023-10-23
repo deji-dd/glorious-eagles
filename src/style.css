@@ -101,3 +101,40 @@ input:focus,
 textarea:focus {
 	outline: none;
 }
+
+.img-hover-zoom--slowmo,
+.img-hover-zoom--slowmo-75,
+.img-hover-zoom--slowmo-5,
+.img-hover-zoom--slowmo-25 {
+	transform-origin: 50% 65%;
+	transition: transform 2s ease-in-out;
+}
+
+.img-hover-zoom--fast {
+	transition: transform .5s ease-in-out;
+}
+
+.img-hover-zoom--slowmo:hover,
+.img-hover-zoom--fast:hover {
+	transform: scale(1.1);
+}
+
+.img-hover-zoom--slowmo-75:hover {
+	transform: scale(1.075);
+}
+
+.img-hover-zoom--slowmo-5:hover {
+	transform: scale(1.05);
+}
+
+.img-hover-zoom--slowmo-25:hover {
+	transform: scale(1.05);
+}
+
+.circle-expand {
+	transition: transform 2s ease-in-out;
+}
+
+.circle-expand:hover {
+	transform: scale(1.2);
+}

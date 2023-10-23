@@ -67,8 +67,16 @@ export default function Experts(props) {
           height: "35.2rem",
         }}
       >
-        <img style={{ alignSelf: "flex-start" }} src={Img1} />
-        <img style={{ alignSelf: "flex-end" }} src={Img2} />
+        <img
+          className={"img-hover-zoom--slowmo"}
+          style={{ alignSelf: "flex-start" }}
+          src={Img1}
+        />
+        <img
+          className={"img-hover-zoom--slowmo"}
+          style={{ alignSelf: "flex-end" }}
+          src={Img2}
+        />
       </div>
     </div>
   );

@@ -5,11 +5,17 @@ export default function EssentialsCard(props) {
         width: "19.3125rem",
         height: "17.5rem",
         borderRadius: "1rem",
-        background: `url(${props.img})`,
         display: "flex",
         alignItems: "flex-end",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      <img
+        className={"img-hover-zoom--fast"}
+        src={props.img}
+        style={{ position: "absolute", zIndex: "0" }}
+      />
       <div
         style={{
           background:
@@ -23,6 +29,7 @@ export default function EssentialsCard(props) {
           display: "inline-flex",
           gap: "0.25rem",
           flexDirection: "column",
+          zIndex: "1",
         }}
       >
         <h3 style={{ color: "#FFF", lineHeight: "125%" }}>{props.num}</h3>

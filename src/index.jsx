@@ -11,6 +11,7 @@ import Footer from "./components/Footer.jsx";
 import How from "./pages/How.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import Socials from "./components/Socials.jsx";
+import Career from "./pages/Career.jsx";
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
           <Route path="/about-us" component={About} />
           <Route path="/how-we-work" component={How} />
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/career" component={Career} />
           <Route default component={NotFound} />
         </Router>
       </main>
