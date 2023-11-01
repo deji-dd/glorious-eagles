@@ -35,7 +35,7 @@ export function App() {
     <LocationProvider>
       <Socials />
       <Header />
-      <main style={{ paddingTop: "5.3125rem" }}>
+      <main style={{ paddingTop: "9.3125rem" }}>
         <Router>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />

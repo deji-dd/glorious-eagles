@@ -27,7 +27,7 @@ export default function MobileHowWeWork() {
     lineHeight: "1.95528rem",
   };
   const div_text_style = {
-    padding: "0 1.28rem",
+    padding: "0 2rem",
     display: "flex",
     flexDirection: "column",
     gap: "0.58rem",
@@ -99,7 +99,7 @@ export default function MobileHowWeWork() {
               "linear-gradient(295deg, #4563FF 9.05%, #456AF9 22.42%, #4388DD 79.28%)",
             position: "absolute",
             margin: "0",
-            left: "0.55rem",
+            left: "1rem",
           }}
         />
         <AnimationOnScroll
