@@ -56,7 +56,9 @@ export default function MobileWork() {
       >
         How We Work- 4 easy steps
       </h2>
-      <div style={{ display: "flex", position: "relative" }}>
+      <div
+        style={{ display: "flex", position: "relative", overflow: "hidden" }}
+      >
         <hr
           style={{
             width: "0.296rem",

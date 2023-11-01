@@ -86,6 +86,7 @@ export default function MobileHowWeWork() {
           flexDirection: "column",
           gap: "3rem",
           paddingTop: "3.3rem",
+          overflow: "hidden",
         }}
       >
         <hr
