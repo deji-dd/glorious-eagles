@@ -1,0 +1,50 @@
+export default function MobileServicesPurple(props) {
+  return (
+    <div
+      style={{
+        width: "30rem",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "3.84rem",
+        flexDirection: "column",
+        padding: "3.5rem 0",
+        background: "var(--Light-primary, #F6F5FF)",
+      }}
+    >
+      <img style={{ width: "26.71624rem" }} src={props.img} />
+      <div
+        style={{
+          display: "flex",
+          gap: "1.92rem",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "0.64rem",
+            flexDirection: "column",
+          }}
+        >
+          <h2 style={{ fontSize: "1.92rem" }}>{props.title}</h2>
+          <p
+            style={{
+              width: "25.6rem",
+              fontSize: "1.28rem",
+              lineHeight: "2.0312rem",
+            }}
+          >
+            {props.desc}
+          </p>
+        </div>
+        <button
+          style={{ width: "13.9rem", height: "3.7rem" }}
+          className={"button-p button-mobile"}
+        >
+          Learn more
+        </button>
+      </div>
+    </div>
+  );
+}

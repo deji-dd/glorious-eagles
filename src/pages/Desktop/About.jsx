@@ -1,13 +1,17 @@
-import Choose from "../components/Choose";
-import Different from "../components/Different";
-import Experts from "../components/Experts";
+import Choose from "../../components/Choose";
+import Different from "../../components/Different";
+import Experts from "../../components/Experts";
 import { useRef } from "react";
-import People from "../components/People";
-import ContactCard from "../components/ContactCard";
-import Transform from "../components/Transform";
+import People from "../../components/People";
+import ContactCard from "../../components/ContactCard";
+import Transform from "../../components/Transform";
+import { useEffect } from "preact/hooks";
 
 export default function About() {
   const ref = useRef(null);
+  useEffect(() => {
+    document.title = "Ginoba | About";
+  }, []);
   return (
     <div>
       <Experts

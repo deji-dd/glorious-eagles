@@ -1,19 +1,23 @@
-import ServicesOffer from "../components/ServicesOffer";
-import ServicesWhite from "../components/ServicesWhite";
-import Img1 from "../assets/services-1.svg";
-import Img2 from "../assets/services-2.svg";
-import Img3 from "../assets/services-3.svg";
-import Img4 from "../assets/services-4.svg";
-import Img5 from "../assets/services-5.svg";
-import Img7 from "../assets/services-7.svg";
-import Img8 from "../assets/services-8.svg";
-import Img9 from "../assets/services-9.svg";
+import ServicesOffer from "../../components/ServicesOffer";
+import ServicesWhite from "../../components/ServicesWhite";
+import Img1 from "../../assets/services-1.svg";
+import Img2 from "../../assets/services-2.svg";
+import Img3 from "../../assets/services-3.svg";
+import Img4 from "../../assets/services-4.svg";
+import Img5 from "../../assets/services-5.svg";
+import Img7 from "../../assets/services-7.svg";
+import Img8 from "../../assets/services-8.svg";
+import Img9 from "../../assets/services-9.svg";
 import { useRef } from "react";
-import ServicesPurple from "../components/ServicesPurple";
-import Transform from "../components/Transform";
+import ServicesPurple from "../../components/ServicesPurple";
+import Transform from "../../components/Transform";
+import { useEffect } from "preact/hooks";
 
 export default function Services() {
   const ref = useRef(null);
+  useEffect(() => {
+    document.title = "Ginoba | Services";
+  }, []);
 
   return (
     <div>

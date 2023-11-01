@@ -47,18 +47,15 @@ export default function Experts(props) {
             expectations. Discover the exceptional difference that sets us apart
           </p>
         </div>
-        <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>
-          <button className={"button-p"}>Contact us</button>
-          <img
-            style={{
-              width: "4rem",
-              height: "4rem",
-              cursor: "pointer",
-            }}
-            src={Arrow}
-            onClick={props.scroll}
-          />
-        </div>
+        <img
+          style={{
+            width: "4rem",
+            height: "4rem",
+            cursor: "pointer",
+          }}
+          src={Arrow}
+          onClick={props.scroll}
+        />
       </div>
       <div
         style={{

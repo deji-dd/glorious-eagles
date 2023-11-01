@@ -5,10 +5,6 @@ import Instagram from "../assets/social-instagram.svg";
 import Twitter from "../assets/social-twitter.svg";
 
 export default function Socials() {
-  const p_style = {
-    color: "var(--Primary-colour, #180344)",
-    fontSize: "1.125rem",
-  };
   const div_style = {
     display: "flex",
     justifyContent: "center",

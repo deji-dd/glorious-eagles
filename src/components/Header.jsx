@@ -1,4 +1,3 @@
-import { useState } from "preact/hooks";
 import logo from "../assets/logo.svg";
 import { useLocation } from "preact-iso/router";
 

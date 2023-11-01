@@ -3,10 +3,12 @@ import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import UploadIcon from "../assets/upload-icon.svg";
 import { useRef, useState } from "preact/hooks";
+import emailjs from "emailjs-com";
 
 export default function Job() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [name, setName] = useState("Upload");
+  const form = useRef();
 
   const FileUploader = ({ handleFile }) => {
     const hiddenFileInput = useRef(null);
@@ -161,8 +163,28 @@ export default function Job() {
             </p>
           </div>
           <form
+            ref={form}
             onSubmit={(e) => {
               e.preventDefault();
+              emailjs.sendForm(
+                process.env.EMAIL_SERVICE_ID,
+                process.env.EMAIL_TEMPLATE_ID,
+                form.current,
+                process.env.EMAIL_USER_ID
+              );
+              // .then(
+              //   () => {
+              //     setTimeout(() => {
+              //       setHeader("Contact Form");
+              //       setDisabled(false);
+              //     }, 5000);
+              //   },
+              //   () => {
+              //     setState(false);
+              //   }
+              // );
+              // @ts-ignore
+              e.target.reset();
             }}
             style={{
               display: "flex",
@@ -186,6 +208,7 @@ export default function Job() {
                   style={input_style}
                   type={"text"}
                   placeholder={"Lorem Ipsum"}
+                  name="name"
                 />
               </div>
             </div>
@@ -203,6 +226,7 @@ export default function Job() {
                   style={input_style}
                   type={"email"}
                   placeholder={"Lorem@gmail.com"}
+                  name="email"
                 />
               </div>
             </div>
@@ -214,7 +238,6 @@ export default function Job() {
               }}
             >
               <label style={label_style}>Upload cover letter</label>
-              <FileUploader />
             </div>
             <div
               style={{
@@ -224,7 +247,6 @@ export default function Job() {
               }}
             >
               <label style={label_style}>Upload resume</label>
-              <FileUploader />
             </div>
             <button
               className={"button-p"}

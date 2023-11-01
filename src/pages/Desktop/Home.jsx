@@ -1,13 +1,18 @@
-import Different from "../components/Different";
-import Essentials from "../components/Essentials";
-import Offer from "../components/Offer";
-import Unlocking from "../components/Unlocking";
-import Work from "../components/Work";
-import ContactCard from "../components/ContactCard";
-import ContactForm from "../components/ContactForm";
-import Transform from "../components/Transform";
+import Different from "../../components/Different";
+import Essentials from "../../components/Essentials";
+import Offer from "../../components/Offer";
+import Unlocking from "../../components/Unlocking";
+import Work from "../../components/Work";
+import ContactCard from "../../components/ContactCard";
+import ContactForm from "../../components/ContactForm";
+import Transform from "../../components/Transform";
+import { useEffect } from "preact/hooks";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Ginoba | Home";
+  }, []);
+
   return (
     <div style={{ display: "flex", gap: "1.25rem", flexDirection: "column" }}>
       <Unlocking />

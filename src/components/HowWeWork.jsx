@@ -86,7 +86,7 @@ export default function HowWeWork() {
           display: "flex",
           position: "relative",
           flexDirection: "column",
-          gao: "1.3125rem",
+          gap: "1.3125rem",
         }}
       >
         <hr

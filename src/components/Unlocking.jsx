@@ -44,7 +44,7 @@ export default function Unlocking() {
             letterSpacing: "0.04rem",
           }}
         >
-          Unlocking Potential, One Step at a Time: Your Partner in ABA Therapy"
+          Unlocking Potential, One Step at a Time: Your Partner in ABA Therapy
         </h1>
         <p
           style={{
