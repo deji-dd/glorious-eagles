@@ -42,7 +42,7 @@ export function App() {
           <Route path="/about-us" component={About} />
           <Route path="/how-we-work" component={How} />
           <Route path="/contact-us" component={ContactUs} />
-          {/* <Route path="/career" component={Career} /> */}
+          <Route path="/career" component={Career} />
           <Route default component={Home} />
         </Router>
       </main>

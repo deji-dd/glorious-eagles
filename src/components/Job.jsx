@@ -10,7 +10,7 @@ export default function Job() {
   const [name, setName] = useState("Upload");
   const form = useRef();
 
-  const FileUploader = () => {
+  function FileUploader(props) {
     const hiddenFileInput = useRef(null);
 
     const handleClick = (e) => {
@@ -57,10 +57,13 @@ export default function Job() {
           style={{ display: "none" }}
           ref={hiddenFileInput}
           onChange={handleChange}
+          id={props.id}
+          name={props.name}
+          // required
         />
       </>
     );
-  };
+  }
 
   const label_style = {
     color: "#FFF",
@@ -163,12 +166,14 @@ export default function Job() {
             </p>
           </div>
           <form
+            enctype="multipart/form-data"
+            data-static-form-name="application"
             ref={form}
-            onSubmit={(e) => {
-              e.preventDefault();
-              // @ts-ignore
-              e.target.reset();
-            }}
+            // onSubmit={(e) => {
+            //   e.preventDefault();
+            //   // @ts-ignore
+            //   e.target.reset();
+            // }}
             style={{
               display: "flex",
               width: "74.4375rem",
@@ -184,7 +189,9 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label style={label_style}>Name</label>
+              <label for={"i-name"} style={label_style}>
+                Name
+              </label>
               <div style={div_style}>
                 <img src={NameIcon} />
                 <input
@@ -192,6 +199,8 @@ export default function Job() {
                   type={"text"}
                   placeholder={"Lorem Ipsum"}
                   name="name"
+                  id={"i-name"}
+                  required
                 />
               </div>
             </div>
@@ -202,14 +211,18 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label style={label_style}>Email</label>
+              <label for={"i-email"} style={label_style}>
+                Email
+              </label>
               <div style={div_style}>
                 <img src={MessageIcon} />
                 <input
+                  id={"i-email"}
                   style={input_style}
                   type={"email"}
                   placeholder={"Lorem@gmail.com"}
                   name="email"
+                  required
                 />
               </div>
             </div>
@@ -220,7 +233,10 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label style={label_style}>Upload cover letter</label>
+              <label for={"i-cover"} style={label_style}>
+                Upload cover letter
+              </label>
+              <FileUploader id={"i-cover"} name={"cover"} />
             </div>
             <div
               style={{
@@ -229,7 +245,10 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label style={label_style}>Upload resume</label>
+              <label for={"i-resume"} style={label_style}>
+                Upload resume
+              </label>
+              <FileUploader id={"i-resume"} name={"resume"} />
             </div>
             <button
               className={"button-p"}
