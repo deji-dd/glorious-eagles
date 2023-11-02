@@ -10,7 +10,7 @@ export default function Job() {
   const [name, setName] = useState("Upload");
   const form = useRef();
 
-  const FileUploader = ({ handleFile }) => {
+  const FileUploader = () => {
     const hiddenFileInput = useRef(null);
 
     const handleClick = (e) => {
@@ -19,7 +19,7 @@ export default function Job() {
 
     const handleChange = (e) => {
       const fileUploaded = e.target.files[0];
-      // handleFile(fileUploaded);
+
       if (fileUploaded.size > 1024) {
       } else {
         setName(fileUploaded.name);
@@ -166,23 +166,6 @@ export default function Job() {
             ref={form}
             onSubmit={(e) => {
               e.preventDefault();
-              emailjs.sendForm(
-                process.env.EMAIL_SERVICE_ID,
-                process.env.EMAIL_TEMPLATE_ID,
-                form.current,
-                process.env.EMAIL_USER_ID
-              );
-              // .then(
-              //   () => {
-              //     setTimeout(() => {
-              //       setHeader("Contact Form");
-              //       setDisabled(false);
-              //     }, 5000);
-              //   },
-              //   () => {
-              //     setState(false);
-              //   }
-              // );
               // @ts-ignore
               e.target.reset();
             }}
