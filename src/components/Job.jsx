@@ -3,7 +3,6 @@ import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import UploadIcon from "../assets/upload-icon.svg";
 import { useRef, useState } from "preact/hooks";
-import emailjs from "emailjs-com";
 
 export default function Job() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -167,7 +166,8 @@ export default function Job() {
           </div>
           <form
             enctype="multipart/form-data"
-            data-static-form-name="application"
+            method={"POST"}
+            action={"/career/submit"}
             ref={form}
             // onSubmit={(e) => {
             //   e.preventDefault();
