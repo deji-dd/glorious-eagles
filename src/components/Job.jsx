@@ -167,8 +167,8 @@ export default function Job() {
           <form
             data-static-form-name="app"
             enctype="multipart/form-data"
-            // method={"POST"}
-            // action={"/career/submit"}
+            method={"POST"}
+            action={"/career/submit"}
             ref={form}
             // onSubmit={(e) => {
             //   e.preventDefault();
