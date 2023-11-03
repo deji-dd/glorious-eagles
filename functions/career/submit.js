@@ -35,7 +35,7 @@ export async function onRequestPost(context) {
     respContent = resp.status + " " + resp.statusText + "\n\n" + respText;
     console.log(respContent);
 
-    return new Response("success");
+    return new Response(respContent);
   } catch {
     return new Response("fail");
   }
