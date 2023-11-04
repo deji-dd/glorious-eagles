@@ -133,6 +133,7 @@ export default function Job() {
                   request.open("POST", "/career/submit", true);
                   request.onreadystatechange = () => {
                     if (request.readyState === 4 && request.status === 200) {
+                      window.location.reload();
                     }
                   };
                   formData.append("name", name);

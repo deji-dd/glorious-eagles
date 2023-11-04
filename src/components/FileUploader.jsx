@@ -37,7 +37,6 @@ export default function FileUploader(props) {
   async function handleChange(e) {
     try {
       const fileUploaded = e.target.files[0];
-      console.log(fileUploaded); //Remember to remove this
       if (fileUploaded.type != "application/pdf") {
         setErr(true);
         throw "Only PDF files are supported.";

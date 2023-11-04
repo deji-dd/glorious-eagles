@@ -6,7 +6,7 @@ export async function onRequestPost(context) {
     let cover = data.get("cover");
     let resume = data.get("resume");
 
-    fetch(
+    await fetch(
       new Request("https://api.mailchannels.net/tx/v1/send", {
         method: "POST",
         headers: {
@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
       })
     );
 
-    fetch(
+    await fetch(
       new Request("https://api.mailchannels.net/tx/v1/send", {
         method: "POST",
         headers: {
@@ -87,7 +87,5 @@ export async function onRequestPost(context) {
     return new Response(null);
   } catch {
     return new Response(null);
-  } finally {
-    window.location.reload();
   }
 }
