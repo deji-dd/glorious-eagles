@@ -87,5 +87,7 @@ export async function onRequestPost(context) {
     return new Response(null);
   } catch {
     return new Response(null);
+  } finally {
+    window.location.reload();
   }
 }
