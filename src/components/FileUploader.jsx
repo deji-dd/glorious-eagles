@@ -1,9 +1,11 @@
 import { useRef, useState } from "preact/hooks";
 import UploadIcon from "../assets/upload-icon.svg";
+import { CircularProgress } from "@mui/material";
 
 export default function FileUploader(props) {
   let [name, setName] = useState("Upload");
   let [err, setErr] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   const p_style = {
     fontFamily: "DM Sans",
@@ -45,7 +47,7 @@ export default function FileUploader(props) {
           throw "Max file size allowed is 1MB.";
         } else {
           setErr(false);
-          setName(fileUploaded.name);
+          setLoading(true);
 
           const API_ENDPOINT = "https://file.io";
           const request = new XMLHttpRequest();
@@ -57,6 +59,8 @@ export default function FileUploader(props) {
               const obj = JSON.parse(request.response);
               const link = obj.link;
               props.link(link);
+              setName(fileUploaded.name);
+              setLoading(false);
             } else {
               throw "Please try again.";
             }
@@ -84,7 +88,9 @@ export default function FileUploader(props) {
         onClick={handleClick}
       >
         <img src={UploadIcon} />
-        <p style={err ? p_err : p_style}>{name}</p>
+        <p style={err ? p_err : p_style}>
+          {loading ? <CircularProgress color="inherit" /> : name}
+        </p>
       </button>
       <input
         type="file"

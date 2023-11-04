@@ -5,9 +5,8 @@ export async function onRequestPost(context) {
     let email = data.get("email");
     let cover = data.get("cover");
     let resume = data.get("resume");
-    console.log(data);
 
-    let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
+    let to_eagles = new Request("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -27,7 +26,7 @@ export async function onRequestPost(context) {
           email: "president@gloriouseagles.com",
           name: "Glorious Eagles LLC",
         },
-        subject: "New Application (Website Testing)",
+        subject: "New Application",
         content: [
           {
             type: "text/html",
@@ -49,14 +48,40 @@ export async function onRequestPost(context) {
         ],
       }),
     });
-    let respContent = "";
 
-    const resp = await fetch(send_request);
-    const respText = await resp.text();
-    respContent = resp.status + " " + resp.statusText + "\n\n" + respText;
+    let to_app = new Request("https://api.mailchannels.net/tx/v1/send", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        personalizations: [
+          {
+            to: [
+              {
+                email: email,
+                name: name,
+              },
+            ],
+          },
+        ],
+        from: {
+          email: "president@gloriouseagles.com",
+          name: "Glorious Eagles LLC",
+        },
+        subject: "Thank you for applying!",
+        content: [
+          {
+            type: "text/plain",
+            value:
+              "We have received your application and will get back to you soon\n\n-Glorious Eagles LLC",
+          },
+        ],
+      }),
+    });
 
-    return new Response(respContent);
+    return new Response(null);
   } catch {
-    return new Response("fail");
+    return new Response(null);
   }
 }

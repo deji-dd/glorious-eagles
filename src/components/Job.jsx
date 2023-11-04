@@ -3,12 +3,15 @@ import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useRef, useState } from "preact/hooks";
 import FileUploader from "./FileUploader";
+import { CircularProgress } from "@mui/material";
 
 export default function Job() {
-  const [cover, setCover] = useState(null);
-  const [resume, setResume] = useState(null);
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
+  let [cover, setCover] = useState(null);
+  let [resume, setResume] = useState(null);
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [submit, setSubmit] = useState("Apply");
+  let [loading, setLoading] = useState(false);
 
   const form = useRef();
 
@@ -41,6 +44,11 @@ export default function Job() {
     fontWeight: "400",
     border: "none",
   };
+
+  function refreshPage() {
+    window.location.reload();
+  }
+
   return (
     <div
       style={{
@@ -115,19 +123,34 @@ export default function Job() {
           <form
             enctype="multipart/form-data"
             ref={form}
-            onSubmit={(e) => {
-              // @ts-ignore
-              setName(e.target.name.value);
-              // @ts-ignore
-              setEmail(e.target.email.value);
-              const request = new XMLHttpRequest();
-              const formData = new FormData();
-              request.open("POST", "/career/submit", true);
-              formData.append("name", name);
-              formData.append("email", email);
-              formData.append("cover", cover);
-              formData.append("resume", resume);
-              request.send(formData);
+            onSubmit={async (e) => {
+              e.preventDefault();
+              try {
+                if (cover != null && resume != null) {
+                  setLoading(true);
+                  const request = new XMLHttpRequest();
+                  const formData = new FormData();
+                  request.open("POST", "/career/submit", true);
+                  request.onreadystatechange = () => {
+                    if (request.readyState === 4 && request.status === 200) {
+                      refreshPage();
+                    }
+                  };
+                  formData.append("name", name);
+                  formData.append("email", email);
+                  formData.append("cover", cover);
+                  formData.append("resume", resume);
+                  request.send(formData);
+                } else {
+                  throw "Please fill all fields.";
+                }
+              } catch (err) {
+                setSubmit(err);
+                setLoading(false);
+                setTimeout(() => {
+                  setSubmit("Apply");
+                }, 3500);
+              }
             }}
             style={{
               display: "flex",
@@ -156,6 +179,10 @@ export default function Job() {
                   name="name"
                   id={"i-name"}
                   required
+                  onChange={(e) => {
+                    // @ts-ignore
+                    setName(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -178,6 +205,10 @@ export default function Job() {
                   placeholder={"Lorem@gmail.com"}
                   name="email"
                   required
+                  onChange={(e) => {
+                    // @ts-ignore
+                    setEmail(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -216,7 +247,7 @@ export default function Job() {
                 alignSelf: "center",
               }}
             >
-              Apply
+              {loading ? <CircularProgress color="secondary" /> : submit}
             </button>
           </form>
         </div>
