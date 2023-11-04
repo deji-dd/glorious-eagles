@@ -1,68 +1,16 @@
 import Img from "../assets/career.gif";
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
-import UploadIcon from "../assets/upload-icon.svg";
 import { useRef, useState } from "preact/hooks";
+import FileUploader from "./FileUploader";
 
 export default function Job() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [name, setName] = useState("Upload");
+  const [cover, setCover] = useState(null);
+  const [resume, setResume] = useState(null);
+  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
+
   const form = useRef();
-
-  function FileUploader(props) {
-    const hiddenFileInput = useRef(null);
-
-    const handleClick = (e) => {
-      hiddenFileInput.current.click();
-    };
-
-    const handleChange = (e) => {
-      const fileUploaded = e.target.files[0];
-
-      if (fileUploaded.size > 1024) {
-      } else {
-        setName(fileUploaded.name);
-      }
-    };
-
-    return (
-      <>
-        <button
-          style={{
-            ...div_style,
-            display: "flex",
-            gap: "1.5rem",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1.864px solid #E6DCFC",
-          }}
-          onClick={handleClick}
-        >
-          <img src={UploadIcon} />
-          <p
-            style={{
-              fontFamily: "DM Sans",
-              color: "var(--Text, #4D4D4D)",
-              fontSize: "1.875rem",
-              lineHeight: "2.33044rem",
-              fontWeight: "400",
-            }}
-          >
-            {name}
-          </p>
-        </button>
-        <input
-          type="file"
-          style={{ display: "none" }}
-          ref={hiddenFileInput}
-          onChange={handleChange}
-          id={props.id}
-          name={props.name}
-          // required
-        />
-      </>
-    );
-  }
 
   const label_style = {
     color: "#FFF",
@@ -165,16 +113,22 @@ export default function Job() {
             </p>
           </div>
           <form
-            data-static-form-name="app"
             enctype="multipart/form-data"
-            method={"POST"}
-            action={"/career/submit"}
             ref={form}
-            // onSubmit={(e) => {
-            //   e.preventDefault();
-            //   // @ts-ignore
-            //   e.target.reset();
-            // }}
+            onSubmit={(e) => {
+              // @ts-ignore
+              setName(e.target.name.value);
+              // @ts-ignore
+              setEmail(e.target.email.value);
+              const request = new XMLHttpRequest();
+              const formData = new FormData();
+              request.open("POST", "/career/submit", true);
+              formData.append("name", name);
+              formData.append("email", email);
+              formData.append("cover", cover);
+              formData.append("resume", resume);
+              request.send(formData);
+            }}
             style={{
               display: "flex",
               width: "74.4375rem",
@@ -237,7 +191,7 @@ export default function Job() {
               <label for={"i-cover"} style={label_style}>
                 Upload cover letter
               </label>
-              <FileUploader id={"i-cover"} name={"cover"} />
+              <FileUploader id={"i-cover"} name={"cover"} link={setCover} />
             </div>
             <div
               style={{
@@ -249,7 +203,7 @@ export default function Job() {
               <label for={"i-resume"} style={label_style}>
                 Upload resume
               </label>
-              <FileUploader id={"i-resume"} name={"resume"} />
+              <FileUploader id={"i-resume"} name={"resume"} link={setResume} />
             </div>
             <button
               className={"button-p"}
