@@ -1,4 +1,4 @@
-// ../.wrangler/tmp/bundle-Zgrx3w/checked-fetch.js
+// ../.wrangler/tmp/bundle-XuIgRH/checked-fetch.js
 var urls = /* @__PURE__ */ new Set();
 function checkURL(request, init) {
   const url = request instanceof URL ? request : new URL(
@@ -31,64 +31,68 @@ async function onRequestPost(context) {
     let email = data.get("email");
     let cover = data.get("cover");
     let resume = data.get("resume");
-    let to_eagles = new Request("https://api.mailchannels.net/tx/v1/send", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [
-              {
-                email: "president@gloriouseagles.com",
-                name: "Glorious Eagles LLC"
-              }
-            ]
-          }
-        ],
-        from: {
-          email: "president@gloriouseagles.com",
-          name: "Glorious Eagles LLC"
+    fetch(
+      new Request("https://api.mailchannels.net/tx/v1/send", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
         },
-        subject: "New Application",
-        content: [
-          {
-            type: "text/html",
-            value: "<body><p>Name: " + name + "</p><br /><p>Email: " + email + "</p><br/><p>Cover Letter: <a href='" + cover + "'>" + cover + "</a></p><br/><p>Resume: <a href='" + resume + "'>" + resume + "</a></p></body>"
-          }
-        ]
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [
+                {
+                  email: "president@gloriouseagles.com",
+                  name: "Glorious Eagles LLC"
+                }
+              ]
+            }
+          ],
+          from: {
+            email: "president@gloriouseagles.com",
+            name: "Glorious Eagles LLC"
+          },
+          subject: "New Application",
+          content: [
+            {
+              type: "text/html",
+              value: "<body><p>Name: " + name + "</p><br /><p>Email: " + email + "</p><br/><p>Cover Letter: <a href='" + cover + "'>" + cover + "</a></p><br/><p>Resume: <a href='" + resume + "'>" + resume + "</a></p></body>"
+            }
+          ]
+        })
       })
-    });
-    let to_app = new Request("https://api.mailchannels.net/tx/v1/send", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [
-              {
-                email,
-                name
-              }
-            ]
-          }
-        ],
-        from: {
-          email: "president@gloriouseagles.com",
-          name: "Glorious Eagles LLC"
+    );
+    fetch(
+      new Request("https://api.mailchannels.net/tx/v1/send", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
         },
-        subject: "Thank you for applying!",
-        content: [
-          {
-            type: "text/plain",
-            value: "We have received your application and will get back to you soon\n\n-Glorious Eagles LLC"
-          }
-        ]
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [
+                {
+                  email,
+                  name
+                }
+              ]
+            }
+          ],
+          from: {
+            email: "president@gloriouseagles.com",
+            name: "Glorious Eagles LLC"
+          },
+          subject: "Thank you for applying!",
+          content: [
+            {
+              type: "text/plain",
+              value: "We have received your application and will get back to you soon\n\n-Glorious Eagles LLC"
+            }
+          ]
+        })
       })
-    });
+    );
     return new Response(null);
   } catch {
     return new Response(null);
@@ -569,7 +573,7 @@ var jsonError = async (request, env, _ctx, middlewareCtx) => {
 var middleware_miniflare3_json_error_default = jsonError;
 var wrap = void 0;
 
-// ../.wrangler/tmp/bundle-Zgrx3w/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-XuIgRH/middleware-insertion-facade.js
 var envWrappers = [wrap].filter(Boolean);
 var facade = {
   ...pages_template_worker_default,
@@ -581,7 +585,7 @@ var facade = {
 };
 var middleware_insertion_facade_default = facade;
 
-// ../.wrangler/tmp/bundle-Zgrx3w/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-XuIgRH/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
