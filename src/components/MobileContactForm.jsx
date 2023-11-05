@@ -113,11 +113,11 @@ export default function MobileContactForm() {
                 if (request.readyState === 4 && request.status === 200) {
                   window.location.reload();
                 }
-                formData.append("name", name);
-                formData.append("email", email);
-                formData.append("message", message);
-                request.send(formData);
               };
+              formData.append("name", name);
+              formData.append("email", email);
+              formData.append("message", message);
+              request.send(formData);
             } catch {
               setSubmit("Please try again.");
               setTimeout(() => {
