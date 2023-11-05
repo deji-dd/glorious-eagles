@@ -1,10 +1,16 @@
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useState } from "preact/hooks";
+import { CircularProgress } from "@mui/material";
 
 export default function ContactForm() {
   let [formStyleOne, setFormOneStyle] = useState(false);
   let [formStyleTwo, setFormTwoStyle] = useState(false);
+  let [loading, setLoading] = useState(false);
+  let [submit, setSubmit] = useState("Submit");
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [message, setMessage] = useState("");
 
   const label_style = {
     color: "var(--neutral-800, #170F49)",
@@ -92,8 +98,29 @@ export default function ContactForm() {
         }}
       >
         <form
-          onSubmit={(e) => {
+          enctype="multipart/form-data"
+          onSubmit={async (e) => {
             e.preventDefault();
+            try {
+              setLoading(true);
+              const request = new XMLHttpRequest();
+              const formData = new FormData();
+              request.open("POST", "/contact", true);
+              request.onreadystatechange = () => {
+                if (request.readyState === 4 && request.status === 200) {
+                  window.location.reload();
+                }
+                formData.append("name", name);
+                formData.append("email", email);
+                formData.append("message", message);
+                request.send(formData);
+              };
+            } catch {
+              setSubmit("Please try again.");
+              setTimeout(() => {
+                setSubmit("Submit");
+              }, 3500);
+            }
           }}
           style={{
             display: "flex",
@@ -123,12 +150,18 @@ export default function ContactForm() {
                   style={input_style}
                   type={"text"}
                   placeholder={"Lorem Ipsum"}
+                  name="name"
                   onfocusin={() => {
                     setFormOneStyle(true);
                   }}
                   onfocusout={() => {
                     setFormOneStyle(false);
                   }}
+                  onChange={(e) => {
+                    // @ts-ignore
+                    setName(e.target.value);
+                  }}
+                  required
                 />
               </div>
             </div>
@@ -152,6 +185,12 @@ export default function ContactForm() {
                   }}
                   onfocusout={() => {
                     setFormTwoStyle(false);
+                  }}
+                  name="email"
+                  required
+                  onChange={(e) => {
+                    // @ts-ignore
+                    setEmail(e.target.value);
                   }}
                 />
               </div>
@@ -178,6 +217,12 @@ export default function ContactForm() {
                 padding: "2.54rem 2.34rem",
               }}
               placeholder={"Lorem Ipsum"}
+              required
+              onChange={(e) => {
+                // @ts-ignore
+                setMessage(e.target.value);
+              }}
+              name={"message"}
             />
           </div>
           <button
@@ -185,7 +230,7 @@ export default function ContactForm() {
             className={"button-p"}
             type={"submit"}
           >
-            Sumbit
+            {loading ? <CircularProgress color="inherit" /> : submit}
           </button>
         </form>
       </div>

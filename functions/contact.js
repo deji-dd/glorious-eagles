@@ -3,8 +3,7 @@ export async function onRequestPost(context) {
     let data = await context.request.formData();
     let name = data.get("name");
     let email = data.get("email");
-    let cover = data.get("cover");
-    let resume = data.get("resume");
+    let message = data.get("message");
 
     await fetch(
       new Request("https://api.mailchannels.net/tx/v1/send", {
@@ -34,17 +33,10 @@ export async function onRequestPost(context) {
               value:
                 "<body><p>Name: " +
                 name +
-                "</p><br /><p>Email: " +
+                "</p><br/><p>Email: " +
                 email +
-                "</p><br/><p>Cover Letter: <a href='" +
-                cover +
-                "'>" +
-                cover +
-                "</a></p><br/><p>Resume: <a href='" +
-                resume +
-                "'>" +
-                resume +
-                "</a></p></body>",
+                "</p><br/><p>Message: " +
+                message,
             },
           ],
         }),
@@ -77,7 +69,7 @@ export async function onRequestPost(context) {
             {
               type: "text/plain",
               value:
-                "We have received your application and will get back to you soon\n\n-Glorious Eagles LLC",
+                "We have received your message and will get back to you soon.\n\n-Glorious Eagles LLC",
             },
           ],
         }),

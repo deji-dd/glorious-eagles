@@ -58,7 +58,7 @@ export function App() {
           <Route path="/contact-us" component={MobileContactUs} />
           <Route path="/how-we-work" component={MobileHow} />
           <Route path="/services" component={MobileServices} />
-          {/* <Route path="/career" component={MobileCareer} /> */}
+          <Route path="/career" component={MobileCareer} />
           <Route default component={MobileHome} />
         </Router>
       </main>

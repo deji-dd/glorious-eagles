@@ -45,10 +45,6 @@ export default function Job() {
     border: "none",
   };
 
-  function refreshPage() {
-    window.location.reload();
-  }
-
   return (
     <div
       style={{
@@ -130,7 +126,7 @@ export default function Job() {
                   setLoading(true);
                   const request = new XMLHttpRequest();
                   const formData = new FormData();
-                  request.open("POST", "/career/submit", true);
+                  request.open("POST", "/application", true);
                   request.onreadystatechange = () => {
                     if (request.readyState === 4 && request.status === 200) {
                       window.location.reload();
@@ -155,7 +151,7 @@ export default function Job() {
             style={{
               display: "flex",
               width: "74.4375rem",
-              alignItems: "f;ex-start",
+              alignItems: "flex-start",
               flexDirection: "column",
               gap: "3.5rem",
             }}

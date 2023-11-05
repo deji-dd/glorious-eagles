@@ -1,5 +1,5 @@
 import { useEffect } from "preact/hooks";
-import Job from "../../components/Job";
+import MobileJob from "../../components/MobileJob";
 
 export default function MobileCareer() {
   useEffect(() => {
@@ -7,7 +7,7 @@ export default function MobileCareer() {
   }, []);
   return (
     <div>
-      <Job />
+      <MobileJob />
     </div>
   );
 }
