@@ -69,7 +69,7 @@ export async function onRequestPost(context) {
             {
               type: "text/plain",
               value:
-                "We have received your message and will get back to you soon.\n\n-Glorious Eagles LLC",
+                "Thank you for contacting us.\n\nThe response will be sent to the email address you’ve contacted us with within 2 business days.\n\n If it’s urgent, we encourage you to call us at +1 612-4566-090\n\nHave a wonderful day!",
             },
           ],
         }),
