@@ -26,7 +26,7 @@ export async function onRequestPost(context) {
             email: "president@gloriouseagles.com",
             name: "Glorious Eagles LLC",
           },
-          subject: "New Application",
+          subject: `New Message from ${name}`,
           content: [
             {
               type: "text/html",
@@ -64,7 +64,7 @@ export async function onRequestPost(context) {
             email: "president@gloriouseagles.com",
             name: "Glorious Eagles LLC",
           },
-          subject: "Thank you for applying!",
+          subject: "We have received your message.",
           content: [
             {
               type: "text/plain",
