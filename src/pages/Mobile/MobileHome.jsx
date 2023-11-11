@@ -10,7 +10,7 @@ import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileHome() {
   useEffect(() => {
-    document.title = "Ginoba | Home";
+    document.title = "Glorious Eagles | Home";
   }, []);
 
   return (

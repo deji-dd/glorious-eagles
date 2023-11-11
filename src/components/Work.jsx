@@ -92,12 +92,18 @@ export default function Work() {
                 <img src={Line} style={img_style} />
               </div>
             </AnimationOnScroll>
-            <button
-              style={{ width: "16.75rem", position: "relative", top: "7.5rem" }}
-              class={"button-p"}
-            >
-              Learn more
-            </button>
+            <a href={"/how-we-work"}>
+              <button
+                style={{
+                  width: "16.75rem",
+                  position: "relative",
+                  top: "7.5rem",
+                }}
+                class={"button-p"}
+              >
+                Learn more
+              </button>
+            </a>
           </div>
           <div
             style={{

@@ -95,12 +95,14 @@ export default function MobileServicesOffer(props) {
           <MobileServicesOfferCard img={Offer3} desc={"Virtual"} />
         </div>
         <div style={{ display: "flex", gap: "6rem", alignItems: "center" }}>
-          <button
-            style={{ height: "3.28rem", width: "10rem" }}
-            className={"button-p button-mobile"}
-          >
-            Contact us
-          </button>
+          <a href={"/contact-us"}>
+            <button
+              style={{ height: "3.28rem", width: "10rem" }}
+              className={"button-p button-mobile"}
+            >
+              Contact us
+            </button>
+          </a>
           <img
             style={{
               width: "2.68392rem",

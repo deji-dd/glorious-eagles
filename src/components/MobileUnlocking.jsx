@@ -64,8 +64,12 @@ export default function MobileUnlocking() {
             gap: "0.9rem",
           }}
         >
-          <button className={"button-p button-mobile"}>Contact us</button>
-          <button className={"button-s button-mobile"}>Learn more</button>
+          <a href={"/contact-us"}>
+            <button className={"button-p button-mobile"}>Contact us</button>
+          </a>
+          <a href={"/services"}>
+            <button className={"button-s button-mobile"}>Learn more</button>
+          </a>
         </div>
       </div>
       <div style={div}>

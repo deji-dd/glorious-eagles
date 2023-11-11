@@ -38,12 +38,6 @@ export default function MobileServicesPurple(props) {
             {props.desc}
           </p>
         </div>
-        <button
-          style={{ width: "13.9rem", height: "3.7rem" }}
-          className={"button-p button-mobile"}
-        >
-          Learn more
-        </button>
       </div>
     </div>
   );

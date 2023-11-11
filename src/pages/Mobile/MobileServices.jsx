@@ -17,7 +17,7 @@ import MobileTransform from "../../components/MobileTransofrm";
 export default function MobileServices() {
   const ref = useRef(null);
   useEffect(() => {
-    document.title = "Ginoba | Services";
+    document.title = "Glorious Eagles | Services";
   }, []);
 
   return (

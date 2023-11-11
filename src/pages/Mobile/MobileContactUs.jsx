@@ -5,7 +5,7 @@ import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileContactUs() {
   useEffect(() => {
-    document.title = "Ginoba | Contact Us";
+    document.title = "Glorious Eagles | Contact Us";
   }, []);
   return (
     <div>

@@ -64,8 +64,12 @@ export default function Unlocking() {
             gap: "1.5rem",
           }}
         >
-          <button className={"button-p"}>Contact us</button>
-          <button className={"button-s"}>Learn more</button>
+          <a href={"/contact-us"}>
+            <button className={"button-p"}>Contact us</button>
+          </a>
+          <a href={"/services"}>
+            <button className={"button-s"}>Learn more</button>
+          </a>
         </div>
       </div>
       <div style={div}>

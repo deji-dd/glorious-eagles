@@ -10,7 +10,7 @@ import { useEffect } from "preact/hooks";
 export default function About() {
   const ref = useRef(null);
   useEffect(() => {
-    document.title = "Ginoba | About";
+    document.title = "Glorious Eagles | About";
   }, []);
   return (
     <div>

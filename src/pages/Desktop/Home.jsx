@@ -10,7 +10,7 @@ import { useEffect } from "preact/hooks";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Ginoba | Home";
+    document.title = "Glorious Eagles | Home";
   }, []);
 
   return (

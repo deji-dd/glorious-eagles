@@ -3,7 +3,7 @@ import Job from "../../components/Job";
 
 export default function Career() {
   useEffect(() => {
-    document.title = "Ginoba | Career";
+    document.title = "Glorious Eagles | Career";
   }, []);
   return (
     <div>

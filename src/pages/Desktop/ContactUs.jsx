@@ -6,7 +6,7 @@ import Transform from "../../components/Transform";
 
 export default function ContactUs() {
   useEffect(() => {
-    document.title = "Ginoba | Contact Us";
+    document.title = "Glorious Eagles | Contact Us";
   }, []);
   return (
     <div style={{ paddingTop: "5.26rem" }}>

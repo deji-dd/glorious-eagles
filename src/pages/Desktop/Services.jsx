@@ -16,7 +16,7 @@ import { useEffect } from "preact/hooks";
 export default function Services() {
   const ref = useRef(null);
   useEffect(() => {
-    document.title = "Ginoba | Services";
+    document.title = "Glorious Eagles | Services";
   }, []);
 
   return (

@@ -132,7 +132,9 @@ export default function ServicesOffer(props) {
           </div>
         </div>
         <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>
-          <button className={"button-p"}>Contact us</button>
+          <a href={"/contact-us"}>
+            <button className={"button-p"}>Contact us</button>
+          </a>
           <img
             style={{
               width: "4rem",

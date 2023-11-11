@@ -5,7 +5,7 @@ import Transform from "../../components/Transform";
 
 export default function How() {
   useEffect(() => {
-    document.title = "Ginoba | How we Work";
+    document.title = "Glorious Eagles | How we Work";
   }, []);
   return (
     <div>

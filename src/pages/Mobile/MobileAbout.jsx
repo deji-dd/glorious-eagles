@@ -9,7 +9,7 @@ import MobilePeople from "../../components/MobilePeople";
 export default function MobileAbout() {
   const ref = useRef(null);
   useEffect(() => {
-    document.title = "Ginoba | About";
+    document.title = "Glorious Eagles | About";
   }, []);
   return (
     <div>

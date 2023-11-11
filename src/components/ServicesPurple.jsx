@@ -39,9 +39,6 @@ export default function ServicesPurple(props) {
             {props.desc}
           </p>
         </div>
-        <button style={{ width: "16.75rem" }} className={"button-p"}>
-          Learn more
-        </button>
       </div>
       <img src={props.img} />
     </div>

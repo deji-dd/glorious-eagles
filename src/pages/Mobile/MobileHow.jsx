@@ -5,7 +5,7 @@ import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileHow() {
   useEffect(() => {
-    document.title = "Ginoba | How we Work";
+    document.title = "Glorious Eagles | How we Work";
   }, []);
   return (
     <div>
