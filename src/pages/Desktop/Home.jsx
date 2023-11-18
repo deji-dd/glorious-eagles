@@ -3,8 +3,6 @@ import Essentials from "../../components/Essentials";
 import Offer from "../../components/Offer";
 import Unlocking from "../../components/Unlocking";
 import Work from "../../components/Work";
-import ContactCard from "../../components/ContactCard";
-import ContactForm from "../../components/ContactForm";
 import { useEffect } from "preact/hooks";
 
 export default function Home() {
@@ -41,8 +39,6 @@ export default function Home() {
       <Essentials />
       <Offer />
       <Work />
-      <ContactForm />
-      <ContactCard />
     </div>
   );
 }
