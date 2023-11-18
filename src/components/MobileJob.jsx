@@ -175,7 +175,7 @@ export default function MobileJob() {
               <input
                 style={input_style}
                 type={"text"}
-                placeholder={"Lorem Ipsum"}
+                placeholder={"Your name"}
                 name="name"
                 id={"i-name"}
                 required
@@ -202,7 +202,7 @@ export default function MobileJob() {
                 id={"i-email"}
                 style={input_style}
                 type={"email"}
-                placeholder={"Lorem@gmail.com"}
+                placeholder={"Your email"}
                 name="email"
                 required
                 onChange={(e) => {
