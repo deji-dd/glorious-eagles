@@ -29,10 +29,6 @@ export default function Socials() {
     >
       <div style={div_style}>
         <img style={img_style} src={MailIcon} />
-        <p>president@gloriouseagles.com</p>
-      </div>
-      <div style={div_style}>
-        <img style={img_style} src={MailIcon} />
         <p>info@gloriouseagles.com</p>
       </div>
       <div style={div_style}>

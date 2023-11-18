@@ -40,6 +40,38 @@ export default function Contacts() {
           gap: "3.5rem",
         }}
       >
+        <div style={{ display: "flex", width: "79.125rem", gap: "4rem" }}>
+          <div style={div_style}>
+            <img src={EmailIcon} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <h3 style={h3_small}>Email here</h3>
+              <p style={p_style}>info@gloriouseagles.com</p>
+            </div>
+          </div>
+          <div style={div_style}>
+            <img src={CallIcon} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <h3 style={h3_small}>Call Here</h3>
+              <p style={p_style}>+1 612-4566-090</p>
+            </div>
+          </div>
+        </div>
         <div
           style={{
             width: "79.125rem",
@@ -72,38 +104,6 @@ export default function Contacts() {
               <br />
               (EIDBI)
             </p>
-          </div>
-        </div>
-        <div style={{ display: "flex", width: "79.125rem", gap: "4rem" }}>
-          <div style={div_style}>
-            <img src={EmailIcon} />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <h3 style={h3_small}>Email here</h3>
-              <p style={p_style}>president@gloriouseagles.com</p>
-            </div>
-          </div>
-          <div style={div_style}>
-            <img src={CallIcon} />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <h3 style={h3_small}>Call Here</h3>
-              <p style={p_style}>+1 470-3360-611</p>
-            </div>
           </div>
         </div>
       </div>

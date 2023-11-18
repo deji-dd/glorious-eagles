@@ -56,12 +56,12 @@ export default function MobileContacts() {
       <div style={div_style}>
         <img src={EmailIcon} />
         <h3 style={h3_small}>Email here</h3>
-        <p style={p_style}>president@gloriouseagles.com</p>
+        <p style={p_style}>info@gloriouseagles.com</p>
       </div>
       <div style={div_style}>
         <img src={CallIcon} />
         <h3 style={h3_small}>Call Here</h3>
-        <p style={p_style}>+1 470-3360-611</p>
+        <p style={p_style}>+1 612-4566-090</p>
       </div>
     </div>
   );

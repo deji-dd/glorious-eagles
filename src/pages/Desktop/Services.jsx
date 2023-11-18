@@ -10,7 +10,6 @@ import Img8 from "../../assets/services-8.svg";
 import Img9 from "../../assets/services-9.svg";
 import { useRef } from "react";
 import ServicesPurple from "../../components/ServicesPurple";
-import Transform from "../../components/Transform";
 import { useEffect } from "preact/hooks";
 
 export default function Services() {
@@ -84,7 +83,6 @@ export default function Services() {
           "Our Toilet Training service offers a structured and supportive approach to help children develop essential toileting skills. We works closely with families, providing strategies and guidance to make this transition smooth.  We're dedicated to fostering independence and confidence in children as they achieve this important milestone."
         }
       />
-      <Transform />
     </div>
   );
 }

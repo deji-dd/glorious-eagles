@@ -150,7 +150,7 @@ export default function ContactForm() {
                 <input
                   style={input_style}
                   type={"text"}
-                  placeholder={"Lorem Ipsum"}
+                  placeholder={"Your name"}
                   name="name"
                   onfocusin={() => {
                     setFormOneStyle(true);
@@ -180,7 +180,7 @@ export default function ContactForm() {
                 <input
                   style={input_style}
                   type={"email"}
-                  placeholder={"Lorem Ipsum"}
+                  placeholder={"Your email"}
                   onfocusin={() => {
                     setFormTwoStyle(true);
                   }}
@@ -217,7 +217,7 @@ export default function ContactForm() {
                 border: "1.864px solid #DCCDFC",
                 padding: "2.54rem 2.34rem",
               }}
-              placeholder={"Lorem Ipsum"}
+              placeholder={"Type your message here"}
               required
               onChange={(e) => {
                 // @ts-ignore

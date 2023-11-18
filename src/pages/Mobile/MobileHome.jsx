@@ -6,7 +6,6 @@ import MobileOffer from "../../components/MobileOffer";
 import MobileWork from "../../components/MobileWork";
 import MobileContactForm from "../../components/MobileContactForm";
 import MobileContactCard from "../../components/MobileContactCard";
-import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileHome() {
   useEffect(() => {
@@ -22,7 +21,6 @@ export default function MobileHome() {
       <MobileWork />
       <MobileContactForm />
       <MobileContactCard />
-      <MobileTransform />
     </>
   );
 }

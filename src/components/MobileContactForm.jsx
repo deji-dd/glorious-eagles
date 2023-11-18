@@ -145,7 +145,7 @@ export default function MobileContactForm() {
               <input
                 style={input_style}
                 type={"text"}
-                placeholder={"Lorem Ipsum"}
+                placeholder={"Your name"}
                 onfocusin={() => {
                   setFormOneStyle(true);
                 }}
@@ -175,7 +175,7 @@ export default function MobileContactForm() {
               <input
                 style={input_style}
                 type={"email"}
-                placeholder={"Lorem Ipsum"}
+                placeholder={"Your email"}
                 onfocusin={() => {
                   setFormTwoStyle(true);
                 }}
@@ -211,7 +211,7 @@ export default function MobileContactForm() {
                 border: "1.864px solid #DCCDFC",
                 padding: "2.54rem 2.34rem",
               }}
-              placeholder={"Lorem Ipsum"}
+              placeholder={"Type your message here"}
               required
               onChange={(e) => {
                 // @ts-ignore

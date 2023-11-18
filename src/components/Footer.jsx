@@ -115,7 +115,7 @@ export default function Footer() {
               gap: "2.5rem",
             }}
           >
-            <p style={link_style}>president@gloriouseagles.com</p>
+            <p style={link_style}>info@gloriouseagles.com</p>
             <p style={link_style}>+1 612-4566-090</p>
             <div
               style={{

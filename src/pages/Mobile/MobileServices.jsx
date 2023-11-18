@@ -1,4 +1,3 @@
-import ServicesWhite from "../../components/ServicesWhite";
 import Img2 from "../../assets/services-2.svg";
 import Img1 from "../../assets/services-1.svg";
 import Img3 from "../../assets/services-3.svg";
@@ -12,7 +11,6 @@ import { useEffect } from "preact/hooks";
 import MobileServicesOffer from "../../components/MobileServicesOffer";
 import MobileServicesWhite from "../../components/MobileServicesWhite";
 import MobileServicesPurple from "../../components/MobileServicesPurple";
-import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileServices() {
   const ref = useRef(null);
@@ -85,7 +83,6 @@ export default function MobileServices() {
           "Our Toilet Training service offers a structured and supportive approach to help children develop essential toileting skills. We works closely with families, providing strategies and guidance to make this transition smooth.  We're dedicated to fostering independence and confidence in children as they achieve this important milestone."
         }
       />
-      <MobileTransform />
     </div>
   );
 }

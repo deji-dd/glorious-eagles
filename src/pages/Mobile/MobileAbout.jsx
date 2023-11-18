@@ -2,8 +2,6 @@ import { useEffect, useRef } from "preact/hooks";
 import MobileExperts from "../../components/MobileExperts";
 import MobileChoose from "../../components/MobileChoose";
 import MobileDifferent from "../../components/MobileDifferent";
-import MobileContactCard from "../../components/MobileContactCard";
-import MobileTransform from "../../components/MobileTransofrm";
 import MobilePeople from "../../components/MobilePeople";
 
 export default function MobileAbout() {
@@ -23,8 +21,6 @@ export default function MobileAbout() {
       </div>
       <MobileDifferent />
       <MobilePeople />
-      <MobileContactCard />
-      <MobileTransform />
     </div>
   );
 }

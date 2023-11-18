@@ -1,7 +1,6 @@
 import { useEffect } from "preact/hooks";
 import MobileContacts from "../../components/MobileContacts";
 import MobileContactForm from "../../components/MobileContactForm";
-import MobileTransform from "../../components/MobileTransofrm";
 
 export default function MobileContactUs() {
   useEffect(() => {
@@ -9,9 +8,8 @@ export default function MobileContactUs() {
   }, []);
   return (
     <div>
-      <MobileContacts />
       <MobileContactForm />
-      <MobileTransform />
+      <MobileContacts />
     </div>
   );
 }

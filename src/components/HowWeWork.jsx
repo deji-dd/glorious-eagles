@@ -47,7 +47,7 @@ export default function HowWeWork() {
     <div
       style={{
         width: "90rem",
-        height: "360rem",
+        height: "370rem",
         background: "var(--Light-purple, #F1EBFE)",
         display: "flex",
         justifyContent: "center",
@@ -92,7 +92,7 @@ export default function HowWeWork() {
         <hr
           style={{
             width: "0.875rem",
-            height: "330rem",
+            height: "345rem",
             flexShrink: "0",
             opacity: "0.1",
             background:

@@ -3,8 +3,6 @@ import Different from "../../components/Different";
 import Experts from "../../components/Experts";
 import { useRef } from "react";
 import People from "../../components/People";
-import ContactCard from "../../components/ContactCard";
-import Transform from "../../components/Transform";
 import { useEffect } from "preact/hooks";
 
 export default function About() {
@@ -45,8 +43,6 @@ export default function About() {
         <Different />
       </div>
       <People />
-      <ContactCard />
-      <Transform />
     </div>
   );
 }

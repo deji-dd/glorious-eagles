@@ -91,10 +91,6 @@ export default function MobileFooter() {
         </a>
         <div style={div_style}>
           <img style={img_style} src={MailIcon} />
-          <p style={p_style}>president@gloriouseagles.com</p>
-        </div>
-        <div style={div_style}>
-          <img style={img_style} src={MailIcon} />
           <p style={p_style}>info@gloriouseagles.com</p>
         </div>
         <div style={div_style}>
