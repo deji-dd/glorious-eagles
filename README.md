@@ -7,4 +7,4 @@ Glorious Eagles
 This is a website for the Glorious Eagles foundation.
 
 ## Live Site
-[Live Site]((https://gloriouseagles.com)https://gloriouseagles.com)
+[Live Site](https://gloriouseagles.com)
