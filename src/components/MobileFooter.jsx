@@ -103,13 +103,15 @@ export default function MobileFooter() {
             gap: "1.8125rem",
           }}
         >
-          <a href={"https://web.facebook.com/profile.php?id=61552151991164"}>
+          <a
+            href={"https://web.facebook.com/people/Hero-Center/61557128850758/"}
+          >
             <img src={Facebook} style={{ width: "1.56696rem" }} />
           </a>
-          <a href={"https://www.instagram.com/gloriouseaglesus"}>
+          <a href={"https://www.instagram.com/hero_center_/"}>
             <img src={Instagram} style={{ width: "1.56696rem" }} />
           </a>
-          <a>
+          <a href={"https://twitter.com/hero_center_"}>
             <img src={Twitter} style={{ width: "1.56696rem" }} />
           </a>
         </div>
