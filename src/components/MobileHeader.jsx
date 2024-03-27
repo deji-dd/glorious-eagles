@@ -246,15 +246,17 @@ export default function MobileHeader() {
                       >
                         <a
                           href={
-                            "https://web.facebook.com/profile.php?id=61552151991164"
+                            "https://web.facebook.com/people/Hero-Center/61557128850758/"
                           }
                         >
                           <img src={Facebook} />
                         </a>
-                        <a href={"https://www.instagram.com/gloriouseaglesus"}>
+                        <a href={"https://www.instagram.com/hero_center_/"}>
                           <img src={Instagram} />
                         </a>
-                        <img src={Twitter} />
+                        <a href={"https://twitter.com/hero_center_"}>
+                          <img src={Twitter} />
+                        </a>
                       </div>
                     </div>
                   </div>
