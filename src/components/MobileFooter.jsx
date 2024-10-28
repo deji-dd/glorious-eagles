@@ -95,7 +95,7 @@ export default function MobileFooter() {
         </div>
         <div style={div_style}>
           <img style={img_style} src={CallIcon} />
-          <p style={p_style}>+1 612-4566-090</p>
+          <p style={p_style}>+1 952-2209-361</p>
         </div>
         <div
           style={{
