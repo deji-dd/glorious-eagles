@@ -116,7 +116,7 @@ export default function Footer() {
             }}
           >
             <p style={link_style}>info@gloriouseagles.com</p>
-            <p style={link_style}>+1 612-4566-090</p>
+            <p style={link_style}>+1 952-2209-361</p>
             <div
               style={{
                 display: "flex",
