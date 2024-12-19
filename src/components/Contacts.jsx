@@ -68,7 +68,7 @@ export default function Contacts() {
               }}
             >
               <h3 style={h3_small}>Call Here</h3>
-              <p style={p_style}>+1 612-4566-090</p>
+              <p style={p_style}>+1 952-2209-361</p>
             </div>
           </div>
         </div>
