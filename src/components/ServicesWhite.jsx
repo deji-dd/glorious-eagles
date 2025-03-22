@@ -4,7 +4,8 @@ export default function ServicesWhite(props) {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "53.75rem",
         display: "flex",
         justifyContent: "center",
