@@ -9,7 +9,8 @@ export default function Offer() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         padding: "4rem 4.375rem",
         justifyContent: "center",
         alignItems: "center",

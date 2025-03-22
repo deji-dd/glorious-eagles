@@ -49,9 +49,12 @@ export default function Job() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: "4rem",
+        flexDirection: "column",
       }}
     >
       <div
@@ -71,7 +74,8 @@ export default function Job() {
         <div
           style={{
             display: "flex",
-            width: "90rem",
+            maxWidth: "90rem",
+            width: "100%",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
@@ -81,7 +85,8 @@ export default function Job() {
           <div
             style={{
               display: "flex",
-              width: "90rem",
+              maxWidth: "90rem",
+              width: "100%",
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",

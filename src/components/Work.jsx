@@ -37,7 +37,8 @@ export default function Work() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "53.75rem",
         padding: "4rem 3rem",
         justifyContent: "center",

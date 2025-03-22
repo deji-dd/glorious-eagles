@@ -15,7 +15,8 @@ export default function Home() {
       <Unlocking />
       <div
         style={{
-          width: "90rem",
+          maxWidth: "90rem",
+          width: "100%",
           display: "flex",
           padding: "2.875rem 6.4375rem 3.5rem 6.4375rem",
           flexDirection: "column",

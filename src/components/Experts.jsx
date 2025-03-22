@@ -7,7 +7,8 @@ export default function Experts(props) {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         alignItems: "center",
         justifyContent: "center",
         gap: "4.06rem",
