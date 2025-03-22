@@ -153,10 +153,10 @@ export default function ContactForm() {
                   type={"text"}
                   placeholder={"Your name"}
                   name="name"
-                  onfocusin={() => {
+                  onFocusIn={() => {
                     setFormOneStyle(true);
                   }}
-                  onfocusout={() => {
+                  onFocusOut={() => {
                     setFormOneStyle(false);
                   }}
                   onChange={(e) => {
@@ -182,10 +182,10 @@ export default function ContactForm() {
                   style={input_style}
                   type={"email"}
                   placeholder={"Your email"}
-                  onfocusin={() => {
+                  onFocusIn={() => {
                     setFormTwoStyle(true);
                   }}
-                  onfocusout={() => {
+                  onFocusOut={() => {
                     setFormTwoStyle(false);
                   }}
                   name="email"

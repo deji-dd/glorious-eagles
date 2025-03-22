@@ -31,7 +31,7 @@ export function App() {
     return () => window.removeEventListener("resize", handleResize);
   });
 
-  return size > 481 ? (
+  return size > 500 ? (
     <LocationProvider>
       <Socials />
       <Header />
@@ -53,7 +53,7 @@ export function App() {
   ) : (
     <LocationProvider>
       <MobileHeader />
-      <main style={{ paddingTop: "5rem" }}>
+      <main style={{ paddingTop: "5rem", width: "30rem" }}>
         <Router>
           <Route path="/" component={MobileHome} />
           <Route path="/about-us" component={MobileAbout} />
