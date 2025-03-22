@@ -24,7 +24,6 @@ export default function MobileFooter() {
         width: "30rem",
         flexShrink: "0",
         background: `url(${BG})`,
-        display: "flex",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         padding: "5.7rem 0 2rem 1.45rem",

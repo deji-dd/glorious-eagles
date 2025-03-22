@@ -2,7 +2,6 @@ body,
 html {
 	background: #FFF;
 	width: 100%;
-
 }
 
 h1,
@@ -165,10 +164,12 @@ textarea:focus {
 	height: 100%;
 }
 
-#app {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+@media (min-width: 500px) {
+	#app {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
 }

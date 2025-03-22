@@ -35,7 +35,8 @@ export default function MobileHeader() {
   return (
     <div
       style={{
-        width: "30rem",
+        maxWidth: "30rem",
+        width: "100%",
         height: "5rem",
         display: "inline-flex",
         justifyContent: "center",

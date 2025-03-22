@@ -22,7 +22,6 @@ export default function Contacts() {
     justifyContent: "center",
   };
   const h3_small = { ...h3_style, lineHeight: "2.94025rem" };
-  const p_small = { ...p_style, fontSize: "2.25rem", lineHeight: "2.94025rem" };
   return (
     <div
       style={{

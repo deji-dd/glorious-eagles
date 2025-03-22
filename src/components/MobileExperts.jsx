@@ -7,7 +7,8 @@ export default function MobileExperts(props) {
     <div
       style={{
         display: "flex",
-        width: "30rem",
+        maxWidth: "30rem",
+        width: "100%",
         alignItems: "center",
         justifyContent: "center",
         gap: "2.5rem",
