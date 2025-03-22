@@ -49,7 +49,8 @@ export default function ContactForm() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         padding: "3.75rem 0rem",
         flexDirection: "column",
         alignItems: "center",

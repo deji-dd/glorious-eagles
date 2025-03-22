@@ -46,7 +46,8 @@ export default function HowWeWork() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "370rem",
         background: "var(--Light-purple, #F1EBFE)",
         display: "flex",

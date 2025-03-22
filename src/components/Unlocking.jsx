@@ -16,7 +16,8 @@ export default function Unlocking() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "68.376875rem",
         display: "inline-flex",
         justifyContent: "center",

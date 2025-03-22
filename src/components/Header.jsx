@@ -25,7 +25,8 @@ export default function Header() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",

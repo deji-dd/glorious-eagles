@@ -26,7 +26,8 @@ export default function Contacts() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

@@ -11,7 +11,8 @@ export default function Essentials() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "53.75rem",
         background: `url(${BG}) -5rem -5rem no-repeat`,
         padding: "4.35rem 4.12rem",
