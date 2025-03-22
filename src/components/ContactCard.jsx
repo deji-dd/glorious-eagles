@@ -5,10 +5,11 @@ export default function ContactCard() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
         justifyContent: "center",
         alignItems: "center",
         padding: "4rem 5.4rem",
+        width: "100%",
       }}
     >
       <div

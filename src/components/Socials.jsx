@@ -16,7 +16,7 @@ export default function Socials() {
     <div
       style={{
         display: "flex",
-        width: "90rem",
+        maxWidth: "90rem",
         height: "4.25rem",
         justifyContent: "center",
         alignItems: "center",
@@ -24,6 +24,7 @@ export default function Socials() {
         gap: "10.12rem",
         position: "absolute",
         top: "85px",
+        width: "100%",
         background: "#FFF",
       }}
     >

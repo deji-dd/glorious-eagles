@@ -13,7 +13,8 @@ export default function Footer() {
   return (
     <div
       style={{
-        width: "90rem",
+        maxWidth: "90rem",
+        width: "100%",
         height: "33.625rem",
         flexShrink: "0",
         background: `url(${BG})`,
@@ -23,7 +24,8 @@ export default function Footer() {
     >
       <div
         style={{
-          width: "90rem",
+          maxWidth: "90rem",
+          width: "100%",
           height: "24.1875rem",
           flexShrink: "0",
           display: "flex",

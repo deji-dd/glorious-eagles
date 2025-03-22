@@ -32,7 +32,6 @@ export default function Header() {
         borderBottom: "2px solid var(--Line-Color, #F3F3F3)",
         padding: "0.8125rem 3.9695rem 0.8125rem 4.1875rem",
         position: "fixed",
-        left: "0",
         top: "-1px",
         background: "rgba(255,255,255,97%)",
         zIndex: "2",
