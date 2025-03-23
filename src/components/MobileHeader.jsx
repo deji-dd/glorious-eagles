@@ -175,21 +175,21 @@ export default function MobileHeader() {
                       <a
                         href={"/"}
                         style={path == "/" ? link_active : link_style}
-                        data-bs-dismiss="offcanvas"
+                        // data-bs-dismiss="offcanvas"
                       >
                         Home
                       </a>
                       <a
                         href={"/services"}
                         style={path == "/services" ? link_active : link_style}
-                        data-bs-dismiss="offcanvas"
+                        // data-bs-dismiss="offcanvas"
                       >
                         Services
                       </a>
                       <a
                         href={"/about-us"}
                         style={path == "/about-us" ? link_active : link_style}
-                        data-bs-dismiss="offcanvas"
+                        // data-bs-dismiss="offcanvas"
                       >
                         About Us
                       </a>
@@ -198,14 +198,14 @@ export default function MobileHeader() {
                         style={
                           path == "/how-we-work" ? link_active : link_style
                         }
-                        data-bs-dismiss="offcanvas"
+                        // data-bs-dismiss="offcanvas"
                       >
                         How we work
                       </a>
                       <a
                         href={"/career"}
                         style={path == "/career" ? link_active : link_style}
-                        data-bs-dismiss="offcanvas"
+                        // data-bs-dismiss="offcanvas"
                       >
                         Career
                       </a>
@@ -218,7 +218,7 @@ export default function MobileHeader() {
                             fontSize: "1.44rem",
                             lineHeight: "1.44rem",
                           }}
-                          data-bs-dismiss="offcanvas"
+                          // data-bs-dismiss="offcanvas"
                         >
                           Contact us
                         </button>
@@ -246,7 +246,7 @@ export default function MobileHeader() {
                           width="16"
                           height="16"
                           fill="currentColor"
-                          class="bi bi-printer"
+                          className="bi bi-printer"
                           viewBox="0 0 16 16"
                         >
                           <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
