@@ -1,9 +1,9 @@
 import logo from "../assets/logo.svg";
-import { useLocation } from "preact-iso/router";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const location = useLocation();
-  const path = location.path;
+  const path = location.pathname;
   const link_style = {
     color: "var(--Text-Color, #151411)",
     fontFamily: "Hanken Grotesk",

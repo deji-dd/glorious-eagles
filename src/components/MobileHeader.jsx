@@ -1,6 +1,6 @@
 import logo from "../assets/logo.svg";
 import icon from "../assets/navbar-icon.svg";
-import { useLocation } from "preact-iso/router";
+import { useLocation } from "react-router-dom";
 import MailIcon from "../assets/message-icon.svg";
 import CallIcon from "../assets/call-icon.svg";
 import Facebook from "../assets/social-facebook.svg";
@@ -9,7 +9,7 @@ import Twitter from "../assets/social-twitter.svg";
 
 export default function MobileHeader() {
   const location = useLocation();
-  const path = location.path;
+  const path = location.pathname;
   const link_style = {
     color: "var(--Text-Color, #151411)",
     fontFamily: "Hanken Grotesk",

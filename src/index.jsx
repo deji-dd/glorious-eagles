@@ -1,72 +1,88 @@
-import { render } from "preact";
-import { LocationProvider, Router, Route } from "preact-iso";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense, useEffect, useState } from "react";
+
+// Components
 import Header from "./components/Header.jsx";
-import Home from "./pages/Desktop/Home.jsx";
-import "./style.css";
-import Services from "./pages/Desktop/Services.jsx";
-import About from "./pages/Desktop/About.jsx";
 import Footer from "./components/Footer.jsx";
-import How from "./pages/Desktop/How.jsx";
-import ContactUs from "./pages/Desktop/ContactUs.jsx";
-import Socials from "./components/Socials.jsx";
-import Career from "./pages/Desktop/Career.jsx";
-import { useEffect, useState } from "preact/hooks";
 import MobileHeader from "./components/MobileHeader.jsx";
-import MobileHome from "./pages/Mobile/MobileHome.jsx";
 import MobileFooter from "./components/MobileFooter.jsx";
-import MobileAbout from "./pages/Mobile/MobileAbout.jsx";
-import MobileContactUs from "./pages/Mobile/MobileContactUs.jsx";
-import MobileHow from "./pages/Mobile/MobileHow.jsx";
-import MobileServices from "./pages/Mobile/MobileServices.jsx";
-import MobileCareer from "./pages/Mobile/MobileCareer.jsx";
+import Socials from "./components/Socials.jsx";
+
+// Lazy load pages (Desktop)
+const Home = lazy(() => import("./pages/Desktop/Home.jsx"));
+const Services = lazy(() => import("./pages/Desktop/Services.jsx"));
+const About = lazy(() => import("./pages/Desktop/About.jsx"));
+const How = lazy(() => import("./pages/Desktop/How.jsx"));
+const ContactUs = lazy(() => import("./pages/Desktop/ContactUs.jsx"));
+const Career = lazy(() => import("./pages/Desktop/Career.jsx"));
+
+// Lazy load pages (Mobile)
+const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
+const MobileAbout = lazy(() => import("./pages/Mobile/MobileAbout.jsx"));
+const MobileContactUs = lazy(
+  () => import("./pages/Mobile/MobileContactUs.jsx"),
+);
+const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
+const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));
+const MobileCareer = lazy(() => import("./pages/Mobile/MobileCareer.jsx"));
+
+import "./style.css";
 
 export function App() {
   const [size, setSize] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => {
-      setSize(window.innerWidth);
-    };
+    const handleResize = () => setSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  });
+  }, []);
 
-  return size > 500 ? (
-    <LocationProvider>
-      <Socials />
-      <Header />
-      <main
-        style={{ paddingTop: "9.3125rem", maxWidth: "90rem", width: "100%" }}
-      >
-        <Router>
-          <Route path="/" component={Home} />
-          <Route path="/services" component={Services} />
-          <Route path="/about-us" component={About} />
-          <Route path="/how-we-work" component={How} />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/career" component={Career} />
-          <Route default component={Home} />
-        </Router>
-      </main>
-      <Footer />
-    </LocationProvider>
-  ) : (
-    <LocationProvider>
-      <MobileHeader />
-      <main style={{ paddingTop: "5rem", width: "30rem" }}>
-        <Router>
-          <Route path="/" component={MobileHome} />
-          <Route path="/about-us" component={MobileAbout} />
-          <Route path="/contact-us" component={MobileContactUs} />
-          <Route path="/how-we-work" component={MobileHow} />
-          <Route path="/services" component={MobileServices} />
-          <Route path="/career" component={MobileCareer} />
-          <Route default component={MobileHome} />
-        </Router>
-      </main>
-      <MobileFooter />
-    </LocationProvider>
+  return (
+    <BrowserRouter>
+      {size > 500 ? (
+        <>
+          <Socials />
+          <Header />
+          <main
+            style={{
+              paddingTop: "9.3125rem",
+              maxWidth: "90rem",
+              width: "100%",
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about-us" element={<About />} />
+              <Route path="/how-we-work" element={<How />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/career" element={<Career />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </>
+      ) : (
+        <>
+          <MobileHeader />
+          <main style={{ paddingTop: "5rem", width: "30rem" }}>
+            <Routes>
+              <Route path="/" element={<MobileHome />} />
+              <Route path="/about-us" element={<MobileAbout />} />
+              <Route path="/contact-us" element={<MobileContactUs />} />
+              <Route path="/how-we-work" element={<MobileHow />} />
+              <Route path="/services" element={<MobileServices />} />
+              <Route path="/career" element={<MobileCareer />} />
+              <Route path="*" element={<MobileHome />} />
+            </Routes>
+          </main>
+          <MobileFooter />
+        </>
+      )}
+    </BrowserRouter>
   );
 }
 
-render(<App />, document.getElementById("app"));
+const root = createRoot(document.getElementById("app"));
+root.render(<App />);

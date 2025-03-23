@@ -1,7 +1,7 @@
 import Clipboard from "../assets/clipboard.svg";
 import Puzzle from "../assets/puzzle.svg";
 import Heart from "../assets/heart.svg";
-import { useState } from "preact/hooks";
+import { useState } from "react";
 
 export default function MobileServicesOffer(props) {
   const [selected, setSelected] = useState(0);

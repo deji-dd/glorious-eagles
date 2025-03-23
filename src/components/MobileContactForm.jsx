@@ -1,6 +1,6 @@
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
-import { useState } from "preact/hooks";
+import { useState } from "react";
 import { CircularProgress } from "@mui/material";
 
 export default function MobileContactForm() {

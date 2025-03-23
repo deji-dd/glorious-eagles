@@ -1,4 +1,4 @@
-import { useRef, useState } from "preact/hooks";
+import { useRef, useState } from "react";
 import UploadIcon from "../assets/upload-icon.svg";
 import { CircularProgress } from "@mui/material";
 

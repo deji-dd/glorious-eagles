@@ -1,4 +1,4 @@
-import { useEffect } from "preact/hooks";
+import { useEffect } from "react";
 import MobileUnlocking from "../../components/MobileUnlocking";
 import MobileDifferent from "../../components/MobileDifferent";
 import MobileEssentials from "../../components/MobileEssentials";

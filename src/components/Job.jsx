@@ -1,7 +1,7 @@
 import Img from "../assets/career.gif";
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
-import { useRef, useState } from "preact/hooks";
+import { useRef, useState } from "react";
 import FileUploader from "./FileUploader";
 import { CircularProgress } from "@mui/material";
 
@@ -13,7 +13,7 @@ export default function Job() {
   let [submit, setSubmit] = useState("Apply");
   let [loading, setLoading] = useState(false);
 
-  const form = useRef();
+  const form = useRef(null);
 
   const label_style = {
     color: "#FFF",
@@ -122,7 +122,7 @@ export default function Job() {
             </p>
           </div>
           <form
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
             ref={form}
             onSubmit={async (e) => {
               e.preventDefault();
@@ -168,7 +168,7 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label for={"i-name"} style={label_style}>
+              <label htmlFor={"i-name"} style={label_style}>
                 Name
               </label>
               <div style={div_style}>
@@ -194,7 +194,7 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label for={"i-email"} style={label_style}>
+              <label htmlFor={"i-email"} style={label_style}>
                 Email
               </label>
               <div style={div_style}>
@@ -220,7 +220,7 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label for={"i-cover"} style={label_style}>
+              <label htmlFor={"i-cover"} style={label_style}>
                 Upload cover letter
               </label>
               <FileUploader id={"i-cover"} name={"cover"} link={setCover} />
@@ -232,7 +232,7 @@ export default function Job() {
                 flexDirection: "column",
               }}
             >
-              <label for={"i-resume"} style={label_style}>
+              <label htmlFor={"i-resume"} style={label_style}>
                 Upload resume
               </label>
               <FileUploader id={"i-resume"} name={"resume"} link={setResume} />
