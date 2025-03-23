@@ -1,17 +1,32 @@
+import Assessments from "../../components/Assessments";
 import AbaServices from "../../components/AbaServices";
-import AbaTherapy from "../../components/AbaTherapy";
 import AdditionalSupport from "../../components/AdditionalSupport";
 import ContactCard from "../../components/ContactCard";
 import ServicesOffer from "../../components/ServicesOffer";
 import Arrow from "../../assets/arrow.svg";
+import { useRef } from "preact/hooks";
 
 export default function Services() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+
   return (
     <div>
-      <ServicesOffer />
-      <AbaServices />
-      <AbaTherapy />
-      <AdditionalSupport />
+      <ServicesOffer
+        scroll1={() => ref1.current?.scrollIntoView({ behavior: "smooth" })}
+        scroll2={() => ref2.current?.scrollIntoView({ behavior: "smooth" })}
+        scroll3={() => ref3.current?.scrollIntoView({ behavior: "smooth" })}
+      />
+      <div ref={ref1}>
+        <Assessments />
+      </div>
+      <div ref={ref2}>
+        <AbaServices />
+      </div>
+      <div ref={ref3}>
+        <AdditionalSupport />
+      </div>
       <div
         style={{
           width: "100%",

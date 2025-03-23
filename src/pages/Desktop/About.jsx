@@ -1,7 +1,7 @@
 import Choose from "../../components/Choose";
 import Different from "../../components/Different";
 import Experts from "../../components/Experts";
-import { useRef } from "react";
+import { useRef } from "preact/hooks";
 import People from "../../components/People";
 import { useEffect } from "preact/hooks";
 

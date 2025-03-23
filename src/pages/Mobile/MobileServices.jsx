@@ -4,14 +4,28 @@ import MobileAssessments from "../../components/MobileAssessments";
 import MobileContactCard from "../../components/MobileContactCard";
 import MobileServicesOffer from "../../components/MobileServicesOffer";
 import Arrow from "../../assets/arrow.svg";
+import { useRef } from "preact/hooks";
 
 export default function MobileServices() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
   return (
     <div style={{ marginBottom: "3rem" }}>
-      <MobileServicesOffer />
-      <MobileAssessments />
-      <MobileAbaServices />
-      <MobileAdditionalSupport />
+      <MobileServicesOffer
+        scroll1={() => ref1.current?.scrollIntoView({ behavior: "smooth" })}
+        scroll2={() => ref2.current?.scrollIntoView({ behavior: "smooth" })}
+        scroll3={() => ref3.current?.scrollIntoView({ behavior: "smooth" })}
+      />
+      <div ref={ref1}>
+        <MobileAssessments />
+      </div>
+      <div ref={ref2}>
+        <MobileAbaServices />
+      </div>
+      <div ref={ref3}>
+        <MobileAdditionalSupport />
+      </div>
       <div
         style={{
           width: "100%",
