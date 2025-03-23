@@ -101,7 +101,7 @@ export default function MobileContactForm() {
         }}
       >
         <form
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
           onSubmit={async (e) => {
             e.preventDefault();
             try {
@@ -146,10 +146,10 @@ export default function MobileContactForm() {
                 style={input_style}
                 type={"text"}
                 placeholder={"Your name"}
-                onfocusin={() => {
+                onFocus={() => {
                   setFormOneStyle(true);
                 }}
-                onfocusout={() => {
+                onBlur={() => {
                   setFormOneStyle(false);
                 }}
                 name="name"
@@ -176,10 +176,10 @@ export default function MobileContactForm() {
                 style={input_style}
                 type={"email"}
                 placeholder={"Your email"}
-                onfocusin={() => {
+                onFocus={() => {
                   setFormTwoStyle(true);
                 }}
-                onfocusout={() => {
+                onBlur={() => {
                   setFormTwoStyle(false);
                 }}
                 name="email"

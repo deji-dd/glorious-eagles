@@ -13,7 +13,7 @@ export default function MobileJob() {
   let [submit, setSubmit] = useState("Apply");
   let [loading, setLoading] = useState(false);
 
-  const form = useRef();
+  const form = useRef(null);
 
   const label_style = {
     color: "#FFF",
@@ -121,7 +121,7 @@ export default function MobileJob() {
           </div>
         </div>
         <form
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
           ref={form}
           onSubmit={async (e) => {
             e.preventDefault();
@@ -167,7 +167,7 @@ export default function MobileJob() {
               flexDirection: "column",
             }}
           >
-            <label for={"i-name"} style={label_style}>
+            <label htmlFor={"i-name"} style={label_style}>
               Name
             </label>
             <div style={div_style}>
@@ -193,7 +193,7 @@ export default function MobileJob() {
               flexDirection: "column",
             }}
           >
-            <label for={"i-email"} style={label_style}>
+            <label htmlFor={"i-email"} style={label_style}>
               Email
             </label>
             <div style={div_style}>
@@ -219,7 +219,7 @@ export default function MobileJob() {
               flexDirection: "column",
             }}
           >
-            <label for={"i-cover"} style={label_style}>
+            <label htmlFor={"i-cover"} style={label_style}>
               Upload cover letter
             </label>
             <MobileFileUploader id={"i-cover"} name={"cover"} link={setCover} />
@@ -231,7 +231,7 @@ export default function MobileJob() {
               flexDirection: "column",
             }}
           >
-            <label for={"i-resume"} style={label_style}>
+            <label htmlFor={"i-resume"} style={label_style}>
               Upload resume
             </label>
             <MobileFileUploader
