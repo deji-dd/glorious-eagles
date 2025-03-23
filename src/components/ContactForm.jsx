@@ -1,6 +1,6 @@
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
-import { useState } from "preact/hooks";
+import { useState } from "react";
 import { CircularProgress } from "@mui/material";
 
 export default function ContactForm() {
@@ -99,7 +99,7 @@ export default function ContactForm() {
         }}
       >
         <form
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
           onSubmit={async (e) => {
             e.preventDefault();
             try {
@@ -153,10 +153,10 @@ export default function ContactForm() {
                   type={"text"}
                   placeholder={"Your name"}
                   name="name"
-                  onFocusIn={() => {
+                  onFocus={() => {
                     setFormOneStyle(true);
                   }}
-                  onFocusOut={() => {
+                  onBlur={() => {
                     setFormOneStyle(false);
                   }}
                   onChange={(e) => {
@@ -182,10 +182,10 @@ export default function ContactForm() {
                   style={input_style}
                   type={"email"}
                   placeholder={"Your email"}
-                  onFocusIn={() => {
+                  onFocus={() => {
                     setFormTwoStyle(true);
                   }}
-                  onFocusOut={() => {
+                  onBlur={() => {
                     setFormTwoStyle(false);
                   }}
                   name="email"

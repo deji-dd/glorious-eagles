@@ -4,12 +4,16 @@ import AdditionalSupport from "../../components/AdditionalSupport";
 import ContactCard from "../../components/ContactCard";
 import ServicesOffer from "../../components/ServicesOffer";
 import Arrow from "../../assets/arrow.svg";
-import { useRef } from "preact/hooks";
+import { useRef, useEffect } from "react";
 
 export default function Services() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+
+  useEffect(() => {
+    document.title = "Glorious Eagles | Services";
+  }, []);
 
   return (
     <div>

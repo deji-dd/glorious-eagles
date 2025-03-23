@@ -3,7 +3,7 @@ import Essentials from "../../components/Essentials";
 import Offer from "../../components/Offer";
 import Unlocking from "../../components/Unlocking";
 import Work from "../../components/Work";
-import { useEffect } from "preact/hooks";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {

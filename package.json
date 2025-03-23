@@ -8,27 +8,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cloudflare/pages-plugin-mailchannels": "^0.1.2",
-    "@cloudflare/workers-types": "^4.20231025.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.16",
+    "@cloudflare/pages-plugin-mailchannels": "^0.1.5",
+    "@cloudflare/workers-types": "^4.20250321.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^5.17.1",
     "@react-email/html": "^0.0.6",
     "@react-email/render": "^0.0.9",
     "@react-email/text": "0.0.6",
+    "@vitejs/plugin-react": "^4.3.4",
     "emailjs": "^4.0.3",
-    "preact": "^10.13.1",
-    "preact-iso": "^2.3.1",
-    "preact-render-to-string": "^6.2.1",
-    "react-animation-on-scroll": "^5.1.0"
+    "react": "^19.0.0",
+    "react-animation-on-scroll": "^5.1.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.5.0",
-    "@types/nodemailer": "^6.4.13",
-    "eslint": "^8.50.0",
-    "eslint-config-preact": "^1.3.0",
-    "vite": "^4.3.2",
-    "wrangler": ">=3.19.0"
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^8.57.1",
+    "eslint-config-preact": "^1.5.0",
+    "vite": "^4.5.9",
+    "wrangler": "^4.4.0"
   },
   "eslintConfig": {
     "extends": "preact"

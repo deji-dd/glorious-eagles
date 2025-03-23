@@ -4,12 +4,15 @@ import MobileAssessments from "../../components/MobileAssessments";
 import MobileContactCard from "../../components/MobileContactCard";
 import MobileServicesOffer from "../../components/MobileServicesOffer";
 import Arrow from "../../assets/arrow.svg";
-import { useRef } from "preact/hooks";
+import { useRef, useEffect } from "react";
 
 export default function MobileServices() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  useEffect(() => {
+    document.title = "Glorious Eagles | Services";
+  }, []);
   return (
     <div style={{ marginBottom: "3rem" }}>
       <MobileServicesOffer

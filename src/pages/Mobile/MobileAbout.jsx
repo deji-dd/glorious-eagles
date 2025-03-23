@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "preact/hooks";
+import { useEffect, useRef } from "react";
 import MobileExperts from "../../components/MobileExperts";
 import MobileChoose from "../../components/MobileChoose";
 import MobileDifferent from "../../components/MobileDifferent";

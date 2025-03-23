@@ -1,5 +1,5 @@
-import { useEffect } from "preact/hooks";
 import HowWeWork from "../../components/HowWeWork";
+import { useEffect } from "react";
 
 export default function How() {
   useEffect(() => {
