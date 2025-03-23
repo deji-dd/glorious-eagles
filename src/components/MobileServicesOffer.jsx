@@ -1,8 +1,11 @@
 import Clipboard from "../assets/clipboard.svg";
 import Puzzle from "../assets/puzzle.svg";
 import Heart from "../assets/heart.svg";
+import { useState } from "preact/hooks";
 
-export default function MobileServicesOffer() {
+export default function MobileServicesOffer(props) {
+  const [selected, setSelected] = useState(0);
+
   const div_style = {
     display: "inline-flex",
     padding: "1rem 0.5rem",
@@ -15,6 +18,13 @@ export default function MobileServicesOffer() {
     justifyContent: "space-between",
     paddingTop: "2rem",
     height: "9rem",
+  };
+
+  const selected_style = {
+    ...div_style,
+    borderColor: "#180344",
+    borderWidth: "2px",
+    borderStyle: "solid",
   };
 
   return (
@@ -68,21 +78,32 @@ export default function MobileServicesOffer() {
           }}
         >
           <div
-            style={{
-              ...div_style,
-              borderColor: "#180344",
-              borderWidth: "2px",
-              borderStyle: "solid",
+            style={selected === 1 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll1();
+              setSelected(1);
             }}
           >
             <img style={{ width: "3rem" }} src={Clipboard} />
             <h5 style={{ fontSize: "14px" }}>Assessments</h5>
           </div>
-          <div style={div_style}>
+          <div
+            style={selected === 2 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll2();
+              setSelected(2);
+            }}
+          >
             <img style={{ width: "3rem" }} src={Puzzle} />
             <h5 style={{ fontSize: "14px" }}>ABA Therapy</h5>
           </div>
-          <div style={div_style}>
+          <div
+            style={selected === 3 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll3();
+              setSelected(3);
+            }}
+          >
             <img style={{ width: "3rem" }} src={Heart} />
             <h5 style={{ fontSize: "14px", textAlign: "center" }}>
               Psychotherapy & Additional Support

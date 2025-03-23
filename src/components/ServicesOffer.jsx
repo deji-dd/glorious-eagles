@@ -1,8 +1,11 @@
 import Clipboard from "../assets/clipboard.svg";
 import Puzzle from "../assets/puzzle.svg";
 import Heart from "../assets/heart.svg";
+import { useState } from "preact/hooks";
 
-export default function ServicesOffer() {
+export default function ServicesOffer(props) {
+  const [selected, setSelected] = useState(0);
+
   const div_style = {
     display: "inline-flex",
     padding: "2.4rem 2.1rem",
@@ -14,7 +17,16 @@ export default function ServicesOffer() {
     alignItems: "center",
     paddingTop: "5rem",
     justifyContent: "space-between",
+    cursor: "pointer",
   };
+
+  const selected_style = {
+    ...div_style,
+    borderColor: "#180344",
+    borderWidth: "2px",
+    borderStyle: "solid",
+  };
+
   return (
     <div
       style={{
@@ -22,7 +34,7 @@ export default function ServicesOffer() {
         display: "flex",
         gap: "3rem",
         justifyContent: "center",
-        padding: "2.4rem 0rem",
+        padding: "2.4rem 0rem 0rem",
         flexDirection: "column",
         alignItems: "center",
         width: "100%",
@@ -68,21 +80,32 @@ export default function ServicesOffer() {
           }}
         >
           <div
-            style={{
-              ...div_style,
-              borderColor: "#180344",
-              borderWidth: "2px",
-              borderStyle: "solid",
+            style={selected === 1 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll1();
+              setSelected(1);
             }}
           >
             <img src={Clipboard} />
             <h4>Assessments</h4>
           </div>
-          <div style={div_style}>
+          <div
+            style={selected === 2 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll2();
+              setSelected(2);
+            }}
+          >
             <img src={Puzzle} />
             <h4>ABA Therapy</h4>
           </div>
-          <div style={div_style}>
+          <div
+            style={selected === 3 ? selected_style : div_style}
+            onClick={() => {
+              props.scroll3();
+              setSelected(3);
+            }}
+          >
             <img src={Heart} />
             <h4 style={{ textAlign: "center" }}>
               Psychotherapy & Additional Support
