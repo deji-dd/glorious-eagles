@@ -64,8 +64,10 @@ export default function MobileUnlocking() {
             gap: "0.9rem",
           }}
         >
-          <a href={"/contact-us"}>
-            <button className={"button-p button-mobile"}>Contact us</button>
+          <a href={"/intake-form"}>
+            <button className={"button-p button-mobile"}>
+              EIDBI Intake Form
+            </button>
           </a>
           <a href={"/services"}>
             <button className={"button-s button-mobile"}>Learn more</button>

@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
+import "./style.css";
 
 // Components
 import Header from "./components/Header.jsx";
@@ -16,6 +17,7 @@ const About = lazy(() => import("./pages/Desktop/About.jsx"));
 const How = lazy(() => import("./pages/Desktop/How.jsx"));
 const ContactUs = lazy(() => import("./pages/Desktop/ContactUs.jsx"));
 const Career = lazy(() => import("./pages/Desktop/Career.jsx"));
+const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
 
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
@@ -58,6 +60,7 @@ export function App() {
               <Route path="/how-we-work" element={<How />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/career" element={<Career />} />
+              <Route path="/intake-form" element={<IntakeForm />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>
@@ -75,6 +78,7 @@ export function App() {
               <Route path="/services" element={<MobileServices />} />
               <Route path="/career" element={<MobileCareer />} />
               <Route path="*" element={<MobileHome />} />
+              <Route path="/intake-form" element={<IntakeForm />} />
             </Routes>
           </main>
           <MobileFooter />

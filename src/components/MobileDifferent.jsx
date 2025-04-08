@@ -1,5 +1,5 @@
-import blue_circle from "../assets/blue_circle.svg";
-import orange_circle from "../assets/orange_circle.svg";
+import blue_circle from "../assets/blue-circle.png";
+import orange_circle from "../assets/orange-circle.png";
 
 export default function MobileDifferent() {
   const circle_div = {
@@ -19,14 +19,16 @@ export default function MobileDifferent() {
   const blue = {
     ...circle_div,
     background: `url(${blue_circle})`,
-    backgroundSize: "12.56024rem 12.56024rem",
+    backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
   const orange = {
     ...circle_div,
     background: `url(${orange_circle})`,
-    backgroundSize: "12.56024rem 12.56024rem",
+    backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
   const div_style = {
     display: "flex",
