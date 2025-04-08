@@ -13,5 +13,4 @@ export default defineConfig({
   css: {
     postcss: "./postcss.config.js", // Ensure PostCSS is used with Tailwind
   },
-  assetsInclude: ["**/*.svg", "**/*.png", "**/*.jpg"], // Ensure Vite processes these assets correctly
 });

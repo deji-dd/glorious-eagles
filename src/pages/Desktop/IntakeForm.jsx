@@ -19,7 +19,7 @@ export default function IntakeForm() {
     { id: 5, name: "Other Information", status: "upcoming" },
     { id: 6, name: "Upload Documents", status: "upcoming" },
   ]);
-  const [currentStepIndex, setCurrentStepIndex] = useState(5);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [skippedSections, setSkippedSections] = useState({
     identifyingCharacteristics: false,
     financialInfo: false,

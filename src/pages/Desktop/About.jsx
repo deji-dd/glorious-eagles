@@ -42,7 +42,6 @@ export default function About() {
         </h1>
         <Different />
       </div>
-      <People />
     </div>
   );
 }
