@@ -1,7 +1,8 @@
 import BG from "../assets/elipses.svg";
 import PictureFrame from "./PictureFrame";
 import Img1 from "../assets/additional-support-1.png";
-import Img2 from "../assets/heart.svg";
+import Img2 from "../assets/additional-support-2.png";
+import Img3 from "../assets/heart.svg";
 
 export default function AdditionalSupport() {
   return (
@@ -9,7 +10,7 @@ export default function AdditionalSupport() {
       style={{
         maxWidth: "90rem",
         width: "100%",
-        height: "53.75rem",
+        // height: "53.75rem",
         display: "flex",
         background: `url(${BG}) -22rem -11rem no-repeat`,
         gap: "5rem",
@@ -18,13 +19,20 @@ export default function AdditionalSupport() {
       }}
     >
       <h2>Psychotherapy & Additional Support</h2>
-      <div style={{ display: "flex", gap: "2rem" }}>
+      <div className="grid grid-cols-2 gap-3">
         <PictureFrame
           desc={
             "We offer professional counseling to support emotional and mental well-being, helping children and families navigate challenges such as anxiety, stress, and behavioral difficulties."
           }
           title={"Psychotherapy"}
           img={Img1}
+        />
+        <PictureFrame
+          desc={
+            "We offer convenient, confidential mental health sessions online, so you can access support from the comfort of your home."
+          }
+          title={"Telehealth Mental Health Service"}
+          img={Img2}
         />
         <div
           style={{
@@ -40,7 +48,7 @@ export default function AdditionalSupport() {
             paddingTop: "10rem",
           }}
         >
-          <img style={{ width: "7.5rem" }} src={Img2} />
+          <img style={{ width: "7.5rem" }} src={Img3} />
           <div
             style={{
               display: "flex",

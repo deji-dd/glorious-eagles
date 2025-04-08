@@ -46,7 +46,7 @@ export default function MobileHeader() {
         left: "0",
         top: "0",
         background: "#E5E2FD",
-        zIndex: "2",
+        zIndex: "50",
       }}
     >
       <div
@@ -77,9 +77,13 @@ export default function MobileHeader() {
             GLORIOUS EAGLES
           </h1>
         </a>
-        <div style={{ display: "flex", gap: "1.6rem" }}>
-          <a href={"/contact-us"}>
-            <button className={"button-p button-mobile"}>Contact us</button>
+        <div style={{ display: "flex", gap: "1.6rem" }} className="w-fit">
+          <a href={"/intake-form"}>
+            <button
+              className={"button-p button-mobile w-fit whitespace-nowrap"}
+            >
+              EIDBI Intake Form
+            </button>
           </a>
           <nav className="navbar navbar-dark p-0">
             <div

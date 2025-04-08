@@ -35,7 +35,7 @@ export default function Header() {
         position: "fixed",
         top: "-1px",
         background: "rgba(255,255,255,97%)",
-        zIndex: "2",
+        zIndex: "50",
       }}
     >
       <div
@@ -104,8 +104,16 @@ export default function Header() {
               Career
             </a>
           </div>
-          <a href={"/contact-us"}>
-            <button className={"button-p"}>Contact us</button>
+          <a href={"/intake-form"}>
+            <button
+              style={{
+                fontSize: "1rem",
+                padding: "1rem 1.2rem",
+              }}
+              className={"button-p"}
+            >
+              EIDBI Intake Form
+            </button>
           </a>
         </div>
       </div>

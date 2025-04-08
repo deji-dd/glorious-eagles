@@ -1,4 +1,4 @@
-import BG from "../assets/footer-bg.svg";
+import Background from "../assets/footer-bg.png";
 import logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook-footer.svg";
 import Instagram from "../assets/instagram-footer.svg";
@@ -17,7 +17,8 @@ export default function Footer() {
         width: "100%",
         height: "33.625rem",
         flexShrink: "0",
-        background: `url(${BG})`,
+        background: `url(${Background}) no-repeat center center`,
+        backgroundSize: "cover",
         display: "flex",
         alignItems: "flex-end",
       }}

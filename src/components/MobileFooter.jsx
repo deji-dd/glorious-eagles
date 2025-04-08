@@ -1,4 +1,4 @@
-import BG from "../assets/mobile-footer-bg.svg";
+import BG from "../assets/mobile-footer-bg.png";
 import logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook-footer.svg";
 import Instagram from "../assets/instagram-footer.svg";
@@ -27,6 +27,7 @@ export default function MobileFooter() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         padding: "5.7rem 0 2rem 1.45rem",
+        backgroundPosition: "center",
       }}
     >
       <div
