@@ -16,8 +16,20 @@ export default function Different() {
     letterSpacing: "-0.00938rem",
     padding: "5rem 1.1rem",
   };
-  const blue = { ...circle_div, background: `url(${blue_circle})` };
-  const orange = { ...circle_div, background: `url(${orange_circle})` };
+  const blue = {
+    ...circle_div,
+    background: `url(${blue_circle})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
+  const orange = {
+    ...circle_div,
+    background: `url(${orange_circle})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
   return (
     <div
       style={{
