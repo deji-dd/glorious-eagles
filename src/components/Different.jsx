@@ -1,5 +1,5 @@
-import blue_circle from "../assets/blue_circle.svg";
-import orange_circle from "../assets/orange_circle.svg";
+import blue_circle from "../assets/blue-circle.png";
+import orange_circle from "../assets/orange-circle.png";
 
 export default function Different() {
   const circle_div = {
