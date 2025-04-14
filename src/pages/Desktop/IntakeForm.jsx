@@ -836,7 +836,7 @@ export default function IntakeForm() {
                       value={formData.ssn}
                       onChange={handleInputChange}
                       className="mt-1"
-                      type="text"
+                      type="password"
                       required
                     />
                   </div>
