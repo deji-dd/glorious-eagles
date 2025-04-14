@@ -23,8 +23,8 @@ export default {
 			const { details, attachments } = body;
 
 			const ownerEmail = await resend.emails.send({
-				from: `Glorious Eagles <president@${domain}>`,
-				to: `president@${domain}`,
+				from: `Glorious Eagles <info@${domain}>`,
+				to: `info@${domain}`,
 				subject: body.subject,
 				reply_to: body.to,
 				react: <ApplicationTemplate data={details} attachments={attachments} />,
@@ -39,7 +39,7 @@ export default {
 
 			// Send confirmation
 			const confirmationEmail = await resend.emails.send({
-				from: `Glorious Eagles <president@${domain}>`,
+				from: `Glorious Eagles <info@${domain}>`,
 				to: body.to,
 				subject: 'Application Confirmation',
 				react: <ConfirmationTemplate data={details} attachments={attachments} />,
