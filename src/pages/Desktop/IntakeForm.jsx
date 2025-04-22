@@ -19,18 +19,18 @@ export default function IntakeForm() {
     { id: 5, name: "Other Information", status: "upcoming" },
     { id: 6, name: "Upload Documents", status: "upcoming" },
   ]);
-  const [currentStepIndex, setCurrentStepIndex] = useState(5);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [skippedSections, setSkippedSections] = useState({
     identifyingCharacteristics: false,
     financialInfo: false,
     generalInfo: false,
   });
   const [formData, setFormData] = useState({
-    firstName: "Deji",
+    firstName: undefined,
     lastName: undefined,
     address: undefined,
     dateOfBirth: undefined,
-    email: "dejib50@gmail.com",
+    email: undefined,
     cellPhone: undefined,
     homePhone: undefined,
     language: undefined,
