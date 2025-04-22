@@ -19,30 +19,27 @@ export default function IntakeForm() {
     { id: 5, name: "Other Information", status: "upcoming" },
     { id: 6, name: "Upload Documents", status: "upcoming" },
   ]);
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [currentStepIndex, setCurrentStepIndex] = useState(5);
   const [skippedSections, setSkippedSections] = useState({
     identifyingCharacteristics: false,
     financialInfo: false,
     generalInfo: false,
   });
   const [formData, setFormData] = useState({
-    firstName: undefined,
+    firstName: "Deji",
     lastName: undefined,
     address: undefined,
     dateOfBirth: undefined,
-    email: undefined,
+    email: "dejib50@gmail.com",
     cellPhone: undefined,
     homePhone: undefined,
     language: undefined,
-    maritalStatus: undefined,
-    religiousPreference: undefined,
     guardianshipType: undefined,
     gender: undefined,
     height: undefined,
     weight: undefined,
     hairColor: undefined,
     eyeColor: undefined,
-    distinguishingMarks: undefined,
     ssn: undefined,
     medicalNumber: undefined,
     countyResponsibility: undefined,
@@ -81,10 +78,6 @@ export default function IntakeForm() {
     otherProfessionalAddress: undefined,
     clientInsurance: undefined,
     clientPolicy: undefined,
-    clientCaseManager: undefined,
-    clientPhone: undefined,
-    clientCounty: undefined,
-    clientBurialNumber: undefined,
     childEthnicity: undefined,
     otherPrimaryLanguage: undefined,
     otherSecondaryLanguage: undefined,
@@ -163,7 +156,7 @@ export default function IntakeForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    const requiredFiles = ["insuranceCard", "wellChild", "iep"];
+    const requiredFiles = ["insuranceCard", "wellChild"];
     const missingFile = requiredFiles.find(
       (field) => !formData[field] || formData[field].length === 0,
     );
@@ -179,7 +172,7 @@ export default function IntakeForm() {
     const { details, attachments } = await processFormData(formData);
 
     try {
-      const res = await fetch("https:email.gloriouseagles.com", {
+      const res = await fetch("https://email.gloriouseagles.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -228,7 +221,6 @@ export default function IntakeForm() {
             weight: undefined,
             hairColor: undefined,
             eyeColor: undefined,
-            distinguishingMarks: undefined,
           }),
           ...(sectionKey === "financialInfo" && {
             ssn: undefined,
@@ -237,6 +229,8 @@ export default function IntakeForm() {
             PMINumber: undefined,
             countyFinancialResponsibility: undefined,
             burialAccountNumber: undefined,
+            clientInsurance: undefined,
+            clientPolicy: undefined,
           }),
           ...(sectionKey === "generalInfo" && {
             primaryProfessionalName: undefined,
@@ -262,11 +256,7 @@ export default function IntakeForm() {
   const isFieldRequired = (fieldName) => {
     const fieldSectionMap = {
       gender: "identifyingCharacteristics",
-      height: "identifyingCharacteristics",
-      weight: "identifyingCharacteristics",
-      hairColor: "identifyingCharacteristics",
-      eyeColor: "identifyingCharacteristics",
-      distinguishingMarks: "identifyingCharacteristics",
+
       ssn: "financialInfo",
       medicalNumber: "financialInfo",
       countyResponsibility: "financialInfo",
@@ -553,38 +543,7 @@ export default function IntakeForm() {
                     type="text"
                   />
                 </div>
-                <div>
-                  <div className="flex justify-between">
-                    <Label className="" htmlFor="maritalStatus">
-                      Marital status
-                    </Label>
-                    <span className="text-sm text-gray-500">Optional</span>
-                  </div>
-                  <Input
-                    id="maritalStatus"
-                    name="maritalStatus"
-                    value={formData.maritalStatus}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                  />
-                </div>
-                <div>
-                  <div className="flex justify-between">
-                    <Label className="" htmlFor="religiousPreference">
-                      Religious preference
-                    </Label>
-                    <span className="text-sm text-gray-500">Optional</span>
-                  </div>
-                  <Input
-                    id="religiousPreference"
-                    name="religiousPreference"
-                    value={formData.religiousPreference}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                  />
-                </div>
+
                 <div className="mt-6">
                   <div className="flex justify-between">
                     <Label className="" htmlFor="guardianshipType">
@@ -710,9 +669,13 @@ export default function IntakeForm() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label className="" htmlFor="height">
-                        Height
-                      </Label>
+                      <div className="flex justify-between">
+                        <Label className="" htmlFor="height">
+                          Height
+                        </Label>
+                        <span className="text-sm text-gray-500">Optional</span>
+                      </div>
+
                       <div className="relative mt-1">
                         <Input
                           required={isFieldRequired("height")}
@@ -724,14 +687,18 @@ export default function IntakeForm() {
                           type="text"
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-                          CM
+                          ft
                         </div>
                       </div>
                     </div>
                     <div>
-                      <Label className="" htmlFor="weight">
-                        Weight
-                      </Label>
+                      <div className="flex justify-between">
+                        <Label className="" htmlFor="weight">
+                          Weight
+                        </Label>
+                        <span className="text-sm text-gray-500">Optional</span>
+                      </div>
+
                       <div className="relative mt-1">
                         <Input
                           required={isFieldRequired("weight")}
@@ -743,14 +710,18 @@ export default function IntakeForm() {
                           className="pr-12"
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-                          KG
+                          lbs
                         </div>
                       </div>
                     </div>
                     <div>
-                      <Label className="" htmlFor="hairColor">
-                        Hair color
-                      </Label>
+                      <div className="flex justify-between">
+                        <Label className="" htmlFor="hairColor">
+                          Hair color
+                        </Label>
+                        <span className="text-sm text-gray-500">Optional</span>
+                      </div>
+
                       <Input
                         required={isFieldRequired("hairColor")}
                         type="text"
@@ -762,9 +733,13 @@ export default function IntakeForm() {
                       />
                     </div>
                     <div>
-                      <Label className="" htmlFor="eyeColor">
-                        Eye color
-                      </Label>
+                      <div className="flex justify-between">
+                        <Label className="" htmlFor="eyeColor">
+                          Eye color
+                        </Label>
+                        <span className="text-sm text-gray-500">Optional</span>
+                      </div>
+
                       <Input
                         required={isFieldRequired("eyeColor")}
                         type="text"
@@ -775,22 +750,6 @@ export default function IntakeForm() {
                         className="mt-1"
                       />
                     </div>
-                  </div>
-
-                  <div className="mt-6">
-                    <Label className="" htmlFor="distinguishingMarks">
-                      Distinguishing characteristics/identifying marks
-                    </Label>
-                    <Textarea
-                      required={isFieldRequired("distinguishingMarks")}
-                      id="distinguishingMarks"
-                      name="distinguishingMarks"
-                      value={formData.distinguishingMarks}
-                      onChange={handleInputChange}
-                      placeholder="Content"
-                      className="mt-1 h-32"
-                      type="text"
-                    />
                   </div>
                 </div>
               ) : (
@@ -915,6 +874,30 @@ export default function IntakeForm() {
                       type="text"
                     />
                   </div>
+                  <div>
+                    <Label htmlFor="clientInsurance">Insurance</Label>
+                    <Input
+                      id="clientInsurance"
+                      name="clientInsurance"
+                      value={formData.clientInsurance}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                      type="text"
+                      required={isFieldRequired("clientInsurance")}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="clientPolicy">Policy #</Label>
+                    <Input
+                      id="clientPolicy"
+                      name="clientPolicy"
+                      value={formData.clientPolicy}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                      type="text"
+                      required={isFieldRequired("clientPolicy")}
+                    />
+                  </div>
                 </div>
               </div>
             ) : (
@@ -923,9 +906,7 @@ export default function IntakeForm() {
                   type="button"
                   variant="flat"
                   className="mb-6 px-0 underline"
-                  onClick={() =>
-                    toggleSkipSection("identifyingCharacteristics")
-                  }
+                  onClick={() => toggleSkipSection("financialInfo")}
                   size="md"
                 >
                   Add Section
@@ -1558,99 +1539,6 @@ export default function IntakeForm() {
           <div data-step="4">
             <div className="mb-4">
               <h4 className="text-xl text-center md:!text-left font-semibold text-[#180344]">
-                Client Insurance Information
-              </h4>
-            </div>
-            <div className="bg-white rounded-lg p-8 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="clientInsurance">Insurance</Label>
-                  <Input
-                    id="clientInsurance"
-                    name="clientInsurance"
-                    value={formData.clientInsurance}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                    required={isFieldRequired("clientInsurance")}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="clientPolicy">Policy #</Label>
-                  <Input
-                    id="clientPolicy"
-                    name="clientPolicy"
-                    value={formData.clientPolicy}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                    required={isFieldRequired("clientPolicy")}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="clientCaseManager">Case Manager</Label>
-                  <Input
-                    id="clientCaseManager"
-                    name="clientCaseManager"
-                    value={formData.clientCaseManager}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                    required={isFieldRequired("clientCaseManager")}
-                  />
-                </div>
-                <div>
-                  <Label className="" htmlFor="clientPhone">
-                    Phone
-                  </Label>
-                  <Input
-                    id="clientPhone"
-                    name="clientPhone"
-                    type="text"
-                    value={formData.clientPhone}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    required={isFieldRequired("clientPhone")}
-                  />
-                </div>
-
-                <div>
-                  <div className="flex justify-between">
-                    <Label className="" htmlFor="clientCounty">
-                      County of financial responsibility
-                    </Label>
-                    <span className="text-sm text-gray-500">Optional</span>
-                  </div>
-                  <Input
-                    id="clientCounty"
-                    name="clientCounty"
-                    value={formData.clientCounty}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                  />
-                </div>
-                <div>
-                  <div className="flex justify-between">
-                    <Label className="" htmlFor="clientBurialNumber">
-                      Burial account number
-                    </Label>
-                    <span className="text-sm text-gray-500">Optional</span>
-                  </div>
-                  <Input
-                    id="clientBurialNumber"
-                    name="clientBurialNumber"
-                    value={formData.clientBurialNumber}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    type="text"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="text-xl text-center md:!text-left font-semibold text-[#180344]">
                 Child’s ethnicity/race (check only one)
               </h4>
             </div>
@@ -1670,7 +1558,8 @@ export default function IntakeForm() {
                     "Asian",
                     "Hispanic or Latino",
                     "Black or African American",
-                    "White or Caucasian",
+                    "White",
+                    "Caucasian",
                   ].map((option) => (
                     <label
                       key={option}
@@ -1747,7 +1636,7 @@ export default function IntakeForm() {
 
             <div className="mb-4">
               <h4 className="text-xl md:!text-left text-center font-semibold text-[#180344]">
-                Referent Information
+                Referral Information
               </h4>
             </div>
             <div className="bg-white rounded-lg p-8 mb-8">
@@ -1843,6 +1732,7 @@ export default function IntakeForm() {
               name="iep"
               files={formData.iep}
               setFormData={setFormData}
+              optional={true}
             />
             <FileUpload
               title="DA-diagnostic assessment"

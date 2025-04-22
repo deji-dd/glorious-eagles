@@ -2,25 +2,41 @@ import { Resend } from 'resend';
 import { ApplicationTemplate } from './emails/ApplicationTemplate';
 import { ConfirmationTemplate } from './emails/ConfirmationTemplate';
 
+const CORS = {
+	'Access-Control-Allow-Origin': '*', // or your specific origin
+	'Access-Control-Allow-Methods': 'POST,OPTIONS',
+	'Access-Control-Allow-Headers': 'Content-Type',
+};
+
 export default {
 	async fetch(request, env) {
+		if (request.method === 'OPTIONS') {
+			return new Response(null, { status: 204, headers: CORS });
+		}
+
 		if (request.method !== 'POST') {
 			return new Response('Method Not Allowed', {
 				status: 405,
+				headers: CORS,
 			});
 		}
 
-		const resend = new Resend(env.RESEND_API_KEY);
-		const domain = 'gloriouseagles.com';
+		let body;
 
 		try {
-			const body = await request.json();
+			body = await request.json();
+		} catch {
+			return new Response(JSON.stringify({ success: false, error: 'Invalid JSON' }), {
+				status: 400,
+				headers: { ...CORS, 'Content-Type': 'application/json' },
+			});
+		}
 
-			if (!body.to || !body.subject || !body.details) {
-				throw new Error('Missing required fields');
-			}
+		const { details, attachments } = body;
 
-			const { details, attachments } = body;
+		try {
+			const resend = new Resend(env.RESEND_API_KEY);
+			const domain = 'gloriouseagles.com';
 
 			const ownerEmail = await resend.emails.send({
 				from: `Glorious Eagles <info@${domain}>`,
@@ -56,6 +72,7 @@ export default {
 				{
 					status: 200,
 					headers: {
+						...CORS,
 						'Content-Type': 'application/json',
 					},
 				},
@@ -69,6 +86,7 @@ export default {
 				{
 					status: 400,
 					headers: {
+						...CORS,
 						'Content-Type': 'application/json',
 					},
 				},
