@@ -3,9 +3,10 @@ import { ApplicationTemplate } from './emails/ApplicationTemplate';
 import { ConfirmationTemplate } from './emails/ConfirmationTemplate';
 
 const CORS = {
-	'Access-Control-Allow-Origin': '*', // or your specific origin
+	'Access-Control-Allow-Origin': 'https://gloriouseagles.com',
 	'Access-Control-Allow-Methods': 'POST,OPTIONS',
 	'Access-Control-Allow-Headers': 'Content-Type',
+	Vary: 'Origin', // Important for cache behavior
 };
 
 export default {
