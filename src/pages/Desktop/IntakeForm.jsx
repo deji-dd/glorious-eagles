@@ -9,6 +9,8 @@ import { Check } from "lucide-react";
 import { FileUpload } from "@/components/fileInput";
 import { processFormData } from "../../../functions/emails";
 import { Loader2 } from "lucide-react"; // Import the Loader from Luicide (or similar package)
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function IntakeForm() {
   const [steps, setSteps] = useState([
@@ -21,7 +23,6 @@ export default function IntakeForm() {
   ]);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [skippedSections, setSkippedSections] = useState({
-    identifyingCharacteristics: false,
     financialInfo: false,
     generalInfo: false,
   });
@@ -216,7 +217,6 @@ export default function IntakeForm() {
         setFormData((prevForm) => ({
           ...prevForm,
           ...(sectionKey === "identifyingCharacteristics" && {
-            gender: undefined,
             height: undefined,
             weight: undefined,
             hairColor: undefined,
@@ -255,8 +255,6 @@ export default function IntakeForm() {
 
   const isFieldRequired = (fieldName) => {
     const fieldSectionMap = {
-      gender: "identifyingCharacteristics",
-
       ssn: "financialInfo",
       medicalNumber: "financialInfo",
       countyResponsibility: "financialInfo",
@@ -333,9 +331,25 @@ export default function IntakeForm() {
                     required={isFieldRequired("address")}
                   />
                 </div>
-                <div>
+                <div className="flex flex-col justify-between">
                   <Label htmlFor="dateOfBirth">Date of birth</Label>
-                  <Input
+                  <DatePicker
+                    selected={formData.dateOfBirth}
+                    onChange={(date) =>
+                      setFormData({ ...formData, dateOfBirth: date })
+                    }
+                    dateFormat="MM/dd/yyyy"
+                    placeholderText="MM/DD/YYYY"
+                    className={cn(
+                      "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-11 w-full min-w-0 border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                      "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+                      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+                      // Keeping any additional classes
+                    )}
+                    required={isFieldRequired("dateOfBirth")}
+                    required={isFieldRequired("dateOfBirth")}
+                  />
+                  {/* <Input
                     id="dateOfBirth"
                     name="dateOfBirth"
                     type="date"
@@ -344,7 +358,7 @@ export default function IntakeForm() {
                     onChange={handleInputChange}
                     className="mt-1"
                     required={isFieldRequired("dateOfBirth")}
-                  />
+                  /> */}
                 </div>
                 <div>
                   <Label className="" htmlFor="email">
@@ -544,11 +558,51 @@ export default function IntakeForm() {
                   />
                 </div>
 
-                <div className="mt-6">
+                <div className="flex flex-col justify-between">
+                  <Label htmlFor="gender">Gender</Label>
+                  <RadioGroup
+                    required={isFieldRequired("gender")}
+                    value={formData.gender}
+                    onValueChange={(value) =>
+                      handleRadioChange("gender", value)
+                    }
+                    style={{ display: "flex", gap: "16px" }}
+                  >
+                    {["Male", "Female", "Prefer not to say"].map((option) => (
+                      <label
+                        key={option}
+                        htmlFor={option}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          border: "1px solid",
+                          padding: "8px 16px",
+                          cursor: "pointer",
+                          backgroundColor:
+                            formData.gender === option ? "#dbeafe" : "white",
+                          borderColor:
+                            formData.gender === option ? "#3b82f6" : "#e2e8f0",
+                        }}
+                      >
+                        <RadioGroupItem
+                          value={option}
+                          id={option}
+                          style={{
+                            width: "16px",
+                            height: "16px",
+                            padding: 0,
+                          }}
+                        />
+                        <span style={{ cursor: "pointer" }}>{option}</span>
+                      </label>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                <div className="flex flex-col justify-between">
                   <div className="flex justify-between">
-                    <Label className="" htmlFor="guardianshipType">
-                      Guardianship type
-                    </Label>
+                    <Label htmlFor="guardianshipType">Guardianship type</Label>
                     <span className="text-sm text-gray-500">Optional</span>
                   </div>
                   <RadioGroup
@@ -556,7 +610,7 @@ export default function IntakeForm() {
                     onValueChange={(value) =>
                       handleRadioChange("guardianshipType", value)
                     }
-                    style={{ display: "flex", gap: "16px", marginTop: "4px" }}
+                    style={{ display: "flex", gap: "16px" }}
                   >
                     {["Self", "Private", "Public"].map((option) => (
                       <label
@@ -604,169 +658,90 @@ export default function IntakeForm() {
                 <h4 className="text-xl font-semibold text-[#180344]">
                   Identifying Characteristics
                 </h4>
-                <span className="px-4 py-1 bg-transparent text-[#180344] text-sm rounded-full border border-black border-solid">
-                  Optional section
-                </span>
               </div>
 
-              {!skippedSections.identifyingCharacteristics ? (
-                <div className="bg-white rounded-lg p-8">
-                  <Button
-                    type="button"
-                    variant="flat"
-                    className="px-0 underline mb-3"
-                    onClick={() =>
-                      toggleSkipSection("identifyingCharacteristics")
-                    }
-                    size="md"
-                  >
-                    <p>Skip Section</p>
-                  </Button>
-
-                  <div className="mb-6">
-                    <Label>Gender</Label>
-                    <RadioGroup
-                      required={isFieldRequired("gender")}
-                      value={formData.gender}
-                      onValueChange={(value) =>
-                        handleRadioChange("gender", value)
-                      }
-                      style={{ display: "flex", gap: "16px", marginTop: "8px" }}
-                    >
-                      {["Male", "Female", "Prefer not to say"].map((option) => (
-                        <label
-                          key={option}
-                          htmlFor={option}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px",
-                            border: "1px solid",
-                            padding: "8px 16px",
-                            cursor: "pointer",
-                            backgroundColor:
-                              formData.gender === option ? "#dbeafe" : "white",
-                            borderColor:
-                              formData.gender === option
-                                ? "#3b82f6"
-                                : "#e2e8f0",
-                          }}
-                        >
-                          <RadioGroupItem
-                            value={option}
-                            id={option}
-                            style={{
-                              width: "16px",
-                              height: "16px",
-                              padding: 0,
-                            }}
-                          />
-                          <span style={{ cursor: "pointer" }}>{option}</span>
-                        </label>
-                      ))}
-                    </RadioGroup>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <div className="flex justify-between">
-                        <Label className="" htmlFor="height">
-                          Height
-                        </Label>
-                        <span className="text-sm text-gray-500">Optional</span>
-                      </div>
-
-                      <div className="relative mt-1">
-                        <Input
-                          required={isFieldRequired("height")}
-                          id="height"
-                          name="height"
-                          value={formData.height}
-                          onChange={handleInputChange}
-                          className="pr-12"
-                          type="text"
-                        />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-                          ft
-                        </div>
-                      </div>
+              <div className="bg-white rounded-lg p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <div className="flex justify-between">
+                      <Label className="" htmlFor="height">
+                        Height
+                      </Label>
                     </div>
-                    <div>
-                      <div className="flex justify-between">
-                        <Label className="" htmlFor="weight">
-                          Weight
-                        </Label>
-                        <span className="text-sm text-gray-500">Optional</span>
-                      </div>
 
-                      <div className="relative mt-1">
-                        <Input
-                          required={isFieldRequired("weight")}
-                          type="text"
-                          id="weight"
-                          name="weight"
-                          value={formData.weight}
-                          onChange={handleInputChange}
-                          className="pr-12"
-                        />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-                          lbs
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between">
-                        <Label className="" htmlFor="hairColor">
-                          Hair color
-                        </Label>
-                        <span className="text-sm text-gray-500">Optional</span>
-                      </div>
-
+                    <div className="relative mt-1">
                       <Input
-                        required={isFieldRequired("hairColor")}
-                        type="text"
-                        id="hairColor"
-                        name="hairColor"
-                        value={formData.hairColor}
+                        required={isFieldRequired("height")}
+                        id="height"
+                        name="height"
+                        value={formData.height}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="pr-12"
+                        type="text"
                       />
-                    </div>
-                    <div>
-                      <div className="flex justify-between">
-                        <Label className="" htmlFor="eyeColor">
-                          Eye color
-                        </Label>
-                        <span className="text-sm text-gray-500">Optional</span>
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+                        ft
                       </div>
-
-                      <Input
-                        required={isFieldRequired("eyeColor")}
-                        type="text"
-                        id="eyeColor"
-                        name="eyeColor"
-                        value={formData.eyeColor}
-                        onChange={handleInputChange}
-                        className="mt-1"
-                      />
                     </div>
                   </div>
+                  <div>
+                    <div className="flex justify-between">
+                      <Label className="" htmlFor="weight">
+                        Weight
+                      </Label>
+                    </div>
+
+                    <div className="relative mt-1">
+                      <Input
+                        required={isFieldRequired("weight")}
+                        type="text"
+                        id="weight"
+                        name="weight"
+                        value={formData.weight}
+                        onChange={handleInputChange}
+                        className="pr-12"
+                      />
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+                        lbs
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between">
+                      <Label className="" htmlFor="hairColor">
+                        Hair color
+                      </Label>
+                    </div>
+
+                    <Input
+                      required={isFieldRequired("hairColor")}
+                      type="text"
+                      id="hairColor"
+                      name="hairColor"
+                      value={formData.hairColor}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex justify-between">
+                      <Label className="" htmlFor="eyeColor">
+                        Eye color
+                      </Label>
+                    </div>
+
+                    <Input
+                      required={isFieldRequired("eyeColor")}
+                      type="text"
+                      id="eyeColor"
+                      name="eyeColor"
+                      value={formData.eyeColor}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                    />
+                  </div>
                 </div>
-              ) : (
-                <div className="bg-white rounded-lg p-8">
-                  <Button
-                    type="button"
-                    variant="flat"
-                    className="mb-6 px-0 underline"
-                    onClick={() =>
-                      toggleSkipSection("identifyingCharacteristics")
-                    }
-                    size="md"
-                  >
-                    Add Section
-                  </Button>
-                </div>
-              )}
+              </div>
             </div>
           </div>
         );
@@ -1236,7 +1211,7 @@ export default function IntakeForm() {
             <div className="mb-8">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <h4 className="text-xl font-semibold text-[#180344]">
-                  Identifying Characteristics
+                  Health Related Contact Information
                 </h4>
                 <span className="px-4 py-1 bg-transparent text-[#180344] text-sm rounded-full border border-black border-solid">
                   Optional section
