@@ -347,7 +347,6 @@ export default function IntakeForm() {
                       // Keeping any additional classes
                     )}
                     required={isFieldRequired("dateOfBirth")}
-                    required={isFieldRequired("dateOfBirth")}
                   />
                   {/* <Input
                     id="dateOfBirth"
