@@ -97,7 +97,7 @@ export default function Contacts() {
           >
             <h3 style={h3_style}>Address</h3>
             <p style={p_style}>
-              2119 110th Lane NW Coon Rapids, MN 55433.
+              1865 132nd LN NW Coon Rapids MN 55448.
               <br />
               MN DHS Licensed Early Intensive Developmental and Behavioral
               Intervention
