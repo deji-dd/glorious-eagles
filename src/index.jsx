@@ -1,7 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import "./style.css";
+import React from "react";
 
 // Components
 import Header from "./components/Header.jsx";
@@ -22,8 +23,8 @@ const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
 const MobileAbout = lazy(() => import("./pages/Mobile/MobileAbout.jsx"));
-const MobileContactUs = lazy(() =>
-  import("./pages/Mobile/MobileContactUs.jsx")
+const MobileContactUs = lazy(
+  () => import("./pages/Mobile/MobileContactUs.jsx")
 );
 const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
 const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));

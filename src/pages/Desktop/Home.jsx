@@ -38,7 +38,7 @@ export default function Home() {
         </h1>
         <Different />
       </div>
-      <Journey />x
+      <Journey />
     </div>
   );
 }

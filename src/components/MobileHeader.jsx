@@ -6,6 +6,7 @@ import CallIcon from "../assets/call-icon.svg";
 import Facebook from "../assets/social-facebook.svg";
 import Instagram from "../assets/social-instagram.svg";
 import Twitter from "../assets/social-twitter.svg";
+import React from "react";
 
 export default function MobileHeader() {
   const location = useLocation();
@@ -41,11 +42,11 @@ export default function MobileHeader() {
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
-        borderBottom: "0.8px solid #FFF",
+        borderBottom: "0.8px solid #453269",
         position: "fixed",
         left: "0",
         top: "0",
-        background: "#E5E2FD",
+        background: "#190244",
         zIndex: "50",
       }}
     >
@@ -73,16 +74,15 @@ export default function MobileHeader() {
               fontSize: "0.72264rem",
               width: "3.92rem",
             }}
+            className="text-white"
           >
             GLORIOUS EAGLES
           </h1>
         </a>
         <div style={{ display: "flex", gap: "1.6rem" }} className="w-fit">
           <a href={"/intake-form"}>
-            <button
-              className={"button-p button-mobile w-fit whitespace-nowrap"}
-            >
-              EIDBI Intake Form
+            <button className="button-s button-mobile w-fit whitespace-nowrap bg-white text-[#180344]">
+              Get started
             </button>
           </a>
           <nav className="navbar navbar-dark p-0">

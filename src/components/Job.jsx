@@ -4,6 +4,7 @@ import MessageIcon from "../assets/message-icon.svg";
 import { useRef, useState } from "react";
 import FileUploader from "./FileUploader";
 import { CircularProgress } from "@mui/material";
+import React from "react";
 
 export default function Job() {
   let [cover, setCover] = useState(null);
@@ -115,9 +116,9 @@ export default function Job() {
             >
               Join our team and become a part of something extraordinary. We are
               passionate about making a positive impact on the lives of
-              individuals and families through ABA therapy. If you're dedicated,
-              compassionate, and eager to contribute your expertise to our
-              mission, we invite you to explore the rewarding career
+              individuals and families through ABA therapy. If you&apos;re
+              dedicated, compassionate, and eager to contribute your expertise
+              to our mission, we invite you to explore the rewarding career
               opportunities we offer.
             </p>
           </div>

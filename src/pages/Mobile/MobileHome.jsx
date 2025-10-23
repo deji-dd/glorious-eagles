@@ -4,6 +4,7 @@ import MobileDifferent from "../../components/MobileDifferent";
 import MobileEssentials from "../../components/MobileEssentials";
 import MobileOffer from "../../components/MobileOffer";
 import MobileWork from "../../components/MobileWork";
+import React from "react";
 
 export default function MobileHome() {
   useEffect(() => {
