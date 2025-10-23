@@ -1,5 +1,6 @@
 import lines from "../assets/title-lines.svg";
 import React from "react";
+import heart from "../assets/heart-svg.svg";
 
 export default function Caring() {
   return (
@@ -51,14 +52,68 @@ export default function Caring() {
             <br />
             <br />
             <br />
-            Our Services Include:
-            <ol className="gap-2 flex flex-col mt-3">
-              <li>Psychotherapy</li>
-              <li>Counselling</li>
-              <li>Medication Management</li>
-              <li>Family & Marriage Counselling</li>
-              <li>Mental Health Therap</li>
-            </ol>
+            <div className="grid grid-cols-2">
+              <div>
+                Our Services Include:
+                <div className="gap-2 ps-4 flex flex-col mt-3">
+                  <li>Psychotherapy</li>
+                  <li>Counselling</li>
+                  <li>Medication Management</li>
+                  <li>Family & Marriage Counselling</li>
+                  <li>Mental Health Therapy</li>
+                </div>
+                <button className="button-s mt-5 text-white border-white">
+                  Learn More
+                </button>
+              </div>
+              <img
+                className="self-end me-0 ms-auto"
+                width={"75%"}
+                src={heart}
+                alt=""
+              />
+            </div>
+          </p>
+        </div>
+        <div className="bg-[#FB8E51] rounded-[3rem] py-7 px-12 text-[#180344] flex flex-col">
+          <h4>ABA Therapy Services</h4>
+          <p className="mt-4">
+            Every child is full of potential. Our ABA (Applied Behaviour
+            Analysis) programs are designed to nurture that potential in
+            children and young adults ages 2-21.
+            <br />
+            <br />
+            <br />
+            <br />
+            We focus on building practical life skills, improving communication,
+            and supporting positive behavior, all in a caring, supportive
+            environment.
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="grid grid-cols-2">
+              <div>
+                We help with:
+                <div className="gap-2 ps-4 flex flex-col mt-3">
+                  <li>Language & Communication Skills</li>
+                  <li>Functional Living Skills</li>
+                  <li>Toilet Training</li>
+                  <li>School Readiness</li>
+                  <li>Parent & Caregiver Training</li>
+                  <li>Social Skills & Play</li>
+                </div>
+                <button className="button-s mt-5 border-[#180344]">
+                  Learn More
+                </button>
+              </div>
+              <img
+                className="self-end me-0 ms-auto"
+                width={"75%"}
+                src={heart}
+                alt=""
+              />
+            </div>
           </p>
         </div>
       </div>

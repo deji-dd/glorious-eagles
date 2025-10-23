@@ -4,14 +4,9 @@ import img2 from "../assets/unlocking-2.svg";
 import img3 from "../assets/unlocking-3.svg";
 import img4 from "../assets/unlocking-4.svg";
 import Carousel from "./Carousel";
+import React from "react";
 
 export default function Unlocking() {
-  const div = {
-    display: "flex",
-    gap: "1rem",
-    flexShrink: "0",
-  };
-  const div_col = { ...div, flexDirection: "column" };
   return (
     <div
       style={{

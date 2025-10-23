@@ -1,9 +1,9 @@
+import Caring from "@/components/Caring";
 import Different from "../../components/Different";
-import Essentials from "../../components/Essentials";
-import Offer from "../../components/Offer";
+
 import Unlocking from "../../components/Unlocking";
-import Work from "../../components/Work";
 import { useEffect } from "react";
+import React from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <div style={{ display: "flex", gap: "1.25rem", flexDirection: "column" }}>
       <Unlocking />
+      <Caring />
       <div
         style={{
           maxWidth: "90rem",
@@ -37,9 +38,6 @@ export default function Home() {
         </h1>
         <Different />
       </div>
-      <Essentials />
-      <Offer />
-      <Work />
     </div>
   );
 }
