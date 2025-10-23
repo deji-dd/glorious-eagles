@@ -22,8 +22,8 @@ const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
 const MobileAbout = lazy(() => import("./pages/Mobile/MobileAbout.jsx"));
-const MobileContactUs = lazy(
-  () => import("./pages/Mobile/MobileContactUs.jsx"),
+const MobileContactUs = lazy(() =>
+  import("./pages/Mobile/MobileContactUs.jsx")
 );
 const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
 const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));
@@ -48,7 +48,6 @@ export function App() {
           <Header />
           <main
             style={{
-              paddingTop: "9.3125rem",
               maxWidth: "90rem",
               width: "100%",
             }}

@@ -32,8 +32,8 @@ export default function Header() {
         alignItems: "center",
         borderBottom: "2px solid var(--Line-Color, #F3F3F3)",
         padding: "0.8125rem 3.9695rem 0.8125rem 4.1875rem",
-        position: "fixed",
-        top: "-1px",
+        position: "sticky",
+        top: "0",
         background: "rgba(255,255,255,97%)",
         zIndex: "50",
       }}
