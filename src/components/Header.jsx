@@ -5,7 +5,7 @@ export default function Header() {
   const location = useLocation();
   const path = location.pathname;
   const link_style = {
-    color: "var(--Text-Color, #151411)",
+    color: "#FFF",
     fontFamily: "Hanken Grotesk",
     fontSize: "1.125rem",
     fontWeight: "500",
@@ -19,7 +19,7 @@ export default function Header() {
     alignItems: "center",
     gap: "0.5rem",
     borderRadius: "6.25rem",
-    background: "var(--Light-purple, #F1EBFE)",
+    background: "var(--Light-purple, #453269)",
   };
 
   return (
@@ -34,7 +34,7 @@ export default function Header() {
         padding: "0.8125rem 3.9695rem 0.8125rem 4.1875rem",
         position: "sticky",
         top: "0",
-        background: "rgba(255,255,255,97%)",
+        background: "#190244",
         zIndex: "50",
       }}
     >
@@ -43,7 +43,7 @@ export default function Header() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "9.81rem",
+          gap: "7rem",
         }}
       >
         <a
@@ -56,7 +56,15 @@ export default function Header() {
           }}
         >
           <img src={logo} style={{ width: "4.4055rem" }} />
-          <h1 style={{ fontFamily: "Fascinate Inline", fontSize: "1rem" }}>
+          <h1
+            style={{
+              fontFamily: "Fascinate Inline",
+              fontSize: "1rem",
+              color: "#FFF",
+              width: "full",
+              flexShrink: "0",
+            }}
+          >
             GLORIOUS EAGLES
           </h1>
         </a>
@@ -109,10 +117,11 @@ export default function Header() {
               style={{
                 fontSize: "1rem",
                 padding: "1rem 1.2rem",
+                background: "#FFF",
               }}
-              className={"button-p"}
+              className={"button-s"}
             >
-              EIDBI Intake Form
+              Get Started
             </button>
           </a>
         </div>
