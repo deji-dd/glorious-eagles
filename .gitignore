@@ -162,3 +162,5 @@ dist
 .dev.vars
 .wrangler/
 *.jsonrc
+email-worker/wrangler.jsonc
+
