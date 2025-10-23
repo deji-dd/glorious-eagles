@@ -30,7 +30,7 @@ export default function Header() {
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
-        borderBottom: "2px solid var(--Line-Color, #F3F3F3)",
+        borderBottom: "2px solid var(--Line-Color, #453269)",
         padding: "0.8125rem 3.9695rem 0.8125rem 4.1875rem",
         position: "sticky",
         top: "0",
@@ -121,7 +121,7 @@ export default function Header() {
               }}
               className={"button-s"}
             >
-              Get Started
+              Get started
             </button>
           </a>
         </div>

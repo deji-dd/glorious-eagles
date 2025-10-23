@@ -3,8 +3,7 @@ import img1 from "../assets/unlocking-1.svg";
 import img2 from "../assets/unlocking-2.svg";
 import img3 from "../assets/unlocking-3.svg";
 import img4 from "../assets/unlocking-4.svg";
-import img5 from "../assets/unlocking-5.svg";
-import img6 from "../assets/unlocking-6.svg";
+import Carousel from "./Carousel";
 
 export default function Unlocking() {
   const div = {
@@ -18,15 +17,14 @@ export default function Unlocking() {
       style={{
         maxWidth: "90rem",
         width: "100%",
-        height: "68.376875rem",
+        height: "60rem",
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
         gap: "3.56rem",
         background: `url(${BG}) 8rem 8rem no-repeat`,
-        paddingTop: "8.19rem",
-        backgroundColor: "#E5E2FD",
+        backgroundColor: "#190245",
       }}
     >
       <div
@@ -43,20 +41,24 @@ export default function Unlocking() {
           style={{
             width: "68.4375rem",
             letterSpacing: "0.04rem",
+            color: "#fff",
           }}
         >
-          Unlocking Potential, One Step at a Time: Your Partner in ABA Therapy
+          Helping You Rise, One Step at a Time
         </h1>
         <p
           style={{
-            color: "#4D4D4D",
+            color: "#fff",
             fontSize: "1.5rem",
             lineHeight: "2rem",
             width: "66.5rem",
           }}
         >
-          Discover personalized care that empowers you or your loved one. Let's
-          make a brighter tomorrow a reality for you and your family
+          At Glorious Eagles, we believe that everyone, no matter their age or
+          story, deserves care, and the chance to thrive. We provide gentle,
+          personalized mental health and ABA therapy services that help
+          individuals and families build confidence, connection, and lasting
+          well-being.
         </p>
         <div
           style={{
@@ -66,27 +68,21 @@ export default function Unlocking() {
           }}
         >
           <a href={"/intake-form"}>
-            <button className={"button-p"}>EIDBI Intake Form</button>
+            <button className={"button-s"} style={{ background: "#fff" }}>
+              Get started
+            </button>
           </a>
           <a href={"/contact-us"}>
-            <button className={"button-s"}>Contact us</button>
+            <button
+              className={"button-s"}
+              style={{ color: "#fff", borderColor: "#fff" }}
+            >
+              Contact us
+            </button>
           </a>
         </div>
       </div>
-      <div style={div}>
-        <div style={div_col}>
-          <div style={div}>
-            <img className={"img-hover-zoom--slowmo"} src={img1} />
-            <img className={"img-hover-zoom--slowmo"} src={img2} />
-          </div>
-          <img className={"img-hover-zoom--slowmo-5"} src={img3} />
-        </div>
-        <img className={"img-hover-zoom--slowmo-25"} src={img4} />
-        <div style={div_col}>
-          <img className={"img-hover-zoom--slowmo-75"} src={img5} />
-          <img className={"img-hover-zoom--slowmo-75"} src={img6} />
-        </div>
-      </div>
+      <Carousel images={[img1, img2, img3, img4]} />
     </div>
   );
 }
