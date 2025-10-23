@@ -1,17 +1,11 @@
-import img1 from "../assets/mobile-unlocking-1.svg";
-import img2 from "../assets/mobile-unlocking-2.svg";
-import img3 from "../assets/mobile-unlocking-3.svg";
-import img4 from "../assets/mobile-unlocking-4.svg";
-import img5 from "../assets/mobile-unlocking-5.svg";
-import img6 from "../assets/mobile-unlocking-6.svg";
+import img1 from "../assets/unlocking-1.svg";
+import img2 from "../assets/unlocking-2.svg";
+import img3 from "../assets/unlocking-3.svg";
+import img4 from "../assets/unlocking-4.svg";
+import React from "react";
+import Carousel from "./Carousel";
 
 export default function MobileUnlocking() {
-  const div = {
-    display: "flex",
-    gap: "0.5rem",
-    flexShrink: "0",
-  };
-  const div_col = { ...div, flexDirection: "column" };
   return (
     <div
       style={{
@@ -23,7 +17,7 @@ export default function MobileUnlocking() {
         gap: "2.37rem",
         paddingTop: "3.16rem",
         paddingBottom: "5.12rem",
-        backgroundColor: "#E5E2FD",
+        backgroundColor: "#190244",
       }}
     >
       <div
@@ -43,8 +37,9 @@ export default function MobileUnlocking() {
             fontSize: "2.56rem",
             lineHeight: "3.0256rem",
           }}
+          className="text-white"
         >
-          Unlocking Potential, One Step at a Time: Your Partner in ABA Therapy
+          Helping You Rise, One Step at a Time
         </h1>
         <p
           style={{
@@ -53,9 +48,13 @@ export default function MobileUnlocking() {
             lineHeight: "2rem",
             width: "25.56224rem",
           }}
+          className="text-white"
         >
-          Discover personalized care that empowers you or your loved one. Let's
-          make a brighter tomorrow a reality for you and your family
+          At Glorious Eagles, we believe that everyone, no matter their age or
+          story, deserves care, and the chance to thrive. We provide gentle,
+          personalized mental health and ABA therapy services that help
+          individuals and families build confidence, connection, and lasting
+          well-being.
         </p>
         <div
           style={{
@@ -65,29 +64,22 @@ export default function MobileUnlocking() {
           }}
         >
           <a href={"/intake-form"}>
-            <button className={"button-p button-mobile"}>
-              EIDBI Intake Form
+            <button className="button-s button-mobile bg-white text-[#190244]">
+              Get started
             </button>
           </a>
-          <a href={"/services"}>
-            <button className={"button-s button-mobile"}>Learn more</button>
+          <a href={"/contact-us"}>
+            <button className="button-s button-mobile border-white text-white">
+              Contact us
+            </button>
           </a>
         </div>
       </div>
-      <div style={div}>
-        <div style={div_col}>
-          <img src={img1} />
-          <img src={img2} />
-        </div>
-        <div style={div_col}>
-          <img src={img3} />
-          <img src={img4} />
-        </div>
-        <div style={div_col}>
-          <img src={img5} />
-          <img src={img6} />
-        </div>
-      </div>
+      <Carousel
+        images={[img1, img2, img3, img4]}
+        height="13rem"
+        width="20rem"
+      />
     </div>
   );
 }
