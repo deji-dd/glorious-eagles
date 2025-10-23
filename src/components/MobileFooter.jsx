@@ -5,6 +5,7 @@ import Instagram from "../assets/instagram-footer.svg";
 import Twitter from "../assets/twitter-footer.svg";
 import MailIcon from "../assets/message-icon-footer.svg";
 import CallIcon from "../assets/call-icon-footer.svg";
+import React from "react";
 
 export default function MobileFooter() {
   const link_style = {
@@ -104,7 +105,7 @@ export default function MobileFooter() {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-printer"
+            className="bi bi-printer"
             viewBox="0 0 16 16"
           >
             <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />

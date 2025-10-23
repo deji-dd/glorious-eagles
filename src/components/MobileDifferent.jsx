@@ -1,5 +1,6 @@
 import blue_circle from "../assets/blue-circle.png";
 import orange_circle from "../assets/orange-circle.png";
+import React from "react";
 
 export default function MobileDifferent() {
   const circle_div = {
@@ -55,7 +56,7 @@ export default function MobileDifferent() {
           textAlign: "center",
         }}
       >
-        A different approach to Applied Behaviour Analysis Therapy
+        Why Families Choose Glorious Eagles
       </h1>
       <div
         style={{

@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import MobileUnlocking from "../../components/MobileUnlocking";
 import MobileDifferent from "../../components/MobileDifferent";
-import MobileEssentials from "../../components/MobileEssentials";
-import MobileOffer from "../../components/MobileOffer";
-import MobileWork from "../../components/MobileWork";
+
 import React from "react";
 import MobileCaring from "@/components/MobileCaring";
+import MobileJourney from "@/components/MobileJourney";
 
 export default function MobileHome() {
   useEffect(() => {
@@ -17,9 +16,7 @@ export default function MobileHome() {
       <MobileUnlocking />
       <MobileCaring />
       <MobileDifferent />
-      <MobileEssentials />
-      <MobileOffer />
-      <MobileWork />
+      <MobileJourney />
     </>
   );
 }
