@@ -4,6 +4,7 @@ import Different from "../../components/Different";
 import Unlocking from "../../components/Unlocking";
 import { useEffect } from "react";
 import React from "react";
+import Journey from "@/components/Journey";
 
 export default function Home() {
   useEffect(() => {
@@ -23,7 +24,6 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           gap: "4.5625rem",
-          background: "#F6F5FF",
         }}
       >
         <h1
@@ -34,10 +34,11 @@ export default function Home() {
             textAlign: "center",
           }}
         >
-          A different approach to Applied Behaviour Analysis Therapy
+          Why Families Choose Glorious Eagles
         </h1>
         <Different />
       </div>
+      <Journey />x
     </div>
   );
 }

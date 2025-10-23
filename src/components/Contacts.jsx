@@ -1,6 +1,7 @@
 import AdressIcon from "../assets/address-icon.svg";
 import EmailIcon from "../assets/email-icon.svg";
 import CallIcon from "../assets/call-icon.svg";
+import React from "react";
 
 export default function Contacts() {
   const h3_style = { fontSize: "2.5rem", lineHeight: "130%" };
