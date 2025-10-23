@@ -2,6 +2,7 @@ import MobileOfferCard from "./MobileOfferCard";
 import Offer1 from "../assets/offer1.svg";
 import Offer2 from "../assets/offer2.svg";
 import Offer3 from "../assets/offer3.svg";
+import React from "react";
 
 export default function MobileOffer() {
   return (

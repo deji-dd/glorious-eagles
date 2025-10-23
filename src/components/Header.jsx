@@ -1,5 +1,6 @@
 import logo from "../assets/logo.svg";
 import { useLocation } from "react-router-dom";
+import React from "react";
 
 export default function Header() {
   const location = useLocation();

@@ -5,6 +5,7 @@ import MobileContactCard from "../../components/MobileContactCard";
 import MobileServicesOffer from "../../components/MobileServicesOffer";
 import Arrow from "../../assets/arrow.svg";
 import { useRef, useEffect } from "react";
+import React from "react";
 
 export default function MobileServices() {
   const ref1 = useRef(null);

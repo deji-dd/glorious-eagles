@@ -1,4 +1,5 @@
 import Gif from "../assets/career.gif";
+import React from "react";
 
 export default function MobileTransform() {
   return (
@@ -68,7 +69,7 @@ export default function MobileTransform() {
               Join our team and become a part of something extraordinary. We are
               passionate about making a positive impact on the lives of
               individuals and families through Applied Behavior Analysis (ABA)
-              therapy. If you're dedicated, compassionate, and eager to
+              therapy. If you&apos;re dedicated, compassionate, and eager to
               contribute your expertise to our mission, we invite you to explore
               the rewarding career opportunities we offer.
             </p>

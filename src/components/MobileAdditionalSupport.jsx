@@ -2,6 +2,7 @@ import BG from "../assets/elipses.svg";
 import Img1 from "../assets/aba-service-1.png";
 import MobilePictureFrame from "./MobilePictureFrame";
 import Img2 from "../assets/heart.svg";
+import React from "react";
 
 export default function MobileAdditionalSupport() {
   return (

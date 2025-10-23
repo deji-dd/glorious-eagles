@@ -3,6 +3,7 @@ import logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook-footer.svg";
 import Instagram from "../assets/instagram-footer.svg";
 import Twitter from "../assets/twitter-footer.svg";
+import React from "react";
 
 export default function Footer() {
   const link_style = {

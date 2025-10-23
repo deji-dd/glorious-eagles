@@ -1,5 +1,6 @@
 import Img from "../assets/member.svg";
 import MobilePeopleCard from "./MobilePeopleCard";
+import React from "react";
 
 export default function MobilePeople() {
   return (

@@ -1,6 +1,7 @@
 import WorkImg from "../assets/work-img.svg";
 import Line from "../assets/work-line.svg";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import React from "react";
 
 export default function MobileWork() {
   const h3_style = {

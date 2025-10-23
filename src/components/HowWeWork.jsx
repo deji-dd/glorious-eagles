@@ -1,5 +1,6 @@
 import Line from "../assets/how-we-work-line.svg";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import React from "react";
 
 export default function HowWeWork() {
   const h1_style = {
@@ -78,8 +79,9 @@ export default function HowWeWork() {
         >
           Throughout the entire process, communication and collaboration between
           the therapist, client, and caregivers are essential. ABA therapy is a
-          dynamic and flexible approach that adapts to the client's changing
-          needs and focuses on achieving meaningful and lasting behavior change.
+          dynamic and flexible approach that adapts to the client&apos;s
+          changing needs and focuses on achieving meaningful and lasting
+          behavior change.
         </p>
       </div>
       <div
@@ -117,7 +119,7 @@ export default function HowWeWork() {
                 <p>
                   The process begins with an initial assessment, which includes
                   interviews, observations, and assessments to gather
-                  information about the client's behavior, strengths,
+                  information about the client&apos;s behavior, strengths,
                   weaknesses, and goals.
                 </p>
               </li>
@@ -125,7 +127,7 @@ export default function HowWeWork() {
                 <p>
                   The therapist may also consult with caregivers, teachers, and
                   other professionals to gain a comprehensive understanding of
-                  the client's needs.
+                  the client&apos;s needs.
                 </p>
               </li>
             </ul>
@@ -165,7 +167,7 @@ export default function HowWeWork() {
                   The therapist and client (or their caregivers) work together
                   to set clear and measurable behavioral objectives. These
                   objectives are specific, observable, and tailored to the
-                  client's needs and goals.
+                  client&apos;s needs and goals.
                 </p>
               </li>
             </ul>
@@ -204,7 +206,7 @@ export default function HowWeWork() {
               <li style={li_style}>
                 <p>
                   During therapy sessions, the therapist collects data on the
-                  client's behavior. This data is used to monitor progress,
+                  client&apos;s behavior. This data is used to monitor progress,
                   evaluate the effectiveness of interventions, and make
                   necessary adjustments to the plan.
                 </p>
@@ -244,7 +246,7 @@ export default function HowWeWork() {
               <li style={{ ...li_style, marginBottom: "2rem" }}>
                 <p>
                   ABA therapy is highly individualized, and the therapist
-                  continuously assesses the client's progress and adjusts
+                  continuously assesses the client&apos;s progress and adjusts
                   interventions accordingly.
                 </p>
               </li>
@@ -329,7 +331,7 @@ export default function HowWeWork() {
               <li style={li_style}>
                 <p>
                   Progress is regularly reviewed with caregivers, and reports on
-                  the client's achievements and areas for improvement are
+                  the client&apos;s achievements and areas for improvement are
                   shared. Adjustments to the treatment plan are made as needed.
                 </p>
               </li>

@@ -5,6 +5,7 @@ import ContactCard from "../../components/ContactCard";
 import ServicesOffer from "../../components/ServicesOffer";
 import Arrow from "../../assets/arrow.svg";
 import { useRef, useEffect } from "react";
+import React from "react";
 
 export default function Services() {
   const ref1 = useRef(null);

@@ -11,6 +11,7 @@ import { processFormData } from "../../../functions/emails";
 import { Loader2 } from "lucide-react"; // Import the Loader from Luicide (or similar package)
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import React from "react";
 
 export default function IntakeForm() {
   const [steps, setSteps] = useState([
@@ -122,7 +123,7 @@ export default function IntakeForm() {
 
     // Find the first invalid input
     const firstInvalidInput = requiredInputs.find(
-      (input) => !input.checkValidity(),
+      (input) => !input.checkValidity()
     );
 
     if (firstInvalidInput) {
@@ -159,12 +160,12 @@ export default function IntakeForm() {
 
     const requiredFiles = ["insuranceCard", "wellChild"];
     const missingFile = requiredFiles.find(
-      (field) => !formData[field] || formData[field].length === 0,
+      (field) => !formData[field] || formData[field].length === 0
     );
 
     if (missingFile) {
       alert(
-        `Please upload the required file: ${missingFile === "insuranceCard" ? "Insurance Card" : missingFile === "wellChild" ? "Well Child Check-up" : "IEP"}`,
+        `Please upload the required file: ${missingFile === "insuranceCard" ? "Insurance Card" : missingFile === "wellChild" ? "Well Child Check-up" : "IEP"}`
       );
       setIsLoading(false);
       return;
@@ -193,12 +194,12 @@ export default function IntakeForm() {
 
       if (data.warning) {
         alert(
-          "Application sent! (Though receipt confirmation may not have been delivered)",
+          "Application sent! (Though receipt confirmation may not have been delivered)"
         );
         window.location.reload();
       } else {
         alert(
-          "Application sent successfully! Check your email for confirmation.",
+          "Application sent successfully! Check your email for confirmation."
         );
         window.location.reload();
       }
@@ -343,7 +344,7 @@ export default function IntakeForm() {
                     className={cn(
                       "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-11 w-full min-w-0 border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
                       "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-                      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+                      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                       // Keeping any additional classes
                     )}
                     required={isFieldRequired("dateOfBirth")}
@@ -387,7 +388,7 @@ export default function IntakeForm() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g clip-path="url(#clip0_611_558)">
+                        <g clipPath="url(#clip0_611_558)">
                           <path
                             d="M12.3892 24.1681C19.0166 24.1681 24.3892 18.7955 24.3892 12.1681C24.3892 5.54067 19.0166 0.168091 12.3892 0.168091C5.76174 0.168091 0.38916 5.54067 0.38916 12.1681C0.38916 18.7955 5.76174 24.1681 12.3892 24.1681Z"
                             fill="#F0F0F0"
@@ -474,7 +475,7 @@ export default function IntakeForm() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g clip-path="url(#clip0_611_558)">
+                        <g clipPath="url(#clip0_611_558)">
                           <path
                             d="M12.3892 24.1681C19.0166 24.1681 24.3892 18.7955 24.3892 12.1681C24.3892 5.54067 19.0166 0.168091 12.3892 0.168091C5.76174 0.168091 0.38916 5.54067 0.38916 12.1681C0.38916 18.7955 5.76174 24.1681 12.3892 24.1681Z"
                             fill="#F0F0F0"
@@ -1046,7 +1047,7 @@ export default function IntakeForm() {
                       className="mt-1"
                       type="text"
                       required={isFieldRequired(
-                        "authorizedRepresentativePhone",
+                        "authorizedRepresentativePhone"
                       )}
                     />
                   </div>
@@ -1062,7 +1063,7 @@ export default function IntakeForm() {
                       className="mt-1"
                       type="text"
                       required={isFieldRequired(
-                        "authorizedRepresentativeAddress",
+                        "authorizedRepresentativeAddress"
                       )}
                     />
                   </div>
@@ -1248,7 +1249,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalName",
+                              "primaryProfessionalName"
                             )}
                           />
                         </div>
@@ -1264,7 +1265,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalPhone",
+                              "primaryProfessionalPhone"
                             )}
                           />
                         </div>
@@ -1280,7 +1281,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalAddress",
+                              "primaryProfessionalAddress"
                             )}
                           />
                         </div>
@@ -1390,7 +1391,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "otherProfessionalAddress",
+                              "otherProfessionalAddress"
                             )}
                           />
                         </div>
@@ -1751,7 +1752,7 @@ export default function IntakeForm() {
                           "absolute top-4 md:top-5 left-1/2 w-full h-0.5 border-t-2 border-dashed",
                           step.status === "complete"
                             ? "border-[#10b981]"
-                            : "border-[#e2e8f0]",
+                            : "border-[#e2e8f0]"
                         )}
                         aria-hidden="true"
                       />
@@ -1769,7 +1770,7 @@ export default function IntakeForm() {
                               step.status === "complete",
                             "border-[#e2e8f0] text-[#94A3B8]":
                               step.status === "upcoming",
-                          },
+                          }
                         )}
                       >
                         {step.status === "complete" ? (
@@ -1787,7 +1788,7 @@ export default function IntakeForm() {
                         {
                           "text-[#64748B]": step.status !== "complete",
                           "text-[#10b981]": step.status === "complete",
-                        },
+                        }
                       )}
                     >
                       {step.name}

@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
+
 export const ApplicationTemplate = ({ data, attachments }) => {
 	const renderValue = (value) => {
 		if (Array.isArray(value)) {
@@ -20,7 +23,6 @@ export const ApplicationTemplate = ({ data, attachments }) => {
 			<ul style={{ paddingLeft: '20px' }}>
 				{attachments.map((att, idx) => {
 					// If the attachment is a ZIP, we will show the number of files inside it
-					const isZip = att.filename?.endsWith('.zip') || att.originalCount > 1;
 					return (
 						<li key={att.content_id || idx} style={{ marginBottom: '6px' }}>
 							{att.filename}

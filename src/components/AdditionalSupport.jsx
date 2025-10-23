@@ -3,6 +3,7 @@ import PictureFrame from "./PictureFrame";
 import Img1 from "../assets/additional-support-1.png";
 import Img2 from "../assets/additional-support-2.png";
 import Img3 from "../assets/heart.svg";
+import React from "react";
 
 export default function AdditionalSupport() {
   return (

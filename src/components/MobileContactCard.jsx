@@ -1,4 +1,5 @@
 import Gif from "../assets/contact.gif";
+import React from "react";
 
 export default function MobileContactCard() {
   return (
@@ -42,10 +43,10 @@ export default function MobileContactCard() {
             textAlign: "center",
           }}
         >
-          We're here to assist you on your journey towards positive change. If
-          you have questions, would like to schedule an appointment, or need
-          more information about our services, please don't hesitate to reach
-          out.
+          We&apos;re here to assist you on your journey towards positive change.
+          If you have questions, would like to schedule an appointment, or need
+          more information about our services, please don&apos;t hesitate to
+          reach out.
         </p>
       </div>
       <a href={"/contact-us"}>

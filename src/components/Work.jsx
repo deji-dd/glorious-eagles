@@ -2,6 +2,7 @@ import BG from "../assets/elipses.svg";
 import WorkImg from "../assets/work-img.svg";
 import Line from "../assets/work-line.svg";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import React from "react";
 
 export default function Work() {
   const h3_style = {
@@ -100,7 +101,7 @@ export default function Work() {
                   position: "relative",
                   top: "7.5rem",
                 }}
-                class={"button-p"}
+                className={"button-p"}
               >
                 Learn more
               </button>

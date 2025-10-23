@@ -5,6 +5,7 @@ import Essential3 from "../assets/essential3.svg";
 import Essential5 from "../assets/essential5.svg";
 import Essential7 from "../assets/essential7.svg";
 import Essential8 from "../assets/essential8.svg";
+import React from "react";
 
 export default function MobileEssentials() {
   const div_style = {

@@ -1,6 +1,7 @@
 import BG from "../assets/services-purple-bg.svg";
 import Img from "../assets/member.svg";
 import PeopleCard from "./PeopleCard";
+import React from "react";
 
 export default function People() {
   return (

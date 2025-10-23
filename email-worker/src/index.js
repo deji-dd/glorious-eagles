@@ -1,6 +1,8 @@
 import { Resend } from 'resend';
 import { ApplicationTemplate } from './emails/ApplicationTemplate';
 import { ConfirmationTemplate } from './emails/ConfirmationTemplate';
+import React from 'react';
+
 
 const CORS = {
 	'Access-Control-Allow-Origin': 'https://gloriouseagles.com',

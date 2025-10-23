@@ -1,6 +1,7 @@
 import AdressIcon from "../assets/address-icon.svg";
 import EmailIcon from "../assets/email-icon.svg";
 import CallIcon from "../assets/call-icon.svg";
+import React from "react";
 
 export default function MobileContacts() {
   const h3_style = {
@@ -27,7 +28,6 @@ export default function MobileContacts() {
     width: "26rem",
   };
   const h3_small = { ...h3_style, lineHeight: "2.94025rem" };
-  const p_small = { ...p_style, fontSize: "2.25rem", lineHeight: "2.94025rem" };
   return (
     <div
       style={{
@@ -44,7 +44,7 @@ export default function MobileContacts() {
         <img src={AdressIcon} />
         <h3 style={h3_style}>Address</h3>
         <p style={p_style}>
-           1865 132nd LN NW Coon Rapids MN 55448.
+          1865 132nd LN NW Coon Rapids MN 55448.
           <br />
           <br />
           MN DHS Licensed Early Intensive Developmental and Behavioral

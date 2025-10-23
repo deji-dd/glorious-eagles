@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FolderIcon, XCircle, CheckCircle2 } from "lucide-react";
+import React from "react";
 
 export function FileUpload({
   title,

@@ -6,6 +6,7 @@ import Choose3 from "../assets/choose3.svg";
 import Choose4 from "../assets/choose4.svg";
 import Choose5 from "../assets/choose5.svg";
 import ChooseCardBig from "./ChooseCardBig";
+import React from "react";
 
 export default function Choose() {
   return (

@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import React from "react";
+
 export default function EssentialsCard(props) {
   return (
     <a href={"/services"}>

@@ -5,6 +5,7 @@ import Img3 from "../assets/aba-therapy-3.png";
 import Img4 from "../assets/aba-therapy-4.png";
 import Img5 from "../assets/aba-therapy-5.png";
 import Img6 from "../assets/aba-therapy-6.png";
+import React from "react";
 
 export default function MobileAbaServices() {
   return (

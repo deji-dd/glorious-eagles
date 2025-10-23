@@ -2,6 +2,7 @@ import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
+import React from "react";
 
 export default function MobileContactForm() {
   let [formStyleOne, setFormOneStyle] = useState(false);
@@ -83,7 +84,7 @@ export default function MobileContactForm() {
             width: "25.56224rem",
           }}
         >
-          You can contact us by filling the form provided below, and we'll
+          You can contact us by filling the form provided below, and we&apos;ll
           respond promptly to assist you
         </p>
       </div>

@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
 // ConfirmationTemplate.jsx
+import React from 'react';
+
 export const ConfirmationTemplate = ({ data, attachments }) => {
 	// Filter sensitive fields
 	const fieldLabels = {
@@ -109,7 +112,6 @@ export const ConfirmationTemplate = ({ data, attachments }) => {
 			<ul style={{ paddingLeft: '20px' }}>
 				{attachments.map((att, idx) => {
 					// If the attachment is a ZIP, we will show the number of files inside it
-					const isZip = att.filename?.endsWith('.zip') || att.originalCount > 1;
 					return (
 						<li key={att.content_id || idx} style={{ marginBottom: '6px' }}>
 							{att.filename}
@@ -130,7 +132,7 @@ export const ConfirmationTemplate = ({ data, attachments }) => {
 			}}
 		>
 			<h1 style={{ color: '#2c3e50' }}>Application Received</h1>
-			<p>Thank you for submitting your application to Glorious Eagles. Here's a summary:</p>
+			<p>Thank you for submitting your application to Glorious Eagles. Here&apos;s a summary:</p>
 
 			<div
 				style={{
@@ -163,7 +165,7 @@ export const ConfirmationTemplate = ({ data, attachments }) => {
 				))}
 			</div>
 			{renderAttachments}
-			<p style={{ marginTop: '25px', color: '#7f8c8d' }}>We'll review your application and contact you within 5-7 business days.</p>
+			<p style={{ marginTop: '25px', color: '#7f8c8d' }}>We&apos;ll review your application and contact you within 5-7 business days.</p>
 		</div>
 	);
 };

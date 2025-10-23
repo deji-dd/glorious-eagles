@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import Clipboard from "../assets/clipboard.svg";
 import Puzzle from "../assets/puzzle.svg";
 import Heart from "../assets/heart.svg";
 import { useState } from "react";
+import React from "react";
 
 export default function ServicesOffer(props) {
   const [selected, setSelected] = useState(0);

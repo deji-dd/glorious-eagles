@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import Arrow from "../assets/down-arrow.svg";
 import Img1 from "../assets/experts1.svg";
 import Img2 from "../assets/experts2.svg";
+import React from "react";
 
 export default function MobileExperts(props) {
   return (

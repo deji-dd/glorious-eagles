@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 import UploadIcon from "../assets/upload-icon.svg";
 import { CircularProgress } from "@mui/material";
+import React from "react";
 
 export default function FileUploader(props) {
   let [name, setName] = useState("Upload");

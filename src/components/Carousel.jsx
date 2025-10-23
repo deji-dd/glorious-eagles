@@ -1,4 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from "react";
+import React from "react";
 
 /**
  * Carousel
