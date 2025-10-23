@@ -34,7 +34,7 @@ export default function Caring() {
         services designed to support individuals and families in achieving
         emotional balance, confidence, and independence.
       </p>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         <div className="bg-[#190244] rounded-[3rem] py-7 px-12 text-white flex flex-col">
           <h4 className="text-white">Mental Health Services</h4>
           <p className="mt-4">
@@ -54,7 +54,7 @@ export default function Caring() {
             <br />
             <div className="grid grid-cols-2">
               <div>
-                Our Services Include:
+                <strong>Our Services Include:</strong>
                 <div className="gap-2 ps-4 flex flex-col mt-3">
                   <li>Psychotherapy</li>
                   <li>Counselling</li>
@@ -62,9 +62,11 @@ export default function Caring() {
                   <li>Family & Marriage Counselling</li>
                   <li>Mental Health Therapy</li>
                 </div>
-                <button className="button-s mt-5 text-white border-white">
-                  Learn More
-                </button>
+                <a href="/services">
+                  <button className="button-s mt-5 text-white border-white">
+                    Learn More
+                  </button>
+                </a>
               </div>
               <img
                 className="self-end me-0 ms-auto"
@@ -94,7 +96,7 @@ export default function Caring() {
             <br />
             <div className="grid grid-cols-2">
               <div>
-                We help with:
+                <strong>We help with:</strong>
                 <div className="gap-2 ps-4 flex flex-col mt-3">
                   <li>Language & Communication Skills</li>
                   <li>Functional Living Skills</li>
@@ -103,9 +105,11 @@ export default function Caring() {
                   <li>Parent & Caregiver Training</li>
                   <li>Social Skills & Play</li>
                 </div>
-                <button className="button-s mt-5 border-[#180344]">
-                  Learn More
-                </button>
+                <a href="/services">
+                  <button className="button-s mt-5 border-[#180344]">
+                    Learn More
+                  </button>
+                </a>
               </div>
               <img
                 className="self-end me-0 ms-auto"

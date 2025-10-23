@@ -5,6 +5,7 @@ import MobileEssentials from "../../components/MobileEssentials";
 import MobileOffer from "../../components/MobileOffer";
 import MobileWork from "../../components/MobileWork";
 import React from "react";
+import MobileCaring from "@/components/MobileCaring";
 
 export default function MobileHome() {
   useEffect(() => {
@@ -14,6 +15,7 @@ export default function MobileHome() {
   return (
     <>
       <MobileUnlocking />
+      <MobileCaring />
       <MobileDifferent />
       <MobileEssentials />
       <MobileOffer />
