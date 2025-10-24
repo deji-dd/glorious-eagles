@@ -3,7 +3,7 @@ import React from "react";
 
 export default function MentalHealthServicesCard({ img, title, desc }) {
   return (
-    <div className="flex flex-col w-full gap-3 px-12">
+    <div className="flex flex-col w-full gap-3">
       <div
         style={{ backgroundImage: `url(${img})` }}
         className="w-full bg-black/40 bg-blend-multiply bg-cover bg-center h-[20rem] rounded-2xl flex items-end px-3"

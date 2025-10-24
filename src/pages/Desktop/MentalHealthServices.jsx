@@ -64,7 +64,7 @@ export default function MentalHealthServices() {
           </p>
         </div>
       </div>
-      <div className="mt-5 mb-24 grid gap-y-24 grid-cols-2">
+      <div className="mt-5 mb-24 grid gap-y-24 px-12 grid-cols-2">
         <MentalHealthServicesCard
           img={one}
           title={"Psychotherapy"}
