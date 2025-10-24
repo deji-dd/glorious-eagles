@@ -103,7 +103,7 @@ export default function Footer() {
             gap: "15.3125rem",
           }}
         >
-          <a href={"/contact-us"}>
+          <a className="self-start" href={"/contact-us"}>
             <button
               className={"button-p"}
               style={{ background: "rgba(224, 211, 250, 0.50)", color: "#FFF" }}
@@ -115,13 +115,19 @@ export default function Footer() {
             style={{
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
               gap: "2.5rem",
             }}
           >
             <p style={link_style}>info@gloriouseagles.com</p>
-            <p style={link_style}>+1 952-2209-361</p>
+            <div className="flex self-start flex-col gap-3">
+              <p style={link_style}>+1 651-263-6291</p>
+              <p style={link_style}>+1 651-263-79270</p>
+              <p style={link_style}>9522209361</p>
+              <p style={link_style}>Fax: 2185933191</p>
+            </div>
+
             <div
+              className="self-start"
               style={{
                 display: "flex",
                 justifyContent: "center",
