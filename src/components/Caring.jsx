@@ -62,7 +62,7 @@ export default function Caring() {
                   <li>Family & Marriage Counselling</li>
                   <li>Mental Health Therapy</li>
                 </div>
-                <a href="/services">
+                <a href="/mental-health-services">
                   <button className="button-s mt-5 text-white border-white">
                     Learn More
                   </button>

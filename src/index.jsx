@@ -19,6 +19,9 @@ const How = lazy(() => import("./pages/Desktop/How.jsx"));
 const ContactUs = lazy(() => import("./pages/Desktop/ContactUs.jsx"));
 const Career = lazy(() => import("./pages/Desktop/Career.jsx"));
 const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
+const MentalHealthServices = lazy(
+  () => import("./pages/Desktop/MentalHealthServices.jsx")
+);
 
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
@@ -61,6 +64,10 @@ export function App() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/career" element={<Career />} />
               <Route path="/intake-form" element={<IntakeForm />} />
+              <Route
+                path="/mental-health-services"
+                element={<MentalHealthServices />}
+              />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>

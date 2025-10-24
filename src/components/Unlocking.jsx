@@ -9,10 +9,10 @@ import React from "react";
 export default function Unlocking() {
   return (
     <div
+      className="pt-[5rem] pb-[10rem]"
       style={{
         maxWidth: "90rem",
         width: "100%",
-        height: "60rem",
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
