@@ -239,9 +239,15 @@ export default function MobileHeader() {
                         <img style={img_style} src={MailIcon} />
                         <p>info@gloriouseagles.com</p>
                       </div>
-                      <div style={div_style}>
-                        <img style={img_style} src={CallIcon} />
-                        <p>+1 952-2209-361</p>
+                      <div className="flex gap-4">
+                        <div style={div_style}>
+                          <img style={img_style} src={CallIcon} />
+                          <p>+1 651-263-6291</p>
+                        </div>
+                        <div style={div_style}>
+                          <img style={img_style} src={CallIcon} />
+                          <p>+1 651-263-79270</p>
+                        </div>
                       </div>
                       <div style={div_style}>
                         <svg
@@ -256,7 +262,7 @@ export default function MobileHeader() {
                           <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
                           <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
                         </svg>
-                        <p>218 5933 191</p>
+                        <p>2185933191</p>
                       </div>
                       <div
                         style={{

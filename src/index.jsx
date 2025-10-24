@@ -32,6 +32,9 @@ const MobileContactUs = lazy(
 const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
 const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));
 const MobileCareer = lazy(() => import("./pages/Mobile/MobileCareer.jsx"));
+const MobileMentalHealthServices = lazy(
+  () => import("./pages/Mobile/MobileMentalHealthServices.jsx")
+);
 
 import "./style.css";
 
@@ -86,6 +89,10 @@ export function App() {
               <Route path="/career" element={<MobileCareer />} />
               <Route path="*" element={<MobileHome />} />
               <Route path="/intake-form" element={<IntakeForm />} />
+              <Route
+                path="/mental-health-services"
+                element={<MobileMentalHealthServices />}
+              />
             </Routes>
           </main>
           <MobileFooter />
