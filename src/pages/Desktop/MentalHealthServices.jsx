@@ -1,7 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import BG from "../../assets/elipses.svg";
-import one from "../../assets/mental-health-services-1.jpg";
+import one from "../../assets/mhs-1.jpg";
+import six from "../../assets/mhs-6.png";
+import two from "../../assets/mhs-2.jpg";
+import three from "../../assets/mhs-3.jpg";
+import four from "../../assets/mhs-4.jpg";
+import MentalHealthServicesCard from "@/components/MentalHealthServicesCard";
+import Journey from "@/components/Journey";
 
 export default function MentalHealthServices() {
   useEffect(() => {
@@ -58,14 +64,51 @@ export default function MentalHealthServices() {
           </p>
         </div>
       </div>
-      <div className="mt-5 grid w-full h-full grid-cols-2">
-        <div className="flex w-full h-full flex-col gap-3">
-          <div
-            className="w-[40rem]"
-            style={{ background: `url(${one}) 40rem 10rem no-repeat` }}
-          ></div>
-        </div>
+      <div className="mt-5 mb-24 grid gap-y-24 grid-cols-2">
+        <MentalHealthServicesCard
+          img={one}
+          title={"Psychotherapy"}
+          desc={
+            "Personalized one-on-one sessions to help manage anxiety, depression, and life transitions. A safe, judgment-free space to heal and grow at your pace."
+          }
+        />
+        <MentalHealthServicesCard
+          img={two}
+          title={"Counseling"}
+          desc={
+            "Gentle, confidential conversations to explore emotions and challenges. We help you find clarity, confidence, and calm in your everyday life."
+          }
+        />
+        <MentalHealthServicesCard
+          img={three}
+          title={"Medication Management"}
+          desc={
+            "Professional support for clients who may benefit from medication as part of care. We ensure safe, informed decisions and consistent follow-up."
+          }
+        />
+        <MentalHealthServicesCard
+          img={four}
+          title={"Family & Marriage Counselling"}
+          desc={
+            "Guided sessions that rebuild trust and strengthen communication. We help families and couples reconnect and create harmony at home."
+          }
+        />
+        <MentalHealthServicesCard
+          img={three}
+          title={"Stress Management"}
+          desc={
+            "Learn effective techniques to manage daily work stressors, enhancing your overall well-being, work productivity, and mental resilience."
+          }
+        />
+        <MentalHealthServicesCard
+          img={six}
+          title={"Grief & Loss"}
+          desc={
+            "Our therapists provide compassionate care to help you navigate the challenging journey of grief and loss of loved ones in your life."
+          }
+        />
       </div>
+      <Journey />
     </div>
   );
 }
