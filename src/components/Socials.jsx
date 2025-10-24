@@ -23,7 +23,7 @@ export default function Socials() {
         justifyContent: "center",
         alignItems: "center",
         flexShrink: "0",
-        gap: "10.12rem",
+        gap: "3.5rem",
         position: "relative",
         // top: "85px",
         width: "100%",
@@ -77,8 +77,12 @@ export default function Socials() {
             fill="white"
           />
         </svg>
-
-        <p>+1 612-4566-090</p>
+        <div className="flex gap-3">
+          <p>+1 651-263-6291</p>
+          <p>+1 651-263-79270</p>
+          <p>9522209361</p>
+          <p>Fax: 2185933191</p>
+        </div>
       </div>
       <div
         style={{
