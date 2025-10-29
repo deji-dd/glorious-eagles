@@ -59,19 +59,47 @@ export default function MobileJourney() {
               fontSize: "0.95rem",
             }}
           >
-            <a
-              href="tel:+16124566090"
-              style={{
-                color: "#FFFFFF",
-                textDecoration: "none",
-                display: "inline-flex",
-                gap: "0.5rem",
-                alignItems: "center",
-              }}
-            >
-              <span>📞</span>
-              <span>Call Us: +1 612-4566-090</span>
-            </a>
+            <div className="flex gap-2">
+              <span>📞 Call Us: </span>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="tel:+16124566090"
+                  style={{
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    gap: "0.5rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>+1 612-4566-090</span>
+                </a>
+                <a
+                  href="tel:6512637927"
+                  style={{
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    gap: "0.5rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>651-263-7927</span>
+                </a>
+                <a
+                  href="tel:9522209361"
+                  style={{
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    gap: "0.5rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>9522209361</span>
+                </a>
+              </div>
+            </div>
 
             <a
               href="mailto:info@gloeiouseagles.com"

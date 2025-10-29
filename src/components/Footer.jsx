@@ -119,11 +119,10 @@ export default function Footer() {
             }}
           >
             <p style={link_style}>info@gloriouseagles.com</p>
-            <div className="flex self-start flex-col gap-3">
+            <div className="flex text-right self-start flex-col gap-3">
               <p style={link_style}>+1 651-263-6291</p>
-              <p style={link_style}>+1 651-263-79270</p>
+              <p style={link_style}>651-263-7927</p>
               <p style={link_style}>9522209361</p>
-              <p style={link_style}>Fax: 2185933191</p>
             </div>
 
             <div

@@ -11,7 +11,15 @@ export default function Journey() {
             Whether you&apos;re seeking help for yourself, your child, or your
             family, we&apos;re here to support you.
           </p>
-          <p className="mt-4">📞 Call Us: +1 612-4566-090</p>
+          <div className="flex mt-4 gap-2">
+            <p className="">📞 Call Us: </p>
+            <div className="flex gap-2 flex-col">
+              <p>+1 612-4566-090</p>
+              <p>651-263-7927</p>
+              <p>9522209361</p>
+            </div>
+          </div>
+
           <p className="mt-3">📧 Email: info@gloeiouseagles.com</p>
           <p className="mt-3">
             📍 Visit Us: 1865 132nd NW Coon Rapids MN 55448
