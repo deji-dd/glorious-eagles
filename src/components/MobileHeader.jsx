@@ -50,14 +50,7 @@ export default function MobileHeader() {
         zIndex: "50",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "9.44rem",
-        }}
-      >
+      <div className="flex justify-center items-center gap-28">
         <a
           href={"/"}
           style={{
@@ -79,10 +72,10 @@ export default function MobileHeader() {
             GLORIOUS EAGLES
           </h1>
         </a>
-        <div style={{ display: "flex", gap: "1.6rem" }} className="w-fit">
+        <div className="w-fit flex gap-x-6">
           <a href={"/intake-form"}>
             <button className="button-s button-mobile w-fit whitespace-nowrap bg-white text-[#180344]">
-              Get started
+              EIDBI Intake Form
             </button>
           </a>
           <nav className="navbar navbar-dark p-0">

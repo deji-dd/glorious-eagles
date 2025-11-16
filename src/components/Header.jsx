@@ -122,7 +122,7 @@ export default function Header() {
               }}
               className={"button-s"}
             >
-              Get started
+              EIDBI Intake Form
             </button>
           </a>
         </div>

@@ -81,6 +81,14 @@ export default function MobileFooter() {
           <a href={"/career"} style={link_style}>
             Career
           </a>
+          <a
+            href="/files/privacy-policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={link_style}
+          >
+            Privacy Policy
+          </a>
         </div>
         <a href={"/contact-us"}>
           <button
@@ -104,7 +112,7 @@ export default function MobileFooter() {
         </div>
         <div style={div_style}>
           <img style={img_style} src={CallIcon} />
-          <p style={p_style}>9522209361w</p>
+          <p style={p_style}>9522209361</p>
         </div>
         <div
           style={{
