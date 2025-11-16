@@ -104,7 +104,7 @@ export default function MobileFooter() {
         </div>
         <div style={div_style}>
           <img style={img_style} src={CallIcon} />
-          <p style={p_style}>9522209361</p>
+          <p style={p_style}>9522209361w</p>
         </div>
         <div
           style={{

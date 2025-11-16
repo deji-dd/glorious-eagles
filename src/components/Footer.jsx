@@ -118,7 +118,18 @@ export default function Footer() {
               gap: "2.5rem",
             }}
           >
-            <p style={link_style}>info@gloriouseagles.com</p>
+            <div className="flex flex-col gap-3">
+              <p style={link_style}>info@gloriouseagles.com</p>
+              <a
+                href="/files/privacy-policy.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={link_style}
+              >
+                Privacy Policy
+              </a>
+            </div>
+
             <div className="flex text-right self-start flex-col gap-3">
               <p style={link_style}>+1 651-263-6291</p>
               <p style={link_style}>651-263-7927</p>
