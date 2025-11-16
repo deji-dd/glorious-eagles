@@ -37,12 +37,11 @@ export default function Caring() {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         <div className="bg-[#190244] rounded-[3rem] py-7 px-12 text-white flex flex-col">
           <h4 className="text-white">Mental Health Services</h4>
-          <p className="mt-4">
+          <p className="mt-4 leading-6">
             Life can feel overwhelming sometimes but you don&apos;t have to face
             it alone. Our compassionate therapists and counsellors walk beside
             you every step of the way, helping you find balance, healing, and
             hope.
-            <br />
             <br />
             <br />
             <br />
@@ -79,11 +78,10 @@ export default function Caring() {
         </div>
         <div className="bg-[#FB8E51] rounded-[3rem] py-7 px-12 text-[#180344] flex flex-col">
           <h4>ABA Therapy Services</h4>
-          <p className="mt-4">
+          <p className="mt-4 leading-6">
             Every child is full of potential. Our ABA (Applied Behaviour
             Analysis) programs are designed to nurture that potential in
             children and young adults ages 2-21.
-            <br />
             <br />
             <br />
             <br />
