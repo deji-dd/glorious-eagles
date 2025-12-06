@@ -121,7 +121,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <p style={link_style}>info@gloriouseagles.com</p>
               <a
-                href="/files/privacy-policy.pdf"
+                href="/privacy-policy.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={link_style}
