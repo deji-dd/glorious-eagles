@@ -49,6 +49,14 @@ export default function MobileJourney() {
             Whether you&apos;re seeking help for yourself, your child, or your
             family, we&apos;re here to support you.
           </p>
+          <div className="flex gap-1 mt-7"><span>📍</span>
+            <div className="flex flex-col gap-2"> <span style={{ color: "rgba(255,255,255,0.92)" }}>
+              1865 132nd NW Coon Rapids MN 55448
+            </span>
+            <span style={{ color: "rgba(255,255,255,0.92)" }}>
+              104 6th Ave s. Princeton MN 55371
+            </span></div>
+         </div>
 
           <div
             className="mt-7"
@@ -58,10 +66,7 @@ export default function MobileJourney() {
               alignItems: "center",
             }}
           >
-            <span>📍</span>
-            <span style={{ color: "rgba(255,255,255,0.92)" }}>
-              1865 132nd NW Coon Rapids MN 55448
-            </span>
+
           </div>
         </div>
       </div>

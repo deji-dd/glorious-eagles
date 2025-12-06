@@ -11,7 +11,13 @@ export default function Journey() {
             Whether you&apos;re seeking help for yourself, your child, or your
             family, we&apos;re here to support you.
           </p>
-          <p className="">📍 Visit Us: 1865 132nd NW Coon Rapids MN 55448</p>
+          <div className="flex gap-3">
+            <p>📍 Visit Us:</p>
+            <div className="flex flex-col gap-3"> <p> 1865 132nd NW Coon Rapids MN 55448</p>
+            <p>104 6th Ave s. Princeton MN 55371</p></div>
+          </div>
+
+
         </div>
         <img className="me-0 ms-auto" width={"80%"} src={journeyBG} alt="" />
       </div>
