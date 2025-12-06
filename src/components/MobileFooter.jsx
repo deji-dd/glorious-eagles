@@ -82,7 +82,7 @@ export default function MobileFooter() {
             Career
           </a>
           <a
-            href="/files/privacy-policy.pdf"
+            href="/privacy-policy.pdf"
             target="_blank"
             rel="noopener noreferrer"
             style={link_style}
