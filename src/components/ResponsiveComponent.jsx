@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from "react";
+import React from "react";
 
 export default function ResponsiveComponent({
   desktop: DesktopComponent,
