@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, useEffect, useState, useRef, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import "./style.css";
 import React from "react";
 
@@ -40,26 +40,21 @@ import "./style.css";
 
 import ResponsiveComponent from "./components/ResponsiveComponent.jsx";
 
+import {
+  ResponsiveProvider,
+  useResponsive,
+} from "./contexts/ResponsiveContext.jsx";
+
 export function App() {
-  const [size, setSize] = useState(window.innerWidth);
-  const timeoutRef = useRef(null);
+  return (
+    <ResponsiveProvider>
+      <AppContent />
+    </ResponsiveProvider>
+  );
+}
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = setTimeout(() => {
-        setSize(window.innerWidth);
-      }, 200);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  const isDesktop = size > 500;
+function AppContent() {
+  const { isDesktop } = useResponsive();
 
   return (
     <BrowserRouter>

@@ -1,29 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useResponsive } from "../contexts/ResponsiveContext.jsx";
+import React from "react";
 
 export default function ResponsiveComponent({
   desktop: DesktopComponent,
   mobile: MobileComponent,
 }) {
-  const [isDesktop, setIsDesktop] = useState(
-    typeof window !== "undefined" ? window.innerWidth > 500 : true
-  );
-
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = setTimeout(() => {
-        setIsDesktop(window.innerWidth > 500);
-      }, 200);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+  const { isDesktop } = useResponsive();
 
   return isDesktop ? <DesktopComponent /> : <MobileComponent />;
 }
