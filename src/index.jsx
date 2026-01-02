@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, useEffect, useState, useRef, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import "./style.css";
 import React from "react";
 
@@ -38,81 +38,100 @@ const MobileMentalHealthServices = lazy(
 
 import "./style.css";
 
+import ResponsiveComponent from "./components/ResponsiveComponent.jsx";
+
+import {
+  ResponsiveProvider,
+  useResponsive,
+} from "./contexts/ResponsiveContext.jsx";
+
 export function App() {
-  const [size, setSize] = useState(window.innerWidth);
+  return (
+    <ResponsiveProvider>
+      <AppContent />
+    </ResponsiveProvider>
+  );
+}
 
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = setTimeout(() => {
-        setSize(window.innerWidth);
-      }, 200);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+function AppContent() {
+  const { isDesktop } = useResponsive();
 
   return (
     <BrowserRouter>
-      {size > 500 ? (
-        <>
-          <Socials />
-          <Header />
-          <main
-            style={{
-              maxWidth: "90rem",
-              width: "100%",
-            }}
-          >
-            <Suspense fallback={<div className="loading">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about-us" element={<About />} />
-                <Route path="/how-we-work" element={<How />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/career" element={<Career />} />
-                <Route path="/intake-form" element={<IntakeForm />} />
-                <Route
-                  path="/mental-health-services"
-                  element={<MentalHealthServices />}
+      {isDesktop ? <Socials /> : null}
+      <ResponsiveComponent desktop={Header} mobile={MobileHeader} />
+      <main
+        style={
+          isDesktop
+            ? {
+                maxWidth: "90rem",
+                width: "100%",
+              }
+            : { paddingTop: "5rem", width: "30rem" }
+        }
+      >
+        <Suspense fallback={<div className="loading">Loading...</div>}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ResponsiveComponent desktop={Home} mobile={MobileHome} />
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <ResponsiveComponent
+                  desktop={Services}
+                  mobile={MobileServices}
                 />
-                <Route path="*" element={<Home />} />
-              </Routes>
-            </Suspense>
-          </main>
-          <Footer />
-        </>
-      ) : (
-        <>
-          <MobileHeader />
-          <main style={{ paddingTop: "5rem", width: "30rem" }}>
-            <Suspense fallback={<div className="loading">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<MobileHome />} />
-                <Route path="/about-us" element={<MobileAbout />} />
-                <Route path="/contact-us" element={<MobileContactUs />} />
-                <Route path="/how-we-work" element={<MobileHow />} />
-                <Route path="/services" element={<MobileServices />} />
-                <Route path="/career" element={<MobileCareer />} />
-                <Route path="*" element={<MobileHome />} />
-                <Route path="/intake-form" element={<IntakeForm />} />
-                <Route
-                  path="/mental-health-services"
-                  element={<MobileMentalHealthServices />}
+              }
+            />
+            <Route
+              path="/about-us"
+              element={
+                <ResponsiveComponent desktop={About} mobile={MobileAbout} />
+              }
+            />
+            <Route
+              path="/how-we-work"
+              element={<ResponsiveComponent desktop={How} mobile={MobileHow} />}
+            />
+            <Route
+              path="/contact-us"
+              element={
+                <ResponsiveComponent
+                  desktop={ContactUs}
+                  mobile={MobileContactUs}
                 />
-              </Routes>
-            </Suspense>
-          </main>
-          <MobileFooter />
-        </>
-      )}
+              }
+            />
+            <Route
+              path="/career"
+              element={
+                <ResponsiveComponent desktop={Career} mobile={MobileCareer} />
+              }
+            />
+            <Route path="/intake-form" element={<IntakeForm />} />
+            <Route
+              path="/mental-health-services"
+              element={
+                <ResponsiveComponent
+                  desktop={MentalHealthServices}
+                  mobile={MobileMentalHealthServices}
+                />
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <ResponsiveComponent desktop={Home} mobile={MobileHome} />
+              }
+            />
+          </Routes>
+        </Suspense>
+      </main>
+      <ResponsiveComponent desktop={Footer} mobile={MobileFooter} />
     </BrowserRouter>
   );
 }
