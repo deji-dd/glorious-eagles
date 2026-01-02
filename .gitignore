@@ -168,3 +168,5 @@ email-worker/wrangler.jsonc
 # Workflow
 .issues/
 .prs/
+
+bundle-report.html
