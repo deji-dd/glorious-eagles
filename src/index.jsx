@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, useEffect, useState } from "react";
+import { lazy, useEffect, useState, Suspense } from "react";
 import "./style.css";
 import React from "react";
 
@@ -59,9 +59,7 @@ export function App() {
               width: "100%",
             }}
           >
-            <React.Suspense
-              fallback={<div className="loading">Loading...</div>}
-            >
+            <Suspense fallback={<div className="loading">Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
@@ -76,7 +74,7 @@ export function App() {
                 />
                 <Route path="*" element={<Home />} />
               </Routes>
-            </React.Suspense>
+            </Suspense>
           </main>
           <Footer />
         </>
@@ -84,9 +82,7 @@ export function App() {
         <>
           <MobileHeader />
           <main style={{ paddingTop: "5rem", width: "30rem" }}>
-            <React.Suspense
-              fallback={<div className="loading">Loading...</div>}
-            >
+            <Suspense fallback={<div className="loading">Loading...</div>}>
               <Routes>
                 <Route path="/" element={<MobileHome />} />
                 <Route path="/about-us" element={<MobileAbout />} />
@@ -101,7 +97,7 @@ export function App() {
                   element={<MobileMentalHealthServices />}
                 />
               </Routes>
-            </React.Suspense>
+            </Suspense>
           </main>
           <MobileFooter />
         </>
