@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Website for the Glorious Eagles foundation",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
