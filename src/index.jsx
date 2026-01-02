@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, useEffect, useState, Suspense } from "react";
+import { lazy, useEffect, useState, useRef, Suspense } from "react";
 import "./style.css";
 import React from "react";
 
@@ -41,10 +41,21 @@ import "./style.css";
 export function App() {
   const [size, setSize] = useState(window.innerWidth);
 
+  const timeoutRef = useRef(null);
+
   useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
+    const handleResize = () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setSize(window.innerWidth);
+      }, 200);
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   return (
