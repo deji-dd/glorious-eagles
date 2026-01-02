@@ -42,9 +42,19 @@ export function App() {
   const [size, setSize] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
+    let timeoutId;
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setSize(window.innerWidth);
+      }, 200);
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
