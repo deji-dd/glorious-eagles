@@ -59,20 +59,24 @@ export function App() {
               width: "100%",
             }}
           >
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/about-us" element={<About />} />
-              <Route path="/how-we-work" element={<How />} />
-              <Route path="/contact-us" element={<ContactUs />} />
-              <Route path="/career" element={<Career />} />
-              <Route path="/intake-form" element={<IntakeForm />} />
-              <Route
-                path="/mental-health-services"
-                element={<MentalHealthServices />}
-              />
-              <Route path="*" element={<Home />} />
-            </Routes>
+            <React.Suspense
+              fallback={<div className="loading">Loading...</div>}
+            >
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/about-us" element={<About />} />
+                <Route path="/how-we-work" element={<How />} />
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/career" element={<Career />} />
+                <Route path="/intake-form" element={<IntakeForm />} />
+                <Route
+                  path="/mental-health-services"
+                  element={<MentalHealthServices />}
+                />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </React.Suspense>
           </main>
           <Footer />
         </>
@@ -80,20 +84,24 @@ export function App() {
         <>
           <MobileHeader />
           <main style={{ paddingTop: "5rem", width: "30rem" }}>
-            <Routes>
-              <Route path="/" element={<MobileHome />} />
-              <Route path="/about-us" element={<MobileAbout />} />
-              <Route path="/contact-us" element={<MobileContactUs />} />
-              <Route path="/how-we-work" element={<MobileHow />} />
-              <Route path="/services" element={<MobileServices />} />
-              <Route path="/career" element={<MobileCareer />} />
-              <Route path="*" element={<MobileHome />} />
-              <Route path="/intake-form" element={<IntakeForm />} />
-              <Route
-                path="/mental-health-services"
-                element={<MobileMentalHealthServices />}
-              />
-            </Routes>
+            <React.Suspense
+              fallback={<div className="loading">Loading...</div>}
+            >
+              <Routes>
+                <Route path="/" element={<MobileHome />} />
+                <Route path="/about-us" element={<MobileAbout />} />
+                <Route path="/contact-us" element={<MobileContactUs />} />
+                <Route path="/how-we-work" element={<MobileHow />} />
+                <Route path="/services" element={<MobileServices />} />
+                <Route path="/career" element={<MobileCareer />} />
+                <Route path="*" element={<MobileHome />} />
+                <Route path="/intake-form" element={<IntakeForm />} />
+                <Route
+                  path="/mental-health-services"
+                  element={<MobileMentalHealthServices />}
+                />
+              </Routes>
+            </React.Suspense>
           </main>
           <MobileFooter />
         </>
