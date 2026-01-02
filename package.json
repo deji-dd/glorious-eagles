@@ -1,7 +1,9 @@
 {
-  "name": "example",
-  "private": true,
+  "name": "glorious-eagles",
+  "private": false,
   "type": "module",
+  "version": "1.0.0",
+  "description": "Website for the Glorious Eagles foundation",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
