@@ -299,3 +299,14 @@ textarea:focus {
     @apply bg-background text-foreground;
   }
 }
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0.7;
+}
