@@ -22,7 +22,7 @@ A modern, responsive website for the Glorious Eagles foundation, built with Reac
 ### Prerequisites
 
 - Node.js (v18+)
-- pnpm (v9+)
+- pnpm (v10+)
 
 ### Installation
 
