@@ -168,6 +168,7 @@ export default function Carousel({
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

@@ -1,8 +1,8 @@
 import BG from "../assets/elipses.svg";
-import img1 from "../assets/unlocking-1.svg";
-import img2 from "../assets/unlocking-2.svg";
-import img3 from "../assets/unlocking-3.svg";
-import img4 from "../assets/unlocking-4.svg";
+import img1 from "../assets/unlocking-1.png";
+import img2 from "../assets/unlocking-2.png";
+import img3 from "../assets/unlocking-3.png";
+import img4 from "../assets/unlocking-4.png";
 import Carousel from "./Carousel";
 import React from "react";
 

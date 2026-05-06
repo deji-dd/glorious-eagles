@@ -72,6 +72,8 @@ export default function Caring() {
                 width={"75%"}
                 src={heart}
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </p>
@@ -114,6 +116,8 @@ export default function Caring() {
                 width={"75%"}
                 src={heart}
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </p>

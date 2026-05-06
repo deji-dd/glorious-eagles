@@ -71,11 +71,15 @@ export default function Experts(props) {
           className={"img-hover-zoom--slowmo"}
           style={{ alignSelf: "flex-start" }}
           src={Img1}
+          loading="lazy"
+          decoding="async"
         />
         <img
           className={"img-hover-zoom--slowmo"}
           style={{ alignSelf: "flex-end" }}
           src={Img2}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

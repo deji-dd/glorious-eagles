@@ -2,11 +2,13 @@
 import { useResponsive } from "../contexts/ResponsiveContext.jsx";
 import React from "react";
 
-export default function ResponsiveComponent({
+const ResponsiveComponent = ({
   desktop: DesktopComponent,
   mobile: MobileComponent,
-}) {
+}) => {
   const { isDesktop } = useResponsive();
 
   return isDesktop ? <DesktopComponent /> : <MobileComponent />;
-}
+};
+
+export default React.memo(ResponsiveComponent);

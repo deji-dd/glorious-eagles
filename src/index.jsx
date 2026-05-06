@@ -5,6 +5,7 @@ import "./style.css";
 import React from "react";
 import { ToastProvider } from "./components/ui/use-toast";
 import { Toaster } from "./components/ui/toast";
+import { Spinner } from "./components/ui/spinner";
 
 // Components
 import Header from "./components/Header.jsx";
@@ -75,7 +76,13 @@ function AppContent() {
             : { paddingTop: "5rem", width: "30rem" }
         }
       >
-        <Suspense fallback={<div className="loading">Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="loading" aria-live="polite">
+              <Spinner className="w-8 h-8" />
+            </div>
+          }
+        >
           <Routes>
             <Route
               path="/"

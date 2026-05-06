@@ -72,10 +72,14 @@ export default function MobileExperts(props) {
         <img
           style={{ alignSelf: "flex-start", width: "12.80664rem" }}
           src={Img1}
+          loading="lazy"
+          decoding="async"
         />
         <img
           style={{ alignSelf: "flex-end", width: "12.80664rem" }}
           src={Img2}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

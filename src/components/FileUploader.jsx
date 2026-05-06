@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 import UploadIcon from "../assets/upload-icon.svg";
-import { CircularProgress } from "@mui/material";
+import { Spinner } from "./ui/spinner";
 import React from "react";
 
 export default function FileUploader(props) {
@@ -90,7 +90,7 @@ export default function FileUploader(props) {
       >
         <img src={UploadIcon} />
         <p style={err ? p_err : p_style}>
-          {loading ? <CircularProgress color="inherit" /> : name}
+          {loading ? <Spinner className="w-5 h-5" /> : name}
         </p>
       </button>
       <input

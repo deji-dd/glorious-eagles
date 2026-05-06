@@ -2,7 +2,7 @@ import Img from "../assets/career.gif";
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useRef, useState } from "react";
-import { CircularProgress } from "@mui/material";
+import { Spinner } from "./ui/spinner";
 import MobileFileUploader from "./MobileFileUploader";
 import React from "react";
 
@@ -79,7 +79,12 @@ export default function MobileJob() {
             gap: "1.68rem",
           }}
         >
-          <img style={{ height: "9.92rem" }} src={Img} />
+          <img
+            style={{ height: "9.92rem" }}
+            src={Img}
+            loading="lazy"
+            decoding="async"
+          />
           <div
             style={{
               display: "flex",
@@ -253,7 +258,7 @@ export default function MobileJob() {
               fontSize: "1.6rem",
             }}
           >
-            {loading ? <CircularProgress color="secondary" /> : submit}
+            {loading ? <Spinner className="w-5 h-5" /> : submit}
           </button>
         </form>
       </div>

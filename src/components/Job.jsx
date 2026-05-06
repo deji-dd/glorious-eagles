@@ -3,7 +3,7 @@ import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useRef, useState } from "react";
 import FileUploader from "./FileUploader";
-import { CircularProgress } from "@mui/material";
+import { Spinner } from "./ui/spinner";
 import React from "react";
 
 export default function Job() {
@@ -71,7 +71,12 @@ export default function Job() {
           gap: "2.25rem",
         }}
       >
-        <img style={{ height: "14.375rem" }} src={Img} />
+        <img
+          style={{ height: "14.375rem" }}
+          src={Img}
+          loading="lazy"
+          decoding="async"
+        />
         <div
           style={{
             display: "flex",
@@ -249,7 +254,7 @@ export default function Job() {
                 alignSelf: "center",
               }}
             >
-              {loading ? <CircularProgress color="secondary" /> : submit}
+              {loading ? <Spinner className="w-5 h-5" /> : submit}
             </button>
           </form>
         </div>

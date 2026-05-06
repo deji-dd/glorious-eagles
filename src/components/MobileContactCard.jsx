@@ -24,7 +24,12 @@ export default function MobileContactCard() {
           flexDirection: "column",
         }}
       >
-        <img style={{ width: "23.36rem" }} src={Gif} />
+        <img
+          style={{ width: "23.36rem" }}
+          src={Gif}
+          loading="lazy"
+          decoding="async"
+        />
         <h2
           style={{
             lineHeight: "3.0256rem",

@@ -15,7 +15,7 @@ export default function PictureFrame(props) {
         width: "40rem",
       }}
     >
-      <img src={props.img} />
+      <img src={props.img} loading="lazy" decoding="async" />
       <div
         style={{
           display: "flex",

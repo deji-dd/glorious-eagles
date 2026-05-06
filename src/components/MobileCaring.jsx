@@ -129,6 +129,8 @@ export default function MobileCaring() {
             <img
               src={heart}
               alt="Decorative heart"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: "6.5rem",
                 height: "6.5rem",
@@ -203,6 +205,8 @@ export default function MobileCaring() {
             <img
               src={heart}
               alt="Decorative heart"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: "6.5rem",
                 height: "6.5rem",

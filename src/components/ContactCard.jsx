@@ -67,7 +67,12 @@ export default function ContactCard() {
             </button>
           </a>
         </div>
-        <img style={{ width: "18.91138rem" }} src={Gif} />
+        <img
+          style={{ width: "18.91138rem" }}
+          src={Gif}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   );

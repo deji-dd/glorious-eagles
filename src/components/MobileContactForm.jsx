@@ -1,7 +1,7 @@
 import NameIcon from "../assets/name-icon.svg";
 import MessageIcon from "../assets/message-icon.svg";
 import { useState } from "react";
-import { CircularProgress } from "@mui/material";
+import { Spinner } from "./ui/spinner";
 import React from "react";
 
 export default function MobileContactForm() {
@@ -226,7 +226,7 @@ export default function MobileContactForm() {
             className={"button-p"}
             type={"submit"}
           >
-            {loading ? <CircularProgress color="inherit" /> : submit}
+            {loading ? <Spinner className="w-5 h-5" /> : submit}
           </button>
         </form>
       </div>
