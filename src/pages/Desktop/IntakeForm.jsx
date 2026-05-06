@@ -12,6 +12,8 @@ import { Loader2 } from "lucide-react"; // Import the Loader from Luicide (or si
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import React from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { isDevMode, generateTestFormData } from "@/lib/devUtils";
 
 export default function IntakeForm() {
   const [steps, setSteps] = useState([
@@ -95,6 +97,7 @@ export default function IntakeForm() {
     schoolEvaluation: undefined,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   const formatPhoneNumber = (value) => {
     const cleaned = value.replace(/\D/g, "").substring(0, 10);
@@ -123,7 +126,7 @@ export default function IntakeForm() {
 
     // Find the first invalid input
     const firstInvalidInput = requiredInputs.find(
-      (input) => !input.checkValidity()
+      (input) => !input.checkValidity(),
     );
 
     if (firstInvalidInput) {
@@ -160,13 +163,15 @@ export default function IntakeForm() {
 
     const requiredFiles = ["insuranceCard", "wellChild"];
     const missingFile = requiredFiles.find(
-      (field) => !formData[field] || formData[field].length === 0
+      (field) => !formData[field] || formData[field].length === 0,
     );
 
     if (missingFile) {
-      alert(
-        `Please upload the required file: ${missingFile === "insuranceCard" ? "Insurance Card" : missingFile === "wellChild" ? "Well Child Check-up" : "IEP"}`
-      );
+      toast({
+        title: "Missing file",
+        description: `Please upload the required file: ${missingFile === "insuranceCard" ? "Insurance Card" : missingFile === "wellChild" ? "Well Child Check-up" : "IEP"}`,
+        variant: "error",
+      });
       setIsLoading(false);
       return;
     }
@@ -174,7 +179,11 @@ export default function IntakeForm() {
     const { details, attachments } = await processFormData(formData);
 
     try {
-      const res = await fetch("https://email.gloriouseagles.com", {
+      const emailEndpoint = import.meta.env.DEV
+        ? "http://localhost:8787"
+        : "https://email.gloriouseagles.com";
+
+      const res = await fetch(emailEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -193,18 +202,28 @@ export default function IntakeForm() {
       }
 
       if (data.warning) {
-        alert(
-          "Application sent! (Though receipt confirmation may not have been delivered)"
-        );
+        toast({
+          title: "Sent with warnings",
+          description:
+            "Application sent! (Though receipt confirmation may not have been delivered)",
+          variant: "info",
+        });
         window.location.reload();
       } else {
-        alert(
-          "Application sent successfully! Check your email for confirmation."
-        );
+        toast({
+          title: "Sent",
+          description:
+            "Application sent successfully! Check your email for confirmation.",
+          variant: "success",
+        });
         window.location.reload();
       }
     } catch (err) {
-      alert("Failed to send application: " + err.message);
+      toast({
+        title: "Error",
+        description: "Failed to send application: " + err.message,
+        variant: "error",
+      });
       setIsLoading(false);
     }
   };
@@ -344,7 +363,7 @@ export default function IntakeForm() {
                     className={cn(
                       "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-11 w-full min-w-0 border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
                       "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-                      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
                       // Keeping any additional classes
                     )}
                     required={isFieldRequired("dateOfBirth")}
@@ -1047,7 +1066,7 @@ export default function IntakeForm() {
                       className="mt-1"
                       type="text"
                       required={isFieldRequired(
-                        "authorizedRepresentativePhone"
+                        "authorizedRepresentativePhone",
                       )}
                     />
                   </div>
@@ -1063,7 +1082,7 @@ export default function IntakeForm() {
                       className="mt-1"
                       type="text"
                       required={isFieldRequired(
-                        "authorizedRepresentativeAddress"
+                        "authorizedRepresentativeAddress",
                       )}
                     />
                   </div>
@@ -1249,7 +1268,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalName"
+                              "primaryProfessionalName",
                             )}
                           />
                         </div>
@@ -1265,7 +1284,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalPhone"
+                              "primaryProfessionalPhone",
                             )}
                           />
                         </div>
@@ -1281,7 +1300,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "primaryProfessionalAddress"
+                              "primaryProfessionalAddress",
                             )}
                           />
                         </div>
@@ -1391,7 +1410,7 @@ export default function IntakeForm() {
                             className="mt-1"
                             type="text"
                             required={isFieldRequired(
-                              "otherProfessionalAddress"
+                              "otherProfessionalAddress",
                             )}
                           />
                         </div>
@@ -1734,7 +1753,29 @@ export default function IntakeForm() {
 
   return (
     <div className="md:px-20">
-      <h3 className="text-center mb-5">ADMISSION FORM AND DATA SHEET</h3>
+      <div className="flex justify-between items-center mb-5">
+        <h3 className="text-center flex-1">ADMISSION FORM AND DATA SHEET</h3>
+        {isDevMode() && (
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            onClick={() => {
+              const testData = generateTestFormData();
+              setFormData(testData);
+              setCurrentStepIndex(steps.length - 1);
+              const updatedSteps = steps.map((step, idx) => ({
+                ...step,
+                status: idx < steps.length - 1 ? "complete" : "current",
+              }));
+              setSteps(updatedSteps);
+            }}
+            className="ml-auto"
+          >
+            Load Test Data
+          </Button>
+        )}
+      </div>
       <div className="w-full py-8 bg-[#f1ebfe] min-h-screen">
         <form onSubmit={handleSubmit}>
           <div className="max-w-6xl mx-auto">
@@ -1752,7 +1793,7 @@ export default function IntakeForm() {
                           "absolute top-4 md:top-5 left-1/2 w-full h-0.5 border-t-2 border-dashed",
                           step.status === "complete"
                             ? "border-[#10b981]"
-                            : "border-[#e2e8f0]"
+                            : "border-[#e2e8f0]",
                         )}
                         aria-hidden="true"
                       />
@@ -1770,7 +1811,7 @@ export default function IntakeForm() {
                               step.status === "complete",
                             "border-[#e2e8f0] text-[#94A3B8]":
                               step.status === "upcoming",
-                          }
+                          },
                         )}
                       >
                         {step.status === "complete" ? (
@@ -1788,7 +1829,7 @@ export default function IntakeForm() {
                         {
                           "text-[#64748B]": step.status !== "complete",
                           "text-[#10b981]": step.status === "complete",
-                        }
+                        },
                       )}
                     >
                       {step.name}
@@ -1805,7 +1846,7 @@ export default function IntakeForm() {
                 type="button"
                 onClick={goToPreviousStep}
                 disabled={currentStepIndex === 0}
-                variant="outline"
+                variant="default"
                 className="button-p"
                 size="md"
               >
@@ -1817,7 +1858,7 @@ export default function IntakeForm() {
                   type="submit"
                   className="button-p"
                   size="md"
-                  variant="outline"
+                  variant="default"
                   disabled={isLoading}
                 >
                   {isLoading && <Loader2 className="animate-spin" />}
@@ -1829,7 +1870,7 @@ export default function IntakeForm() {
                   onClick={goToNextStep}
                   disabled={currentStepIndex === steps.length - 1}
                   size="md"
-                  variant="outline"
+                  variant="default"
                   className="button-p"
                 >
                   Next

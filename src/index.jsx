@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./style.css";
 import React from "react";
+import { ToastProvider } from "./components/ui/use-toast";
+import { Toaster } from "./components/ui/toast";
 
 // Components
 import Header from "./components/Header.jsx";
@@ -20,20 +22,20 @@ const ContactUs = lazy(() => import("./pages/Desktop/ContactUs.jsx"));
 const Career = lazy(() => import("./pages/Desktop/Career.jsx"));
 const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
 const MentalHealthServices = lazy(
-  () => import("./pages/Desktop/MentalHealthServices.jsx")
+  () => import("./pages/Desktop/MentalHealthServices.jsx"),
 );
 
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
 const MobileAbout = lazy(() => import("./pages/Mobile/MobileAbout.jsx"));
 const MobileContactUs = lazy(
-  () => import("./pages/Mobile/MobileContactUs.jsx")
+  () => import("./pages/Mobile/MobileContactUs.jsx"),
 );
 const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
 const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));
 const MobileCareer = lazy(() => import("./pages/Mobile/MobileCareer.jsx"));
 const MobileMentalHealthServices = lazy(
-  () => import("./pages/Mobile/MobileMentalHealthServices.jsx")
+  () => import("./pages/Mobile/MobileMentalHealthServices.jsx"),
 );
 
 import "./style.css";
@@ -48,7 +50,10 @@ import {
 export function App() {
   return (
     <ResponsiveProvider>
-      <AppContent />
+      <ToastProvider>
+        <AppContent />
+        <Toaster />
+      </ToastProvider>
     </ResponsiveProvider>
   );
 }

@@ -100,8 +100,7 @@ export function FileUpload({
 
         <Button
           type="button"
-          variant="outline"
-          className="bg-white"
+          variant="default"
           onClick={() => document.getElementById(id)?.click()}
         >
           Select Files

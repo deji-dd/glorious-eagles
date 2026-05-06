@@ -13,7 +13,8 @@ dist-ssr
 *.local
 archive
 .wrangler/
-
+email-worker/
+email-worker/.dev.vars
 
 # Editor directories and files
 .vscode/*
