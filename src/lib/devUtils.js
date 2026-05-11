@@ -30,7 +30,7 @@ export const generateTestFormData = () => {
     weight: "75",
     hairColor: "Brown",
     eyeColor: "Blue",
-    guardianshipType: "Parent",
+    guardianshipType: "Self",
     ssn: "123-45-6789",
     medicalNumber: "MA123456",
     countyResponsibility: "Hennepin",
