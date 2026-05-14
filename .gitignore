@@ -164,7 +164,7 @@ dist
 .wrangler/
 *.jsonrc
 
-email-worker/wrangler.jsonc
+email-worker/
 
 # Workflow
 .issues/

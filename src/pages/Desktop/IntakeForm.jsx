@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Check } from "lucide-react";
 import { FileUpload } from "@/components/fileInput";
-import { processFormData } from "../../../functions/emails";
 import { Loader2 } from "lucide-react"; // Import the Loader from Luicide (or similar package)
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -171,22 +170,39 @@ export default function IntakeForm() {
       return;
     }
 
-    const { details, attachments } = await processFormData(formData);
-
     try {
       const emailEndpoint = import.meta.env.DEV
         ? "http://localhost:8787"
         : "https://email.gloriouseagles.com";
 
+      const payload = new FormData();
+
+      for (const [key, value] of Object.entries(formData)) {
+        if (value === undefined || value === null) {
+          continue;
+        }
+
+        if (Array.isArray(value)) {
+          for (const file of value) {
+            payload.append(key, file, file.name);
+          }
+          continue;
+        }
+
+        if (value instanceof Date) {
+          payload.append(key, value.toISOString());
+          continue;
+        }
+
+        payload.append(key, String(value));
+      }
+
+      payload.append("subject", "New Admission Application");
+      payload.append("to", formData.email || "");
+
       const res = await fetch(emailEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          to: formData.email,
-          subject: "New Admission Application",
-          details, // <- clean key-value fields
-          attachments, // <- zipped files as base64
-        }),
+        body: payload,
       });
 
       const data = await res.json();
