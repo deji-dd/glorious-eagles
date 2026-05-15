@@ -172,8 +172,8 @@ export default function IntakeForm() {
 
     try {
       const emailEndpoint = import.meta.env.DEV
-        ? "http://localhost:8787"
-        : "https://email.gloriouseagles.com";
+        ? "http://localhost:8787/api/intake"
+        : "/api/intake";
 
       const payload = new FormData();
 
