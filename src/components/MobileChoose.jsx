@@ -4,7 +4,6 @@ import Choose3 from "../assets/choose3.svg";
 import Choose4 from "../assets/choose4.svg";
 import Choose5 from "../assets/choose5.svg";
 import MobileChooseCard from "./MobileChooseCard";
-import React from "react";
 
 export default function MobileChoose() {
   return (

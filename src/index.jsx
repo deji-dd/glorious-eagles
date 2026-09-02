@@ -1,18 +1,16 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.css";
-import React from "react";
-import { ToastProvider } from "./components/ui/use-toast";
-import { Toaster } from "./components/ui/toast";
-import { Spinner } from "./components/ui/spinner";
-
+import Footer from "./components/Footer.jsx";
 // Components
 import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-import MobileHeader from "./components/MobileHeader.jsx";
 import MobileFooter from "./components/MobileFooter.jsx";
+import MobileHeader from "./components/MobileHeader.jsx";
 import Socials from "./components/Socials.jsx";
+import { Spinner } from "./components/ui/spinner";
+import { Toaster } from "./components/ui/toast";
+import { ToastProvider } from "./components/ui/use-toast";
 
 // Lazy load pages (Desktop)
 const Home = lazy(() => import("./pages/Desktop/Home.jsx"));
@@ -22,16 +20,12 @@ const How = lazy(() => import("./pages/Desktop/How.jsx"));
 const ContactUs = lazy(() => import("./pages/Desktop/ContactUs.jsx"));
 const Career = lazy(() => import("./pages/Desktop/Career.jsx"));
 const IntakeForm = lazy(() => import("./pages/Desktop/IntakeForm.jsx"));
-const MentalHealthServices = lazy(
-  () => import("./pages/Desktop/MentalHealthServices.jsx"),
-);
+const MentalHealthServices = lazy(() => import("./pages/Desktop/MentalHealthServices.jsx"));
 
 // Lazy load pages (Mobile)
 const MobileHome = lazy(() => import("./pages/Mobile/MobileHome.jsx"));
 const MobileAbout = lazy(() => import("./pages/Mobile/MobileAbout.jsx"));
-const MobileContactUs = lazy(
-  () => import("./pages/Mobile/MobileContactUs.jsx"),
-);
+const MobileContactUs = lazy(() => import("./pages/Mobile/MobileContactUs.jsx"));
 const MobileHow = lazy(() => import("./pages/Mobile/MobileHow.jsx"));
 const MobileServices = lazy(() => import("./pages/Mobile/MobileServices.jsx"));
 const MobileCareer = lazy(() => import("./pages/Mobile/MobileCareer.jsx"));
@@ -43,10 +37,7 @@ import "./style.css";
 
 import ResponsiveComponent from "./components/ResponsiveComponent.jsx";
 
-import {
-  ResponsiveProvider,
-  useResponsive,
-} from "./contexts/ResponsiveContext.jsx";
+import { ResponsiveProvider, useResponsive } from "./contexts/ResponsiveContext.jsx";
 
 export function App() {
   return (
@@ -84,26 +75,14 @@ function AppContent() {
           }
         >
           <Routes>
-            <Route
-              path="/"
-              element={
-                <ResponsiveComponent desktop={Home} mobile={MobileHome} />
-              }
-            />
+            <Route path="/" element={<ResponsiveComponent desktop={Home} mobile={MobileHome} />} />
             <Route
               path="/services"
-              element={
-                <ResponsiveComponent
-                  desktop={Services}
-                  mobile={MobileServices}
-                />
-              }
+              element={<ResponsiveComponent desktop={Services} mobile={MobileServices} />}
             />
             <Route
               path="/about-us"
-              element={
-                <ResponsiveComponent desktop={About} mobile={MobileAbout} />
-              }
+              element={<ResponsiveComponent desktop={About} mobile={MobileAbout} />}
             />
             <Route
               path="/how-we-work"
@@ -111,18 +90,11 @@ function AppContent() {
             />
             <Route
               path="/contact-us"
-              element={
-                <ResponsiveComponent
-                  desktop={ContactUs}
-                  mobile={MobileContactUs}
-                />
-              }
+              element={<ResponsiveComponent desktop={ContactUs} mobile={MobileContactUs} />}
             />
             <Route
               path="/career"
-              element={
-                <ResponsiveComponent desktop={Career} mobile={MobileCareer} />
-              }
+              element={<ResponsiveComponent desktop={Career} mobile={MobileCareer} />}
             />
             <Route path="/intake-form" element={<IntakeForm />} />
             <Route
@@ -134,12 +106,7 @@ function AppContent() {
                 />
               }
             />
-            <Route
-              path="*"
-              element={
-                <ResponsiveComponent desktop={Home} mobile={MobileHome} />
-              }
-            />
+            <Route path="*" element={<ResponsiveComponent desktop={Home} mobile={MobileHome} />} />
           </Routes>
         </Suspense>
       </main>

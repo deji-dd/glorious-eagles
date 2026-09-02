@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
+
 import Arrow from "../assets/down-arrow.svg";
 import Img1 from "../assets/experts1.svg";
 import Img2 from "../assets/experts2.svg";
-import React from "react";
 
 export default function Experts(props) {
   return (
@@ -34,9 +34,7 @@ export default function Experts(props) {
             width: "32.9375rem",
           }}
         >
-          <h1 style={{ lineHeight: "5.375rem" }}>
-            We are experts with a difference
-          </h1>
+          <h1 style={{ lineHeight: "5.375rem" }}>We are experts with a difference</h1>
           <p
             style={{
               color: "var(--Text, #4D4D4D)",
@@ -44,10 +42,10 @@ export default function Experts(props) {
               lineHeight: "2.5rem",
             }}
           >
-            Our commitment to excellence, innovation, and client-centered care
-            sets us apart. With a team of dedicated professionals and a passion
-            for transformative solutions, we stand ready to exceed your
-            expectations. Discover the exceptional difference that sets us apart
+            Our commitment to excellence, innovation, and client-centered care sets us apart. With a
+            team of dedicated professionals and a passion for transformative solutions, we stand
+            ready to exceed your expectations. Discover the exceptional difference that sets us
+            apart
           </p>
         </div>
         <img

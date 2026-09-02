@@ -1,18 +1,17 @@
-import Img from "../assets/career.gif";
-import NameIcon from "../assets/name-icon.svg";
-import MessageIcon from "../assets/message-icon.svg";
 import { useRef, useState } from "react";
-import { Spinner } from "./ui/spinner";
+import Img from "../assets/career.gif";
+import MessageIcon from "../assets/message-icon.svg";
+import NameIcon from "../assets/name-icon.svg";
 import MobileFileUploader from "./MobileFileUploader";
-import React from "react";
+import { Spinner } from "./ui/spinner";
 
 export default function MobileJob() {
-  let [cover, setCover] = useState(null);
-  let [resume, setResume] = useState(null);
-  let [name, setName] = useState("");
-  let [email, setEmail] = useState("");
-  let [submit, setSubmit] = useState("Apply");
-  let [loading, setLoading] = useState(false);
+  const [cover, setCover] = useState(null);
+  const [resume, setResume] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [submit, setSubmit] = useState("Apply");
+  const [loading, setLoading] = useState(false);
 
   const form = useRef(null);
 
@@ -79,12 +78,7 @@ export default function MobileJob() {
             gap: "1.68rem",
           }}
         >
-          <img
-            style={{ height: "9.92rem" }}
-            src={Img}
-            loading="lazy"
-            decoding="async"
-          />
+          <img style={{ height: "9.92rem" }} src={Img} loading="lazy" decoding="async" />
           <div
             style={{
               display: "flex",
@@ -117,12 +111,10 @@ export default function MobileJob() {
                 fontSize: "1.28rem",
               }}
             >
-              Join our team and become a part of something extraordinary. We are
-              passionate about making a positive impact on the lives of
-              individuals and families through ABA therapy. If you&apos;re
-              dedicated, compassionate, and eager to contribute your expertise
-              to our mission, we invite you to explore the rewarding career
-              opportunities we offer.
+              Join our team and become a part of something extraordinary. We are passionate about
+              making a positive impact on the lives of individuals and families through ABA therapy.
+              If you&apos;re dedicated, compassionate, and eager to contribute your expertise to our
+              mission, we invite you to explore the rewarding career opportunities we offer.
             </p>
           </div>
         </div>
@@ -134,25 +126,36 @@ export default function MobileJob() {
             try {
               if (cover != null && resume != null) {
                 setLoading(true);
-                const request = new XMLHttpRequest();
                 const formData = new FormData();
-                request.open("POST", "/application", true);
-                request.onreadystatechange = () => {
-                  if (request.readyState === 4 && request.status === 200) {
-                    window.location.reload();
-                  }
-                };
                 formData.append("name", name);
                 formData.append("email", email);
                 formData.append("cover", cover);
                 formData.append("resume", resume);
-                request.send(formData);
+
+                const response = await fetch("/application", {
+                  method: "POST",
+                  body: formData,
+                });
+
+                const result = await response.json().catch(() => null);
+
+                if (!response.ok || (result && !result.success)) {
+                  throw new Error(
+                    result?.error || "Failed to submit application. Please try again.",
+                  );
+                }
+
+                setSubmit("Application Sent!");
+                setLoading(false);
+                setTimeout(() => {
+                  window.location.reload();
+                }, 1500);
               } else {
-                throw "Please fill all fields.";
+                throw new Error("Please fill all fields.");
               }
             } catch (err) {
-              setSubmit(err);
               setLoading(false);
+              setSubmit(typeof err === "string" ? err : err.message || "Please try again.");
               setTimeout(() => {
                 setSubmit("Apply");
               }, 3500);
@@ -186,7 +189,7 @@ export default function MobileJob() {
                 id={"i-name"}
                 required
                 onChange={(e) => {
-                  // @ts-ignore
+                  // @ts-expect-error
                   setName(e.target.value);
                 }}
               />
@@ -212,7 +215,7 @@ export default function MobileJob() {
                 name="email"
                 required
                 onChange={(e) => {
-                  // @ts-ignore
+                  // @ts-expect-error
                   setEmail(e.target.value);
                 }}
               />
@@ -240,11 +243,7 @@ export default function MobileJob() {
             <label htmlFor={"i-resume"} style={label_style}>
               Upload resume
             </label>
-            <MobileFileUploader
-              id={"i-resume"}
-              name={"resume"}
-              link={setResume}
-            />
+            <MobileFileUploader id={"i-resume"} name={"resume"} link={setResume} />
           </div>
           <button
             className={"button-p button-mobile"}

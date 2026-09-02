@@ -1,17 +1,16 @@
-import NameIcon from "../assets/name-icon.svg";
-import MessageIcon from "../assets/message-icon.svg";
 import { useState } from "react";
+import MessageIcon from "../assets/message-icon.svg";
+import NameIcon from "../assets/name-icon.svg";
 import { Spinner } from "./ui/spinner";
-import React from "react";
 
 export default function MobileContactForm() {
-  let [formStyleOne, setFormOneStyle] = useState(false);
-  let [formStyleTwo, setFormTwoStyle] = useState(false);
-  let [loading, setLoading] = useState(false);
-  let [submit, setSubmit] = useState("Submit");
-  let [name, setName] = useState("");
-  let [email, setEmail] = useState("");
-  let [message, setMessage] = useState("");
+  const [formStyleOne, setFormOneStyle] = useState(false);
+  const [formStyleTwo, setFormTwoStyle] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submit, setSubmit] = useState("Submit");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const label_style = {
     color: "var(--neutral-800, #170F49)",
@@ -84,8 +83,8 @@ export default function MobileContactForm() {
             width: "25.56224rem",
           }}
         >
-          You can contact us by filling the form provided below, and we&apos;ll
-          respond promptly to assist you
+          You can contact us by filling the form provided below, and we&apos;ll respond promptly to
+          assist you
         </p>
       </div>
       <div
@@ -107,23 +106,33 @@ export default function MobileContactForm() {
             e.preventDefault();
             try {
               setLoading(true);
-              const request = new XMLHttpRequest();
               const formData = new FormData();
-              request.open("POST", "/contact", true);
-              request.onreadystatechange = () => {
-                if (request.readyState === 4 && request.status === 200) {
-                  window.location.reload();
-                }
-              };
               formData.append("name", name);
               formData.append("email", email);
               formData.append("message", message);
-              request.send(formData);
-            } catch {
-              setSubmit("Please try again.");
+
+              const response = await fetch("/contact", {
+                method: "POST",
+                body: formData,
+              });
+
+              const result = await response.json().catch(() => null);
+
+              if (!response.ok || (result && !result.success)) {
+                throw new Error(result?.error || "Failed to send message. Please try again.");
+              }
+
+              setSubmit("Message Sent!");
+              setLoading(false);
+              setTimeout(() => {
+                window.location.reload();
+              }, 1500);
+            } catch (err) {
+              setLoading(false);
+              setSubmit(typeof err === "string" ? err : err.message || "Please try again.");
               setTimeout(() => {
                 setSubmit("Submit");
-              }, 3500);
+              }, 4000);
             }
           }}
           style={{
@@ -155,7 +164,7 @@ export default function MobileContactForm() {
                 }}
                 name="name"
                 onChange={(e) => {
-                  // @ts-ignore
+                  // @ts-expect-error
                   setName(e.target.value);
                 }}
                 required
@@ -186,7 +195,7 @@ export default function MobileContactForm() {
                 name="email"
                 required
                 onChange={(e) => {
-                  // @ts-ignore
+                  // @ts-expect-error
                   setEmail(e.target.value);
                 }}
               />
@@ -215,7 +224,7 @@ export default function MobileContactForm() {
               placeholder={"Type your message here"}
               required
               onChange={(e) => {
-                // @ts-ignore
+                // @ts-expect-error
                 setMessage(e.target.value);
               }}
               name={"message"}

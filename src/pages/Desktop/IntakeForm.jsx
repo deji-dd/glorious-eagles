@@ -1,17 +1,15 @@
+import { Check, Loader2 } from "lucide-react"; // Import the Loader from Luicide (or similar package)
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import DatePicker from "react-datepicker";
+import { FileUpload } from "@/components/fileInput";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Check } from "lucide-react";
-import { FileUpload } from "@/components/fileInput";
-import { Loader2 } from "lucide-react"; // Import the Loader from Luicide (or similar package)
-import DatePicker from "react-datepicker";
+import { cn } from "@/lib/utils";
 import "react-datepicker/dist/react-datepicker.css";
-import React from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { isDevMode, generateTestFormData } from "@/lib/devUtils";
+import { generateTestFormData, isDevMode } from "@/lib/devUtils";
 
 export default function IntakeForm() {
   const [steps, setSteps] = useState([
@@ -119,9 +117,7 @@ export default function IntakeForm() {
     const requiredInputs = Array.from(form.querySelectorAll("[required]"));
 
     // Find the first invalid input
-    const firstInvalidInput = requiredInputs.find(
-      (input) => !input.checkValidity(),
-    );
+    const firstInvalidInput = requiredInputs.find((input) => !input.checkValidity());
 
     if (firstInvalidInput) {
       // Focus and show validation message for the first invalid field
@@ -171,9 +167,7 @@ export default function IntakeForm() {
     }
 
     try {
-      const emailEndpoint = import.meta.env.DEV
-        ? "http://localhost:8787/api/intake"
-        : "/api/intake";
+      const emailEndpoint = "/api/intake";
 
       const payload = new FormData();
 
@@ -223,8 +217,7 @@ export default function IntakeForm() {
       } else {
         toast({
           title: "Sent",
-          description:
-            "Application sent successfully! Check your email for confirmation.",
+          description: "Application sent successfully! Check your email for confirmation.",
           variant: "success",
         });
         window.location.reload();
@@ -232,7 +225,7 @@ export default function IntakeForm() {
     } catch (err) {
       toast({
         title: "Error",
-        description: "Failed to send application: " + err.message,
+        description: `Failed to send application: ${err.message}`,
         variant: "error",
       });
       setIsLoading(false);
@@ -262,9 +255,7 @@ export default function IntakeForm() {
         return (
           <div data-step="0" className="flex flex-col gap-8">
             <section className="bg-white rounded-lg p-8">
-              <h4 className="text-xl font-semibold text-[#180344] mb-6">
-                Personal Information
-              </h4>
+              <h4 className="text-xl font-semibold text-[#180344] mb-6">Personal Information</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="firstName">First name</Label>
@@ -294,9 +285,7 @@ export default function IntakeForm() {
                   <Label htmlFor="gender">Gender</Label>
                   <RadioGroup
                     value={formData.gender}
-                    onValueChange={(value) =>
-                      handleRadioChange("gender", value)
-                    }
+                    onValueChange={(value) => handleRadioChange("gender", value)}
                     required
                     className="mt-2 flex flex-wrap gap-3"
                   >
@@ -327,9 +316,7 @@ export default function IntakeForm() {
                   <Label htmlFor="dateOfBirth">Date of birth</Label>
                   <DatePicker
                     selected={formData.dateOfBirth}
-                    onChange={(date) =>
-                      setFormData({ ...formData, dateOfBirth: date })
-                    }
+                    onChange={(date) => setFormData({ ...formData, dateOfBirth: date })}
                     dateFormat="MM/dd/yyyy"
                     placeholderText="MM/DD/YYYY"
                     className={cn(
@@ -402,9 +389,7 @@ export default function IntakeForm() {
                   </div>
                   <RadioGroup
                     value={formData.guardianshipType}
-                    onValueChange={(value) =>
-                      handleRadioChange("guardianshipType", value)
-                    }
+                    onValueChange={(value) => handleRadioChange("guardianshipType", value)}
                     className="mt-2 flex flex-wrap gap-3"
                   >
                     {["Self", "Private", "Public"].map((option) => (
@@ -422,14 +407,10 @@ export default function IntakeForm() {
             </section>
 
             <section className="bg-white rounded-lg p-8">
-              <h4 className="text-xl font-semibold text-[#180344] mb-6">
-                Insurance Information
-              </h4>
+              <h4 className="text-xl font-semibold text-[#180344] mb-6">Insurance Information</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="primaryInsuranceName">
-                    Primary Insurance Name
-                  </Label>
+                  <Label htmlFor="primaryInsuranceName">Primary Insurance Name</Label>
                   <Input
                     id="primaryInsuranceName"
                     name="primaryInsuranceName"
@@ -454,9 +435,7 @@ export default function IntakeForm() {
                 </div>
                 <div>
                   <div className="flex justify-between">
-                    <Label htmlFor="secondaryInsuranceName">
-                      Secondary Insurance Name
-                    </Label>
+                    <Label htmlFor="secondaryInsuranceName">Secondary Insurance Name</Label>
                     <span className="text-sm text-gray-500">Optional</span>
                   </div>
                   <Input
@@ -492,9 +471,7 @@ export default function IntakeForm() {
 
               <div className="space-y-6">
                 <div className="rounded border border-[#E5DDF7] bg-[#FCFBFF] p-4">
-                  <p className="text-sm font-medium text-[#180344] mb-4">
-                    Legal Representative:
-                  </p>
+                  <p className="text-sm font-medium text-[#180344] mb-4">Legal Representative:</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="legalRepresentativeName">Name</Label>
@@ -509,9 +486,7 @@ export default function IntakeForm() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="legalRepresentativePhone">
-                        Telephone number
-                      </Label>
+                      <Label htmlFor="legalRepresentativePhone">Telephone number</Label>
                       <Input
                         id="legalRepresentativePhone"
                         name="legalRepresentativePhone"
@@ -523,9 +498,7 @@ export default function IntakeForm() {
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <Label htmlFor="legalRepresentativeAddress">
-                        Address
-                      </Label>
+                      <Label htmlFor="legalRepresentativeAddress">Address</Label>
                       <Input
                         id="legalRepresentativeAddress"
                         name="legalRepresentativeAddress"
@@ -557,9 +530,7 @@ export default function IntakeForm() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="authorizedRepresentativePhone">
-                        Telephone number
-                      </Label>
+                      <Label htmlFor="authorizedRepresentativePhone">Telephone number</Label>
                       <Input
                         id="authorizedRepresentativePhone"
                         name="authorizedRepresentativePhone"
@@ -571,9 +542,7 @@ export default function IntakeForm() {
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <Label htmlFor="authorizedRepresentativeAddress">
-                        Address
-                      </Label>
+                      <Label htmlFor="authorizedRepresentativeAddress">Address</Label>
                       <Input
                         id="authorizedRepresentativeAddress"
                         name="authorizedRepresentativeAddress"
@@ -589,9 +558,7 @@ export default function IntakeForm() {
 
                 <div className="rounded border border-[#E5DDF7] bg-[#FCFBFF] p-4">
                   <div className="flex items-center justify-between mb-4">
-                    <p className="text-sm font-medium text-[#180344]">
-                      Case Manager:
-                    </p>
+                    <p className="text-sm font-medium text-[#180344]">Case Manager:</p>
                     <span className="text-sm text-gray-500">Optional</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -713,18 +680,13 @@ export default function IntakeForm() {
             <nav aria-label="Progress" className="mb-8">
               <ol className="flex items-center px-0 md:px-4 justify-between w-full">
                 {steps.map((step, stepIdx) => (
-                  <li
-                    key={step.id}
-                    className="relative flex flex-col items-center flex-1"
-                  >
+                  <li key={step.id} className="relative flex flex-col items-center flex-1">
                     {/* Progress line between steps */}
                     {stepIdx !== steps.length - 1 && (
                       <div
                         className={cn(
                           "absolute top-4 md:top-5 left-1/2 w-full h-0.5 border-t-2 border-dashed",
-                          step.status === "complete"
-                            ? "border-[#10b981]"
-                            : "border-[#e2e8f0]",
+                          step.status === "complete" ? "border-[#10b981]" : "border-[#e2e8f0]",
                         )}
                         aria-hidden="true"
                       />
@@ -736,12 +698,9 @@ export default function IntakeForm() {
                         className={cn(
                           "h-8 w-8 md:h-10 md:w-10 rounded-full flex items-center justify-center border-2 bg-white text-xs md:text-sm font-medium",
                           {
-                            "border-[#9747ff] bg-[#9747ff] text-white":
-                              step.status === "current",
-                            "border-[#10b981] text-[#10b981]":
-                              step.status === "complete",
-                            "border-[#e2e8f0] text-[#94A3B8]":
-                              step.status === "upcoming",
+                            "border-[#9747ff] bg-[#9747ff] text-white": step.status === "current",
+                            "border-[#10b981] text-[#10b981]": step.status === "complete",
+                            "border-[#e2e8f0] text-[#94A3B8]": step.status === "upcoming",
                           },
                         )}
                       >
@@ -755,13 +714,10 @@ export default function IntakeForm() {
 
                     {/* Step label - hidden on mobile, visible on md and up */}
                     <span
-                      className={cn(
-                        "hidden md:block mt-2 md:mt-3 text-sm font-medium",
-                        {
-                          "text-[#64748B]": step.status !== "complete",
-                          "text-[#10b981]": step.status === "complete",
-                        },
-                      )}
+                      className={cn("hidden md:block mt-2 md:mt-3 text-sm font-medium", {
+                        "text-[#64748B]": step.status !== "complete",
+                        "text-[#10b981]": step.status === "complete",
+                      })}
                     >
                       {step.name}
                     </span>

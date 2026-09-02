@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
+
 import Arrow from "../assets/down-arrow.svg";
 import Img1 from "../assets/experts1.svg";
 import Img2 from "../assets/experts2.svg";
-import React from "react";
 
 export default function MobileExperts(props) {
   return (
@@ -46,10 +46,9 @@ export default function MobileExperts(props) {
             textAlign: "center",
           }}
         >
-          Our commitment to excellence, innovation, and client-centered care
-          sets us apart. With a team of dedicated professionals and a passion
-          for transformative solutions, we stand ready to exceed your
-          expectations. Discover the exceptional difference that sets us apart
+          Our commitment to excellence, innovation, and client-centered care sets us apart. With a
+          team of dedicated professionals and a passion for transformative solutions, we stand ready
+          to exceed your expectations. Discover the exceptional difference that sets us apart
         </p>
         <img
           style={{

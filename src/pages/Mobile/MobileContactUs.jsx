@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import MobileContacts from "../../components/MobileContacts";
 import MobileContactForm from "../../components/MobileContactForm";
-import React from "react";
+import MobileContacts from "../../components/MobileContacts";
 
 export default function MobileContactUs() {
   useEffect(() => {

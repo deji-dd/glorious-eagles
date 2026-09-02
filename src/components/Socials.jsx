@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Socials() {
   const div_style = {
     display: "flex",
@@ -78,10 +76,8 @@ export default function Socials() {
           />
         </svg>
         <div className="flex gap-3">
-          <p>+1 651-263-6291</p>
-          <p>+1 651-263-79270</p>
-          <p>9522209361</p>
-          <p>Fax: 2185933191</p>
+          <p>(651) 263-6291</p>
+          <p>Fax: (218) 593-3191</p>
         </div>
       </div>
       <div

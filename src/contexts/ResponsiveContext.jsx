@@ -1,12 +1,11 @@
-import { createContext, useContext, useState, useEffect, useRef } from "react";
-import React from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 const ResponsiveContext = createContext({ isDesktop: true });
 
 // eslint-disable-next-line react/prop-types
 export function ResponsiveProvider({ children }) {
   const [isDesktop, setIsDesktop] = useState(
-    typeof window !== "undefined" ? window.innerWidth > 500 : true
+    typeof window !== "undefined" ? window.innerWidth > 500 : true,
   );
   const timeoutRef = useRef(null);
 
@@ -25,11 +24,7 @@ export function ResponsiveProvider({ children }) {
     };
   }, []);
 
-  return (
-    <ResponsiveContext.Provider value={{ isDesktop }}>
-      {children}
-    </ResponsiveContext.Provider>
-  );
+  return <ResponsiveContext.Provider value={{ isDesktop }}>{children}</ResponsiveContext.Provider>;
 }
 
 export function useResponsive() {

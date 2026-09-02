@@ -1,6 +1,5 @@
-import HowWeWork from "../../components/HowWeWork";
 import { useEffect } from "react";
-import React from "react";
+import HowWeWork from "../../components/HowWeWork";
 
 export default function How() {
   useEffect(() => {

@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useResponsive } from "../contexts/ResponsiveContext.jsx";
-import React from "react";
 
-const ResponsiveComponent = ({
-  desktop: DesktopComponent,
-  mobile: MobileComponent,
-}) => {
+import React from "react";
+import { useResponsive } from "../contexts/ResponsiveContext.jsx";
+
+const ResponsiveComponent = ({ desktop: DesktopComponent, mobile: MobileComponent }) => {
   const { isDesktop } = useResponsive();
 
   return isDesktop ? <DesktopComponent /> : <MobileComponent />;

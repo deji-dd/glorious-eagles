@@ -1,8 +1,7 @@
-import BG from "../assets/elipses.svg";
 import Img1 from "../assets/aba-service-1.png";
-import MobilePictureFrame from "./MobilePictureFrame";
+import BG from "../assets/elipses.svg";
 import Img2 from "../assets/heart.svg";
-import React from "react";
+import MobilePictureFrame from "./MobilePictureFrame";
 
 export default function MobileAdditionalSupport() {
   return (
@@ -57,8 +56,8 @@ export default function MobileAdditionalSupport() {
                 color: "#4D4D4D",
               }}
             >
-              In addition to ABA, we provide additional interventions designed
-              to meet the unique needs of each individual.
+              In addition to ABA, we provide additional interventions designed to meet the unique
+              needs of each individual.
             </p>
           </div>
         </div>

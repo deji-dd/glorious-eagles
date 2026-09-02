@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import Clipboard from "../assets/clipboard.svg";
-import Puzzle from "../assets/puzzle.svg";
-import Heart from "../assets/heart.svg";
+
 import { useState } from "react";
-import React from "react";
+import Clipboard from "../assets/clipboard.svg";
+import Heart from "../assets/heart.svg";
+import Puzzle from "../assets/puzzle.svg";
 
 export default function ServicesOffer(props) {
   const [selected, setSelected] = useState(0);
@@ -68,9 +68,8 @@ export default function ServicesOffer(props) {
               lineHeight: "2.5rem",
             }}
           >
-            At Glorious Eagles, we provide personalized therapy and support to
-            help children develop essential skills, improve behaviors, and gain
-            independence.
+            At Glorious Eagles, we provide personalized therapy and support to help children develop
+            essential skills, improve behaviors, and gain independence.
           </p>
         </div>
       </div>
@@ -109,9 +108,7 @@ export default function ServicesOffer(props) {
             }}
           >
             <img src={Heart} />
-            <h4 style={{ textAlign: "center" }}>
-              Psychotherapy & Additional Support
-            </h4>
+            <h4 style={{ textAlign: "center" }}>Psychotherapy & Additional Support</h4>
           </div>
         </div>
       </div>

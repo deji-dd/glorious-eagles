@@ -1,7 +1,6 @@
 import AdressIcon from "../assets/address-icon.svg";
-import EmailIcon from "../assets/email-icon.svg";
 import CallIcon from "../assets/call-icon.svg";
-import React from "react";
+import EmailIcon from "../assets/email-icon.svg";
 
 export default function Contacts() {
   const h3_style = { fontSize: "2.5rem", lineHeight: "130%" };
@@ -69,7 +68,7 @@ export default function Contacts() {
               }}
             >
               <h3 style={h3_small}>Call Here</h3>
-              <p style={p_style}>+1 952-2209-361</p>
+              <p style={p_style}>(651) 263-6291</p>
             </div>
           </div>
         </div>
@@ -100,8 +99,7 @@ export default function Contacts() {
             <p style={p_style}>
               1865 132nd LN NW Coon Rapids MN 55448.
               <br />
-              MN DHS Licensed Early Intensive Developmental and Behavioral
-              Intervention
+              MN DHS Licensed Early Intensive Developmental and Behavioral Intervention
               <br />
               (EIDBI)
             </p>

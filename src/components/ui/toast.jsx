@@ -1,4 +1,3 @@
-import React from "react";
 import { createPortal } from "react-dom";
 import { useToast } from "./use-toast";
 
@@ -12,14 +11,9 @@ function ToastItem({ t }) {
   };
 
   return (
-    <div
-      className={`${base} ${variantStyles[t.variant] || variantStyles.default}`}
-      role="status"
-    >
+    <div className={`${base} ${variantStyles[t.variant] || variantStyles.default}`} role="status">
       {t.title && <div className="font-medium">{t.title}</div>}
-      {t.description && (
-        <div className="text-xs opacity-90">{t.description}</div>
-      )}
+      {t.description && <div className="text-xs opacity-90">{t.description}</div>}
     </div>
   );
 }

@@ -2,7 +2,6 @@ import img1 from "../assets/unlocking-1.png";
 import img2 from "../assets/unlocking-2.png";
 import img3 from "../assets/unlocking-3.png";
 import img4 from "../assets/unlocking-4.png";
-import React from "react";
 import Carousel from "./Carousel";
 
 export default function MobileUnlocking() {
@@ -50,10 +49,9 @@ export default function MobileUnlocking() {
           }}
           className="text-white"
         >
-          At Glorious Eagles, we believe that everyone, no matter their age or
-          story, deserves care, and the chance to thrive. We provide gentle,
-          personalized mental health and ABA therapy services that help
-          individuals and families build confidence, connection, and lasting
+          At Glorious Eagles, we believe that everyone, no matter their age or story, deserves care,
+          and the chance to thrive. We provide gentle, personalized mental health and ABA therapy
+          services that help individuals and families build confidence, connection, and lasting
           well-being.
         </p>
         <div
@@ -69,17 +67,11 @@ export default function MobileUnlocking() {
             </button>
           </a>
           <a href={"/contact-us"}>
-            <button className="button-s button-mobile border-white text-white">
-              Contact us
-            </button>
+            <button className="button-s button-mobile border-white text-white">Contact us</button>
           </a>
         </div>
       </div>
-      <Carousel
-        images={[img1, img2, img3, img4]}
-        height="13rem"
-        width="20rem"
-      />
+      <Carousel images={[img1, img2, img3, img4]} height="13rem" width="20rem" />
     </div>
   );
 }

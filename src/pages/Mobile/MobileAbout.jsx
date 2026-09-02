@@ -1,9 +1,8 @@
 import { useEffect, useRef } from "react";
-import MobileExperts from "../../components/MobileExperts";
 import MobileChoose from "../../components/MobileChoose";
 import MobileDifferent from "../../components/MobileDifferent";
+import MobileExperts from "../../components/MobileExperts";
 import MobilePeople from "../../components/MobilePeople";
-import React from "react";
 
 export default function MobileAbout() {
   const ref = useRef(null);

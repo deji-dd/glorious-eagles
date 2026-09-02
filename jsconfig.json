@@ -8,12 +8,10 @@
     "checkJs": false,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
   "include": ["node_modules/vite/client.d.ts", "**/*"],
-  "content": ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"]
+  "exclude": ["node_modules", "dist"]
 }

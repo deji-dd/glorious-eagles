@@ -1,6 +1,5 @@
-import React from "react";
-import lines from "../assets/title-lines.svg";
 import heart from "../assets/heart-svg.svg";
+import lines from "../assets/title-lines.svg";
 
 export default function MobileCaring() {
   return (
@@ -44,9 +43,9 @@ export default function MobileCaring() {
           width: "25.6rem",
         }}
       >
-        At Glorious Eagles, we provide a blend of Mental Health and ABA Therapy
-        services designed to support individuals and families in achieving
-        emotional balance, confidence, and independence.
+        At Glorious Eagles, we provide a blend of Mental Health and ABA Therapy services designed to
+        support individuals and families in achieving emotional balance, confidence, and
+        independence.
       </p>
 
       {/* Cards container */}
@@ -68,9 +67,7 @@ export default function MobileCaring() {
           }}
           aria-labelledby="mh-title"
         >
-          <div
-            style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}
-          >
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
             <div style={{ flex: 1 }}>
               <h3
                 id="mh-title"
@@ -86,10 +83,9 @@ export default function MobileCaring() {
                   color: "rgba(255,255,255,0.92)",
                 }}
               >
-                Life can feel overwhelming sometimes but you don&apos;t have to
-                face it alone. Our compassionate therapists and counsellors walk
-                beside you every step of the way, helping you find balance,
-                healing, and hope.
+                Life can feel overwhelming sometimes but you don&apos;t have to face it alone. Our
+                compassionate therapists and counsellors walk beside you every step of the way,
+                helping you find balance, healing, and hope.
               </p>
 
               <div style={{ marginTop: "0.9rem", fontSize: "0.95rem" }}>
@@ -151,20 +147,15 @@ export default function MobileCaring() {
           }}
           aria-labelledby="aba-title"
         >
-          <div
-            style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}
-          >
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
             <div style={{ flex: 1 }}>
-              <h3
-                id="aba-title"
-                style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}
-              >
+              <h3 id="aba-title" style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>
                 ABA Therapy Services
               </h3>
               <p style={{ fontSize: "0.95rem", lineHeight: "1.4rem" }}>
-                Every child is full of potential. Our ABA programs nurture that
-                potential in children and young adults ages 2–21, focusing on
-                communication, life skills, and positive behaviour.
+                Every child is full of potential. Our ABA programs nurture that potential in
+                children and young adults ages 2–21, focusing on communication, life skills, and
+                positive behaviour.
               </p>
 
               <div style={{ marginTop: "0.9rem", fontSize: "0.95rem" }}>

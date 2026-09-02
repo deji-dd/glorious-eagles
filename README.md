@@ -1,6 +1,6 @@
 # Glorious Eagles
 
-A modern, responsive website for the Glorious Eagles foundation, built with React, Vite, and Cloudflare Workers.
+A modern, responsive website for the Glorious Eagles foundation, built with React, Vite, and Cloudflare Pages.
 
 ## Features
 
@@ -15,14 +15,14 @@ A modern, responsive website for the Glorious Eagles foundation, built with Reac
 - **Language**: JavaScript (ESModules)
 - **Styling**: Tailwind CSS
 - **Routing**: React Router DOM v7
-- **Package Manager**: pnpm
+- **Runtime & Package Manager**: Bun
+- **Linter & Formatter**: Biome
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v18+)
-- pnpm (v10+)
+- [Bun](https://bun.sh) (v1.2+)
 
 ### Installation
 
@@ -36,7 +36,7 @@ A modern, responsive website for the Glorious Eagles foundation, built with Reac
 2. Install dependencies:
 
    ```bash
-   pnpm install
+   bun install
    ```
 
 ### Development
@@ -44,7 +44,29 @@ A modern, responsive website for the Glorious Eagles foundation, built with Reac
 Start the development server:
 
 ```bash
-pnpm run dev
+bun run dev
+```
+
+### Type Checking
+
+Check types:
+
+```bash
+bun run typecheck
+```
+
+### Linting & Formatting
+
+Check code quality with Biome:
+
+```bash
+bun run lint
+```
+
+Format code:
+
+```bash
+bun run format
 ```
 
 ### Build
@@ -52,7 +74,7 @@ pnpm run dev
 Build for production:
 
 ```bash
-pnpm run build
+bun run build
 ```
 
 ## Deployment

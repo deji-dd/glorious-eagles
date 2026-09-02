@@ -1,12 +1,11 @@
-import logo from "../assets/logo.svg";
-import icon from "../assets/navbar-icon.svg";
 import { useLocation } from "react-router-dom";
-import MailIcon from "../assets/message-icon.svg";
 import CallIcon from "../assets/call-icon.svg";
+import logo from "../assets/logo.svg";
+import MailIcon from "../assets/message-icon.svg";
+import icon from "../assets/navbar-icon.svg";
 import Facebook from "../assets/social-facebook.svg";
 import Instagram from "../assets/social-instagram.svg";
 import Twitter from "../assets/social-twitter.svg";
-import React from "react";
 
 export default function MobileHeader() {
   const location = useLocation();
@@ -79,10 +78,7 @@ export default function MobileHeader() {
             </button>
           </a>
           <nav className="navbar navbar-dark p-0">
-            <div
-              style={{ paddingTop: "0.3125rem" }}
-              className="container-fluid px-0"
-            >
+            <div style={{ paddingTop: "0.3125rem" }} className="container-fluid px-0">
               <button
                 style={{
                   width: "1.375rem",
@@ -171,37 +167,35 @@ export default function MobileHeader() {
                     >
                       <a
                         href={"/"}
-                        style={path == "/" ? link_active : link_style}
+                        style={path === "/" ? link_active : link_style}
                         // data-bs-dismiss="offcanvas"
                       >
                         Home
                       </a>
                       <a
                         href={"/services"}
-                        style={path == "/services" ? link_active : link_style}
+                        style={path === "/services" ? link_active : link_style}
                         // data-bs-dismiss="offcanvas"
                       >
                         Services
                       </a>
                       <a
                         href={"/about-us"}
-                        style={path == "/about-us" ? link_active : link_style}
+                        style={path === "/about-us" ? link_active : link_style}
                         // data-bs-dismiss="offcanvas"
                       >
                         About Us
                       </a>
                       <a
                         href={"/how-we-work"}
-                        style={
-                          path == "/how-we-work" ? link_active : link_style
-                        }
+                        style={path === "/how-we-work" ? link_active : link_style}
                         // data-bs-dismiss="offcanvas"
                       >
                         How we work
                       </a>
                       <a
                         href={"/career"}
-                        style={path == "/career" ? link_active : link_style}
+                        style={path === "/career" ? link_active : link_style}
                         // data-bs-dismiss="offcanvas"
                       >
                         Career
@@ -235,11 +229,8 @@ export default function MobileHeader() {
                       <div className="flex gap-4">
                         <div style={div_style}>
                           <img style={img_style} src={CallIcon} />
-                          <p>+1 651-263-6291</p>
-                        </div>
-                        <div style={div_style}>
-                          <img style={img_style} src={CallIcon} />
-                          <p>+1 651-263-79270</p>
+
+                          <p>(651) 263-6291</p>
                         </div>
                       </div>
                       <div style={div_style}>
@@ -255,7 +246,7 @@ export default function MobileHeader() {
                           <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
                           <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
                         </svg>
-                        <p>2185933191</p>
+                        <p>Fax: (218) 593-3191</p>
                       </div>
                       <div
                         style={{
@@ -263,11 +254,7 @@ export default function MobileHeader() {
                           gap: "1.57rem",
                         }}
                       >
-                        <a
-                          href={
-                            "https://web.facebook.com/people/Hero-Center/61557128850758/"
-                          }
-                        >
+                        <a href={"https://web.facebook.com/people/Hero-Center/61557128850758/"}>
                           <img src={Facebook} />
                         </a>
                         <a href={"https://www.instagram.com/hero_center_/"}>

@@ -1,9 +1,8 @@
-import BG from "../assets/elipses.svg";
-import PictureFrame from "./PictureFrame";
 import Img1 from "../assets/additional-support-1.png";
 import Img2 from "../assets/additional-support-2.png";
+import BG from "../assets/elipses.svg";
 import Img3 from "../assets/heart.svg";
-import React from "react";
+import PictureFrame from "./PictureFrame";
 
 export default function AdditionalSupport() {
   return (
@@ -66,8 +65,8 @@ export default function AdditionalSupport() {
                 color: "#4D4D4D",
               }}
             >
-              In addition to ABA, we provide additional interventions designed
-              to meet the unique needs of each individual.
+              In addition to ABA, we provide additional interventions designed to meet the unique
+              needs of each individual.
             </p>
           </div>
         </div>

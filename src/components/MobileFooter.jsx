@@ -1,11 +1,10 @@
-import BG from "../assets/mobile-footer-bg.png";
-import logo from "../assets/logo.svg";
+import CallIcon from "../assets/call-icon-footer.svg";
 import Facebook from "../assets/facebook-footer.svg";
 import Instagram from "../assets/instagram-footer.svg";
-import Twitter from "../assets/twitter-footer.svg";
+import logo from "../assets/logo.svg";
 import MailIcon from "../assets/message-icon-footer.svg";
-import CallIcon from "../assets/call-icon-footer.svg";
-import React from "react";
+import BG from "../assets/mobile-footer-bg.png";
+import Twitter from "../assets/twitter-footer.svg";
 
 export default function MobileFooter() {
   const link_style = {
@@ -104,15 +103,11 @@ export default function MobileFooter() {
         </div>
         <div style={div_style}>
           <img style={img_style} src={CallIcon} />
-          <p style={p_style}>+1 651-263-6291</p>
+          <p style={p_style}>(651) 263-6291</p>
         </div>
         <div style={div_style}>
           <img style={img_style} src={CallIcon} />
-          <p style={p_style}>651-263-7927</p>
-        </div>
-        <div style={div_style}>
-          <img style={img_style} src={CallIcon} />
-          <p style={p_style}>9522209361</p>
+          <p style={p_style}>Fax: (218) 593-3191</p>
         </div>
         <div
           style={{
@@ -120,9 +115,7 @@ export default function MobileFooter() {
             gap: "1.8125rem",
           }}
         >
-          <a
-            href={"https://web.facebook.com/people/Hero-Center/61557128850758/"}
-          >
+          <a href={"https://web.facebook.com/people/Hero-Center/61557128850758/"}>
             <img src={Facebook} style={{ width: "1.56696rem" }} />
           </a>
           <a href={"https://www.instagram.com/hero_center_/"}>

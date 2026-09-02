@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import Clipboard from "../assets/clipboard.svg";
-import Puzzle from "../assets/puzzle.svg";
-import Heart from "../assets/heart.svg";
+
 import { useState } from "react";
-import React from "react";
+import Clipboard from "../assets/clipboard.svg";
+import Heart from "../assets/heart.svg";
+import Puzzle from "../assets/puzzle.svg";
 
 export default function MobileServicesOffer(props) {
   const [selected, setSelected] = useState(0);
@@ -65,9 +65,8 @@ export default function MobileServicesOffer(props) {
             textAlign: "center",
           }}
         >
-          At Glorious Eagles, we provide personalized therapy and support to
-          help children develop essential skills, improve behaviors, and gain
-          independence.
+          At Glorious Eagles, we provide personalized therapy and support to help children develop
+          essential skills, improve behaviors, and gain independence.
         </p>
       </div>
       <div style={{ width: "100%" }}>

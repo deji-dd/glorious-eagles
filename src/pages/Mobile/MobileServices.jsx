@@ -1,11 +1,10 @@
+import { useEffect, useRef } from "react";
+import Arrow from "../../assets/arrow.svg";
 import MobileAbaServices from "../../components/MobileAbaServices";
 import MobileAdditionalSupport from "../../components/MobileAdditionalSupport";
 import MobileAssessments from "../../components/MobileAssessments";
 import MobileContactCard from "../../components/MobileContactCard";
 import MobileServicesOffer from "../../components/MobileServicesOffer";
-import Arrow from "../../assets/arrow.svg";
-import { useRef, useEffect } from "react";
-import React from "react";
 
 export default function MobileServices() {
   const ref1 = useRef(null);
@@ -41,8 +40,8 @@ export default function MobileServices() {
         }}
       >
         <h5 style={{ textAlign: "center" }}>
-          We’re here to support you and your child every step of the way. Let’s
-          work together to create meaningful progress!
+          We’re here to support you and your child every step of the way. Let’s work together to
+          create meaningful progress!
         </h5>
         <img style={{ width: "6rem", marginTop: "2rem" }} src={Arrow} />
       </div>

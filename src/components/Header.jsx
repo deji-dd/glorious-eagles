@@ -1,6 +1,5 @@
-import logo from "../assets/logo.svg";
 import { useLocation } from "react-router-dom";
-import React from "react";
+import logo from "../assets/logo.svg";
 
 export default function Header() {
   const location = useLocation();
@@ -85,31 +84,19 @@ export default function Header() {
               gap: "3.75rem",
             }}
           >
-            <a href={"/"} style={path == "/" ? link_active : link_style}>
+            <a href={"/"} style={path === "/" ? link_active : link_style}>
               Home
             </a>
-            <a
-              href={"/services"}
-              style={path == "/services" ? link_active : link_style}
-            >
+            <a href={"/services"} style={path === "/services" ? link_active : link_style}>
               Services
             </a>
-            <a
-              href={"/about-us"}
-              style={path == "/about-us" ? link_active : link_style}
-            >
+            <a href={"/about-us"} style={path === "/about-us" ? link_active : link_style}>
               About Us
             </a>
-            <a
-              href={"/how-we-work"}
-              style={path == "/how-we-work" ? link_active : link_style}
-            >
+            <a href={"/how-we-work"} style={path === "/how-we-work" ? link_active : link_style}>
               How we work
             </a>
-            <a
-              href={"/career"}
-              style={path == "/career" ? link_active : link_style}
-            >
+            <a href={"/career"} style={path === "/career" ? link_active : link_style}>
               Career
             </a>
           </div>

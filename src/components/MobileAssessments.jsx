@@ -1,8 +1,7 @@
-import BG from "../assets/elipses.svg";
 import Img1 from "../assets/aba-service-1.png";
-import MobilePictureFrame from "./MobilePictureFrame";
 import Img2 from "../assets/aba-service-2.png";
-import React from "react";
+import BG from "../assets/elipses.svg";
+import MobilePictureFrame from "./MobilePictureFrame";
 
 export default function MobileAssessments() {
   return (

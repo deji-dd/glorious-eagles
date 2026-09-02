@@ -1,9 +1,8 @@
-import Background from "../assets/footer-bg.png";
-import logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook-footer.svg";
+import Background from "../assets/footer-bg.png";
 import Instagram from "../assets/instagram-footer.svg";
+import logo from "../assets/logo.svg";
 import Twitter from "../assets/twitter-footer.svg";
-import React from "react";
 
 export default function Footer() {
   const link_style = {
@@ -131,9 +130,7 @@ export default function Footer() {
             </div>
 
             <div className="flex text-right self-start flex-col gap-3">
-              <p style={link_style}>+1 651-263-6291</p>
-              <p style={link_style}>651-263-7927</p>
-              <p style={link_style}>9522209361</p>
+              <p style={link_style}>(651) 263-6291</p>
             </div>
 
             <div
@@ -145,11 +142,7 @@ export default function Footer() {
                 gap: "1.8125rem",
               }}
             >
-              <a
-                href={
-                  "https://web.facebook.com/people/Hero-Center/61557128850758/"
-                }
-              >
+              <a href={"https://web.facebook.com/people/Hero-Center/61557128850758/"}>
                 <img src={Facebook} />
               </a>
               <a href={"https://www.instagram.com/hero_center_/"}>

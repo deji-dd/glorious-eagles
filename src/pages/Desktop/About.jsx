@@ -1,8 +1,7 @@
+import { useEffect, useRef } from "react";
 import Choose from "../../components/Choose";
 import Different from "../../components/Different";
 import Experts from "../../components/Experts";
-import { useEffect, useRef } from "react";
-import React from "react";
 export default function About() {
   const ref = useRef(null);
   useEffect(() => {

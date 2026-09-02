@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import React from "react";
+import MentalHealthServicesCard from "@/components/MentalHealthServicesCard";
+import MobileJourney from "@/components/MobileJourney";
 import one from "../../assets/mhs-1.webp";
-import six from "../../assets/mhs-6.png";
 import two from "../../assets/mhs-2.webp";
 import three from "../../assets/mhs-3.webp";
 import four from "../../assets/mhs-4.webp";
-import MentalHealthServicesCard from "@/components/MentalHealthServicesCard";
-import MobileJourney from "@/components/MobileJourney";
+import six from "../../assets/mhs-6.png";
 
 export default function MobileMentalHealthServices() {
   useEffect(() => {
@@ -58,10 +57,9 @@ export default function MobileMentalHealthServices() {
             }}
             className="text-white"
           >
-            We support teens, adults, and families with therapy and counselling
-            designed to meet you where you are. Whether you&apos;re facing
-            stress, relationship challenges, or emotional struggles, our trained
-            professionals help you rediscover hope and healing.
+            We support teens, adults, and families with therapy and counselling designed to meet you
+            where you are. Whether you&apos;re facing stress, relationship challenges, or emotional
+            struggles, our trained professionals help you rediscover hope and healing.
           </p>
         </div>
       </div>

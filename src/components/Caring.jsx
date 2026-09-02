@@ -1,6 +1,5 @@
-import lines from "../assets/title-lines.svg";
-import React from "react";
 import heart from "../assets/heart-svg.svg";
+import lines from "../assets/title-lines.svg";
 
 export default function Caring() {
   return (
@@ -30,23 +29,22 @@ export default function Caring() {
         Caring for Every Mind, Every Age, Every Story
       </h1>
       <p className="text-center w-[60rem] text-[22px] mt-3 text-[#4D4D4D] mb-5">
-        At Glorious Eagles, we provide a blend of Mental Health and ABA Therapy
-        services designed to support individuals and families in achieving
-        emotional balance, confidence, and independence.
+        At Glorious Eagles, we provide a blend of Mental Health and ABA Therapy services designed to
+        support individuals and families in achieving emotional balance, confidence, and
+        independence.
       </p>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         <div className="bg-[#190244] rounded-[3rem] py-7 px-12 text-white flex flex-col">
           <h4 className="text-white">Mental Health Services</h4>
           <p className="mt-4 leading-6">
-            Life can feel overwhelming sometimes but you don&apos;t have to face
-            it alone. Our compassionate therapists and counsellors walk beside
-            you every step of the way, helping you find balance, healing, and
-            hope.
+            Life can feel overwhelming sometimes but you don&apos;t have to face it alone. Our
+            compassionate therapists and counsellors walk beside you every step of the way, helping
+            you find balance, healing, and hope.
             <br />
             <br />
             <br />
-            We support teens, adults, and families through a variety of care
-            options designed to fit your needs.
+            We support teens, adults, and families through a variety of care options designed to fit
+            your needs.
             <br />
             <br />
             <br />
@@ -62,9 +60,7 @@ export default function Caring() {
                   <li>Mental Health Therapy</li>
                 </div>
                 <a href="/mental-health-services">
-                  <button className="button-s mt-5 text-white border-white">
-                    Learn More
-                  </button>
+                  <button className="button-s mt-5 text-white border-white">Learn More</button>
                 </a>
               </div>
               <img
@@ -81,15 +77,13 @@ export default function Caring() {
         <div className="bg-[#FB8E51] rounded-[3rem] py-7 px-12 text-[#180344] flex flex-col">
           <h4>ABA Therapy Services</h4>
           <p className="mt-4 leading-6">
-            Every child is full of potential. Our ABA (Applied Behaviour
-            Analysis) programs are designed to nurture that potential in
-            children and young adults ages 2-21.
+            Every child is full of potential. Our ABA (Applied Behaviour Analysis) programs are
+            designed to nurture that potential in children and young adults ages 2-21.
             <br />
             <br />
             <br />
-            We focus on building practical life skills, improving communication,
-            and supporting positive behavior, all in a caring, supportive
-            environment.
+            We focus on building practical life skills, improving communication, and supporting
+            positive behavior, all in a caring, supportive environment.
             <br />
             <br />
             <br />
@@ -106,9 +100,7 @@ export default function Caring() {
                   <li>Social Skills & Play</li>
                 </div>
                 <a href="/services">
-                  <button className="button-s mt-5 border-[#180344]">
-                    Learn More
-                  </button>
+                  <button className="button-s mt-5 border-[#180344]">Learn More</button>
                 </a>
               </div>
               <img

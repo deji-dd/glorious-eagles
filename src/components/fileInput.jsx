@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
+
+import { CheckCircle2, FolderIcon, XCircle } from "lucide-react";
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FolderIcon, XCircle, CheckCircle2 } from "lucide-react";
-import React from "react";
 
 export function FileUpload({
   title,
@@ -30,7 +31,7 @@ export function FileUpload({
   const handleFileChange = (e) => {
     e.preventDefault();
     const newFiles = Array.from(e.target.files);
-    let validFiles = [];
+    const validFiles = [];
 
     // Validate each file
     for (const file of newFiles) {
@@ -47,9 +48,7 @@ export function FileUpload({
 
     const totalFiles = files.length + validFiles.length;
     if (totalFiles > 3) {
-      if (
-        !confirm("More than 3 files will be compressed into a ZIP. Continue?")
-      ) {
+      if (!confirm("More than 3 files will be compressed into a ZIP. Continue?")) {
         return;
       }
     }
@@ -94,9 +93,7 @@ export function FileUpload({
       <div className="border bg-white border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center">
         <FolderIcon className="h-8 w-8 text-gray-400 mb-2" />
         <p className="text-gray-700 mb-1">Drag files or click to upload</p>
-        <p className="text-gray-500 text-sm mb-4">
-          Max 5MB per file (PNG, JPG, PDF)
-        </p>
+        <p className="text-gray-500 text-sm mb-4">Max 5MB per file (PNG, JPG, PDF)</p>
 
         <Button
           type="button"
@@ -129,9 +126,7 @@ export function FileUpload({
                 >
                   <div className="flex items-center">
                     <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm truncate max-w-[180px]">
-                      {file.name}
-                    </span>
+                    <span className="text-sm truncate max-w-[180px]">{file.name}</span>
                     <span className="text-xs text-gray-500 ml-2">
                       {(file.size / 1024).toFixed(1)}KB
                     </span>

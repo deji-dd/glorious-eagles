@@ -1,11 +1,10 @@
-import Assessments from "../../components/Assessments";
+import { useEffect, useRef } from "react";
+import Arrow from "../../assets/arrow.svg";
 import AbaServices from "../../components/AbaServices";
 import AdditionalSupport from "../../components/AdditionalSupport";
+import Assessments from "../../components/Assessments";
 import ContactCard from "../../components/ContactCard";
 import ServicesOffer from "../../components/ServicesOffer";
-import Arrow from "../../assets/arrow.svg";
-import { useRef, useEffect } from "react";
-import React from "react";
 
 export default function Services() {
   const ref1 = useRef(null);
@@ -43,8 +42,8 @@ export default function Services() {
         }}
       >
         <h3 style={{ textAlign: "center" }}>
-          We’re here to support you and your child every step of the way. Let’s
-          work together to create meaningful progress!
+          We’re here to support you and your child every step of the way. Let’s work together to
+          create meaningful progress!
         </h3>
         <img style={{ width: "6rem", marginTop: "2rem" }} src={Arrow} />
       </div>

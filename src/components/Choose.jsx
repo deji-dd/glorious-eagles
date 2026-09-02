@@ -1,12 +1,11 @@
-import BG from "../assets/elipses.svg";
-import ChooseCardSmall from "./ChooseCardSmall";
 import Choose1 from "../assets/choose1.svg";
 import Choose2 from "../assets/choose2.svg";
 import Choose3 from "../assets/choose3.svg";
 import Choose4 from "../assets/choose4.svg";
 import Choose5 from "../assets/choose5.svg";
+import BG from "../assets/elipses.svg";
 import ChooseCardBig from "./ChooseCardBig";
-import React from "react";
+import ChooseCardSmall from "./ChooseCardSmall";
 
 export default function Choose() {
   return (
