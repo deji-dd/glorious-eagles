@@ -1,32 +1,27 @@
 import { defaultAvatar } from "../data/teamMembers";
 
-export default function MobilePeopleCard({
+export default function PeopleCard({
   name,
   role,
   degree,
   credentials,
   image,
-  img,
-  title,
   imagePosition,
   imageStyle,
 }) {
-  const memberName = name || title;
-  const memberImg = image || img || defaultAvatar;
-  const isCustomImage = Boolean(image);
-
   return (
     <div
+      className="team-card"
       style={{
-        width: "100%",
-        maxWidth: "13.02888rem",
+        width: "18rem",
         display: "flex",
         flexDirection: "column",
-        border: "0.54px solid #E7DDFD",
+        border: "1px solid #E7DDFD",
         background: "var(--White, #FFF)",
-        boxSizing: "border-box",
+        borderRadius: "0.75rem",
         overflow: "hidden",
-        height: "100%",
+        boxShadow: "0 4px 14px rgba(24, 3, 68, 0.05)",
+        boxSizing: "border-box",
       }}
     >
       {/* Picture Space */}
@@ -35,17 +30,17 @@ export default function MobilePeopleCard({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "11.5rem",
+          height: "14rem",
           width: "100%",
           backgroundColor: "#FBFBFF",
-          borderBottom: "0.54px solid #F1EBFE",
+          borderBottom: "1px solid #F1EBFE",
           overflow: "hidden",
         }}
       >
-        {isCustomImage ? (
+        {image ? (
           <img
-            src={memberImg}
-            alt={memberName}
+            src={image}
+            alt={name}
             style={{
               width: "100%",
               height: "100%",
@@ -56,8 +51,8 @@ export default function MobilePeopleCard({
           />
         ) : (
           <img
-            src={memberImg}
-            alt={memberName}
+            src={defaultAvatar}
+            alt={name}
             style={{
               width: "5.5rem",
               height: "auto",
@@ -66,38 +61,38 @@ export default function MobilePeopleCard({
         )}
       </div>
 
-      {/* Member Details */}
+      {/* Member Info */}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          padding: "0.85rem 0.5rem 1rem",
-          gap: "0.25rem",
+          padding: "1.25rem 1rem 1.5rem",
+          gap: "0.35rem",
           flexGrow: 1,
         }}
       >
-        <p
+        <h3
           style={{
             color: "var(--Primary-colour, #180344)",
-            fontSize: "1.05rem",
+            fontSize: "1.25rem",
             fontWeight: 700,
-            lineHeight: "1.3rem",
+            lineHeight: "1.5rem",
             margin: 0,
             fontFamily: "'Hanken Grotesk', sans-serif",
           }}
         >
-          {memberName}
-        </p>
+          {name}
+        </h3>
 
         {role && (
           <p
             style={{
               color: "#453269",
-              fontSize: "0.85rem",
+              fontSize: "1rem",
               fontWeight: 600,
-              lineHeight: "1.15rem",
+              lineHeight: "1.3rem",
               margin: 0,
               fontFamily: "'Lato', sans-serif",
             }}
@@ -110,9 +105,9 @@ export default function MobilePeopleCard({
           <p
             style={{
               color: "#374151",
-              fontSize: "0.78rem",
+              fontSize: "0.9rem",
               fontWeight: 500,
-              lineHeight: "1.1rem",
+              lineHeight: "1.25rem",
               margin: 0,
               fontFamily: "'Lato', sans-serif",
             }}
@@ -125,9 +120,9 @@ export default function MobilePeopleCard({
           <p
             style={{
               color: "#6B7280",
-              fontSize: "0.74rem",
+              fontSize: "0.85rem",
               fontWeight: 400,
-              lineHeight: "1.05rem",
+              lineHeight: "1.2rem",
               margin: 0,
               fontFamily: "'Lato', sans-serif",
             }}

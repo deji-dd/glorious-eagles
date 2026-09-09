@@ -163,6 +163,17 @@ textarea:focus {
   transform: scale(1.2);
 }
 
+.team-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(24, 3, 68, 0.12);
+}
+
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none;

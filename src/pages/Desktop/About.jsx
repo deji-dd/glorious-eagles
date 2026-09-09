@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import Choose from "../../components/Choose";
 import Different from "../../components/Different";
 import Experts from "../../components/Experts";
+import People from "../../components/People";
+
 export default function About() {
   const ref = useRef(null);
   useEffect(() => {
@@ -40,6 +42,7 @@ export default function About() {
         </h1>
         <Different />
       </div>
+      <People />
     </div>
   );
 }

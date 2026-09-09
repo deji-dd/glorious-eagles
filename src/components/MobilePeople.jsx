@@ -1,4 +1,4 @@
-import Img from "../assets/member.svg";
+import { teamMembers } from "../data/teamMembers";
 import MobilePeopleCard from "./MobilePeopleCard";
 
 export default function MobilePeople() {
@@ -10,9 +10,10 @@ export default function MobilePeople() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "1.2rem",
-        padding: "3rem 1.28rem",
+        gap: "1.8rem",
+        padding: "3.5rem 1.28rem",
         width: "30rem",
+        boxSizing: "border-box",
       }}
     >
       <h2
@@ -20,43 +21,24 @@ export default function MobilePeople() {
           fontSize: "2.56rem",
           lineHeight: "3.0256rem",
           letterSpacing: "0.0256rem",
+          textAlign: "center",
+          margin: 0,
         }}
       >
         Team Members
       </h2>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1.875rem",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "1.4rem",
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            gap: "1.4rem",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              gap: "1.4rem",
-            }}
-          >
-            <MobilePeopleCard img={Img} title={"CEO/Founder"} />
-            <MobilePeopleCard img={Img} title={"Co-Founder"} />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "1.4rem",
-            }}
-          >
-            <MobilePeopleCard img={Img} title={"Program Director"} />
-            <MobilePeopleCard img={Img} title={"QSP"} />
-          </div>
-        </div>
+        {teamMembers.map((member) => (
+          <MobilePeopleCard key={member.id} {...member} />
+        ))}
       </div>
     </div>
   );
