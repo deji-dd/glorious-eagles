@@ -1,9 +1,13 @@
 import agnesImg from "../assets/agnes.jpg";
 import ashleyImg from "../assets/ashley.jpg";
+import assumptaImg from "../assets/assumpta.jpg";
+import heduikImg from "../assets/heduik.jpg";
 import joelImg from "../assets/joel.jpg";
 import judithImg from "../assets/judith.jpg";
 import lindaImg from "../assets/linda.png";
 import defaultAvatar from "../assets/member.svg";
+import moxieImg from "../assets/moxie.jpg";
+import samsonImg from "../assets/samson.jpg";
 
 /**
  * Team Members Data
@@ -21,10 +25,10 @@ export const teamMembers = [
   {
     id: 1,
     name: "Samson Alayande",
-    role: "Director of Logistics",
+    role: "Director of Operations",
     degree: "MA (ABA)",
     credentials: "Behavior Specialist | Level 1 Provider",
-    image: null, // Space for picture
+    image: samsonImg,
   },
   {
     id: 2,
@@ -40,7 +44,7 @@ export const teamMembers = [
     role: "Director Mental Health",
     degree: "PMHNP-BC",
     credentials: "Qualified Supervising Professional | Level 1 Provider",
-    image: null, // Space for picture: add once image is placed in src/assets
+    image: heduikImg,
   },
   {
     id: 4,
@@ -48,7 +52,8 @@ export const teamMembers = [
     role: null,
     degree: "PMHNP-BC",
     credentials: "Qualified Supervising Professional | Level 1 Provider",
-    image: null, // Space for picture: add once image is placed in src/assets
+    image: assumptaImg,
+    imagePosition: "center top",
   },
   {
     id: 5,
@@ -57,6 +62,7 @@ export const teamMembers = [
     degree: "BCBA | Licensed Behavior Analyst",
     credentials: "Qualified Supervising Professional | Level 1 Provider",
     image: agnesImg,
+    imagePosition: "center 30%",
   },
   {
     id: 6,
@@ -69,7 +75,7 @@ export const teamMembers = [
   },
   {
     id: 7,
-    name: "Judith Etombe Esembe",
+    name: "Judith Motome Esembe",
     role: null,
     degree: "MEd (Special Education)",
     credentials: "Behavior Specialist | Program Coordinator | Level 1 Provider",
@@ -78,7 +84,7 @@ export const teamMembers = [
   },
   {
     id: 8,
-    name: "Kaytie Hodges",
+    name: "Katie Hodges",
     role: null,
     degree: "MA (Clinical Mental Health Counseling)",
     credentials: "Level 1 Provider",
@@ -98,7 +104,8 @@ export const teamMembers = [
     role: null,
     degree: null,
     credentials: "RBT | Level II Provider",
-    image: null, // Space for picture: add once image is placed in src/assets
+    image: moxieImg,
+    imagePosition: "center 45%",
   },
 ];
 
