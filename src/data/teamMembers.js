@@ -4,6 +4,7 @@ import assumptaImg from "../assets/assumpta.jpg";
 import heduikImg from "../assets/heduik.jpg";
 import joelImg from "../assets/joel.jpg";
 import judithImg from "../assets/judith.jpg";
+import katieImg from "../assets/katie.jpg";
 import lindaImg from "../assets/linda.png";
 import defaultAvatar from "../assets/member.svg";
 import moxieImg from "../assets/moxie.jpg";
@@ -20,6 +21,11 @@ import samsonImg from "../assets/samson.jpg";
  *    image: samsonPic, (or use an absolute/relative image URL string)
  *
  * When `image` is null or not provided, the default silhouette avatar is displayed.
+ *
+ * Optional per-member photo framing:
+ * - `imagePosition`: CSS `object-position` for the cropped photo (default "center center")
+ * - `imageStyle`: extra inline styles, e.g. `{ objectFit: "contain" }` to show
+ *   a portrait photo in full inside the landscape card frame
  */
 export const teamMembers = [
   {
@@ -86,9 +92,19 @@ export const teamMembers = [
     id: 8,
     name: "Katie Hodges",
     role: null,
-    degree: "MA (Clinical Mental Health Counseling)",
+    degree: "BSc (Psychology)",
     credentials: "Level 1 Provider",
-    image: null, // Space for picture: add once image is placed in src/assets
+    image: katieImg,
+    // Portrait photo in a landscape card frame. Scaled past the width-fill
+    // point (1.72) so it bleeds edge to edge, anchored to the top so the
+    // crop comes off the bottom and her face stays intact. The translate is
+    // listed first so it stays an unscaled 0.85rem shift; lift her further up
+    // screen (drop the sign to move her down).
+    imageStyle: {
+      objectFit: "contain",
+      transform: "translateY(-3.5rem) scale(1.74)",
+      transformOrigin: "center top",
+    },
   },
   {
     id: 9,
