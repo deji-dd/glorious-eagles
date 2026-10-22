@@ -16,7 +16,7 @@ A modern, responsive website for the Glorious Eagles foundation, built with Reac
 - **Styling**: Tailwind CSS
 - **Routing**: React Router DOM v7
 - **Runtime & Package Manager**: Bun
-- **Linter & Formatter**: Biome
+- **Formatter**: Bun (`bun fmt`)
 
 ## Getting Started
 
@@ -55,18 +55,18 @@ Check types:
 bun run typecheck
 ```
 
-### Linting & Formatting
-
-Check code quality with Biome:
-
-```bash
-bun run lint
-```
+### Formatting
 
 Format code:
 
 ```bash
 bun run format
+```
+
+Check formatting:
+
+```bash
+bun run format:check
 ```
 
 ### Build

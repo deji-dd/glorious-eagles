@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+
 import Journey from "@/components/Journey";
 import MentalHealthServicesCard from "@/components/MentalHealthServicesCard";
+
 import BG from "../../assets/elipses.svg";
 import one from "../../assets/mhs-1.webp";
 import two from "../../assets/mhs-2.webp";

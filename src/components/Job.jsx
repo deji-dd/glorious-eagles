@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+
 import Img from "../assets/career.gif";
 import MessageIcon from "../assets/message-icon.svg";
 import NameIcon from "../assets/name-icon.svg";

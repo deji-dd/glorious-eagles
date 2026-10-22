@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import HowWeWork from "../../components/HowWeWork";
 
 export default function How() {

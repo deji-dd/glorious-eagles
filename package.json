@@ -9,9 +9,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
+    "format": "bun fmt",
+    "format:check": "bun fmt --check",
     "typecheck": "tsc -p jsconfig.json --noEmit"
   },
   "dependencies": {
@@ -33,7 +32,6 @@
     "tw-animate-css": "latest"
   },
   "devDependencies": {
-    "@biomejs/biome": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -44,5 +42,5 @@
     "typescript": "latest",
     "vite": "latest"
   },
-  "packageManager": "bun@1.4.3"
+  "packageManager": "bun@1.4.4"
 }

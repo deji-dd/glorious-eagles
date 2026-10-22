@@ -1,4 +1,5 @@
 import { AnimationOnScroll } from "react-animation-on-scroll";
+
 import Line from "../assets/how-we-work-line.svg";
 
 export default function HowWeWork() {

@@ -36,7 +36,6 @@ const MobileMentalHealthServices = lazy(
 import "./style.css";
 
 import ResponsiveComponent from "./components/ResponsiveComponent.jsx";
-
 import { ResponsiveProvider, useResponsive } from "./contexts/ResponsiveContext.jsx";
 
 export function App() {

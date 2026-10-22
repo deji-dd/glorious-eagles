@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React from "react";
+
 import { useResponsive } from "../contexts/ResponsiveContext.jsx";
 
 const ResponsiveComponent = ({ desktop: DesktopComponent, mobile: MobileComponent }) => {

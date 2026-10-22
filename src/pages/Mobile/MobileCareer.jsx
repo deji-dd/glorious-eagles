@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import MobileJob from "../../components/MobileJob";
 
 export default function MobileCareer() {

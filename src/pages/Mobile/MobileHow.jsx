@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import MobileHowWeWork from "../../components/MobileHowWeWork";
 
 export default function MobileHow() {

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import ContactCard from "../../components/ContactCard";
 import Contacts from "../../components/Contacts";
 

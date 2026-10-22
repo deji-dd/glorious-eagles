@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+
 import Caring from "@/components/Caring";
 import Journey from "@/components/Journey";
+
 import Different from "../../components/Different";
 import Unlocking from "../../components/Unlocking";
 

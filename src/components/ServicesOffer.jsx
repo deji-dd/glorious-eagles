@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
+
 import Clipboard from "../assets/clipboard.svg";
 import Heart from "../assets/heart.svg";
 import Puzzle from "../assets/puzzle.svg";

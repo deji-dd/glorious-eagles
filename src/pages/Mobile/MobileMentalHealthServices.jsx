@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+
 import MentalHealthServicesCard from "@/components/MentalHealthServicesCard";
 import MobileJourney from "@/components/MobileJourney";
+
 import one from "../../assets/mhs-1.webp";
 import two from "../../assets/mhs-2.webp";
 import three from "../../assets/mhs-3.webp";
