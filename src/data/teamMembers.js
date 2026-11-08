@@ -8,6 +8,7 @@ import katieImg from "../assets/katie.jpg";
 import lindaImg from "../assets/linda.png";
 import defaultAvatar from "../assets/member.svg";
 import moxieImg from "../assets/moxie.jpg";
+import preciousImg from "../assets/precious.jpg";
 import samsonImg from "../assets/samson.jpg";
 
 /**
@@ -122,6 +123,15 @@ export const teamMembers = [
     credentials: "RBT | Level II Provider",
     image: moxieImg,
     imagePosition: "center 45%",
+  },
+  {
+    id: 11,
+    name: "Precious Ochre",
+    role: null,
+    degree: null,
+    credentials: "Level II Provider",
+    image: preciousImg,
+    imagePosition: "center 30%",
   },
 ];
 
